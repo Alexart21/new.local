@@ -1,0 +1,313 @@
+:root{
+    --logo-color: #e61b05;
+    --viber-color: #774E98;
+    --watsapp-color: #12940A;
+    --tg-color: #52ADDE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap, main, .bg{
+    position: relative;
+    max-width: 1920px !important;
+    margin: auto;
+}
+
+main {
+    /*background-color: lime;*/
+    display: block;
+    position: relative;
+    background: #ddd;
+    /*height: 100vh;*/
+}
+/* header */
+header {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    /*background: rgba(0, 0, 0, 0.7);*/
+}
+.header-content {
+    position: relative;
+    display: block;
+    color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 5px #000000;
+}
+.header-content h1 {
+    font-size: 3em;
+    font-weight: normal;
+}
+.header-content h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+.bg {
+    display: block;
+    position: fixed;
+    top: 0;
+    /*left: calc(100vw - 1366px)/2;*/
+    width: 100vw;
+    height: 100vh;
+    background: url('/img/head/bg8.jpg') center no-repeat;
+    background-size: cover;
+    /*z-index: -1;*/
+}
+/************************************************************/
+/* MEDIA */
+@media screen and (max-width: 768px) {
+    .logo-block{
+        display: none;
+    }
+
+    .m-logo-block{
+        display: block !important;
+        position: absolute;
+        font-size: 40px;
+        right: 0;
+        z-index: 1000000000000;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        cursor: pointer;
+    }
+
+    .m-logo-block > strong{
+        font-size: 30px;
+    }
+
+    .menu-wrapper .menu{
+        /*padding-left: 30px !important;*/
+    }
+}
+/* END MEDIA */
+.logo-block{
+    position: absolute;
+}
+
+.m-logo-block{
+    display: none;
+}
+
+.logo-img{
+    width: 223px;
+    height: 100px;
+    transition: all .4s;
+}
+
+.logo-img-anim{
+    width: 134px;
+    height: 60px;
+    transition: all .4s;
+}
+
+.logo-text{
+    display: block;
+    margin-top: -38px;
+    margin-left: 220px;
+    color: #000;
+    font-size: 26px;
+    font-family: Calibri;
+    font-weight: bold;
+    text-shadow: 1px 1px #fff;
+}
+/**/
+/* блок с иконками мессенджеров*/
+#msg-block {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 50px;
+    border: 1px solid #222;
+    /*background: rgba(150, 150, 150, .4);*/
+    background: #f4fcff;
+    /*background: url('/img/wats-bg.gif');*/
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 0 40px #87ffdb, 0 0 5px #fff inset;
+}
+
+#msg-block > button > span{
+    position: absolute;
+    font-size: 30px;
+    top: -10px;
+    right: -10px;
+}
+
+.msg-opened{
+    height: 320px !important;
+}
+
+.msg-text {
+    width: 80%;
+    margin: 50px auto 0 auto;
+    background: #AAD9C2;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #555;
+}
+
+#msg-content {
+    margin-top: -20px;
+}
+
+.msg-closed {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    font-size: 26px;
+    color: #222;
+    margin-top: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: inherit;
+    /*height: 40px;*/
+    /*line-height: 40px;*/
+}
+
+.msg-closed-text{
+    position: absolute;
+    left: 80px;
+    font-size: 23px;
+}
+
+.msg-closed i {
+    font-size: 34px;
+    /*color: lime !important;*/
+}
+
+.msg-img {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    opacity: 1;
+    z-index: 10000000;
+}
+
+.msg-btn {
+    display: block;
+    padding: 5px;
+    text-align: center;
+    /*background: #0d6aad;*/
+    border: 0px solid transparent;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-size: 30px;
+    color: #fff;
+    width: 80%;
+    min-width: 160px;
+    margin: 0 auto 10px auto;
+}
+
+.viber-bg {
+    background: var(--viber-color);
+}
+
+.watsap-bg {
+    background: var(--watsapp-color);
+}
+
+.tg-bg {
+    background: var(--tg-color);
+}
+
+.viber {
+    color: var(--viber-color) !important;
+}
+
+.wats {
+    color: var(--watsapp-color) !important;
+}
+
+.tg {
+    color: var(--tg-color) !important;
+}
+
+.msg-btn:hover, .msg-btn:visited {
+    box-shadow: 4px 4px 10px #999;
+    color: #fff !important;
+}
+
+.msg-btn i {
+    font-size: 26px;
+}
+
+#msg-block > button {
+    /*display: none;*/
+    position: absolute;
+    top: 10px;
+    right: 24px;
+}
+
+#msg-block hr {
+    border-bottom: 1px dashed #222;
+}
+
+/* всплывающая подсказка над чатом */
+.tooltip{
+    z-index: 100001 !important;
+}
+
+.tooltip-inner{
+    font-size: 18px;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #fff !important;
+    border: 1px solid #222;
+    box-shadow: 0 0 8px inset var(--logo-color);
+}
+
+.arrow::before{
+    border-top-color: #222 !important;
+}
+
+/**/
+/* здесь анимация на блоке чата */
+.button-anim:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    /*top: -180px;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    width: 10px;
+    height:60px;
+    background-color: #fff;
+    animation: shiny-btn1 5s ease-in-out infinite;
+}
+
+@-webkit-keyframes shiny-btn1 {
+    0% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    80% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    81% {
+        -webkit-transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/**/
+audio:not([controls]) {
+    display: none;
+}
+/**/
