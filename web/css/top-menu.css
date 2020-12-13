@@ -1,9 +1,7 @@
 
-/* ----------------------------- */
-/* == Menu */
-/* ----------------------------- */
 .menu-wrapper {
   position: fixed;
+  width: 100%;
   top: 0;
   z-index: 10;
   font-family: 'Economica', sans-serif;
@@ -13,22 +11,18 @@
   padding-top: 2px;
   padding-bottom: 2px;
   background: rgba(255, 255, 255, .3);
-  transition: height .4s;
-  /*transition: height 1s;*/
-  /* the hidden link for RWD nav */
-  /* the rest of the menu lvl 1 */
-  /* current links */
-  /* submenu ! */
-  /* unhide the 2nd level */
+  transition: all .4s;
+  /*background: lime !important;*/
+  max-width: 1920px;
 }
 
 .menu-wrapper-anim{
   height: 65px;
   background: #fff;
-  border-left: 1px solid #e61b05;
-  border-bottom: 1px solid #e61b05;
-  border-right: 1px solid #e61b05;
-  transition: height .4s;
+  /*border-left: 1px solid #e61b05;*/
+  border-bottom: 1px dashed #e61b05;
+  /*border-right: 1px solid #e61b05;*/
+  transition: all .4s;
 }
 
 .menu-wrapper .menu {
@@ -59,8 +53,8 @@
   padding: 0 0.5em;
   margin: 0 0.2em;
   line-height: 1.3em;
-  color: #fff;
-  text-shadow: 1px 1px #000;
+  color: #000;
+  text-shadow: 1px 1px #e61b05;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }

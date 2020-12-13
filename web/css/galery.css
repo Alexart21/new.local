@@ -1,18 +1,17 @@
-
-
-.meb{
-    color: #222;
+main{
+    margin-top: 150px;
+    background: inherit;
 }
-/* Галерея */
-/*.float-img {
-    float: left;
-    margin: 1em;
-    border: 1px #000;
-    border-radius: 3px;
-}*/
-
+header{
+    height: auto !important;
+}
 .galery-small {
-    margin-top: 100px;
+    /*max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;*/
 }
 
 .galery-small img {
@@ -69,9 +68,6 @@
     text-align: left;
 }
 .snip1584 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
 }
 .snip1584:before {
@@ -95,15 +91,11 @@
 }
 .snip1584 figcaption {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 10%;
     z-index: 1;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
 }
 .snip1584 h3,
 .snip1584 h5 {
@@ -183,7 +175,10 @@
 
 .pagination {
     /*background: lime;*/
-    margin-top: 20px;
+    width: 200px;
+    overflow: visible;
+    margin: 20px auto;
+    /*background: lime;*/
 }
 
 .pagination > li a {
@@ -191,7 +186,7 @@
     border: 1px solid #003333 !important;
     border-radius: 4px;
     background: #dddddd;
-
+    padding: 3px 10px;
 }
 
 .pagination > li {
@@ -336,14 +331,6 @@ ul > .pagination li .active a:hover {
     border: none !important;
 }
 
-.ajax-img-wrap{
-    position: relative !important;
-    /*padding: 1em;*/
-    /*background: red;*/
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
 
 .ajax-img-wrap button{
     font-size: 4em !important;
@@ -431,16 +418,4 @@ ul > .pagination li .active a:hover {
 .snip1361:hover figcaption,
 .snip1361.hover figcaption {
     bottom: 0px;
-}
-
-.designer-box{
-    display: block;
-}
-
-#fh5co-logo > div.mail-block > a{
-    top: 5px;
-}
-.tel{
-    color: #003333;
-    text-shadow: none;
 }

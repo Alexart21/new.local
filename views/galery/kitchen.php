@@ -1,29 +1,24 @@
 <?php
-//var_dump($content[0]['last_mod']);die;
-//var_dump($lastMod);die;
+header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $content[0]['last_mod']));
 use yii\widgets\LinkPager;
-//use yii\widgets\Pjax;
+use yii\widgets\Pjax;
 
-if(!empty($_GET['page'])){
-    $page = ' | страница ' . $_GET['page'];
-}else $page = NULL;
-
-header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $lastMod));
-$this->title = 'Дизайн кухонной мебели в Чебоксарах от '.Yii::$app->params['company'] . $page;
+$pageNum = $pageNum ? ' | страница ' . $pageNum : null;
+$this->title = 'Кухни на заказ в Чебоксарах'.Yii::$app->params['company'] . $pageNum;
 $this->registerMetaTag(['name' => 'keywords', 'content' => $content[0]['keywords']]);
 $this->registerMetaTag(['name' => 'description', 'content' => $content[0]['descrition']]);
 
 const IMG_W = 310; // ширина иконок
 const IMG_H = 250; // высота иконок
 ?>
-<div class="galery-small container">
-    <h1 class="header_shadow text-center" >Кухни на заказ от <i><?= Yii::$app->params['company'] ?></i></h1>
+<h1 class="header_shadow text-center" >Кухни на заказ в Чебоксарах от <i><?= Yii::$app->params['company'] ?></i></h1>
+
+<div class="galery-small container d-flex flex-row flex-wrap">
     <?php
     $delay = 0.1;
     ?>
-    <div class="d-flex flex-center">
     <?php foreach ($imgData as $item): ?>
-        <div class="raised">
+        <div class="raised flex-center img-thumbnail">
         <?php
             echo '<figure  class="snip1584"  data-scrollreveal="enter left and move 500px, wait ' .  $delay . 's">'
         ?>
@@ -44,9 +39,8 @@ const IMG_H = 250; // высота иконок
         </div>
     <?php endforeach; ?>
 </div>
-    <?= LinkPager::widget([
-        'pagination' => $pagination,
-        'nextPageLabel' => '<i class="fa fa-forward"></i>',
-        'prevPageLabel' => '<i class="fa fa-backward"></i>',
-    ]) ?>
-</div>
+<?= LinkPager::widget([
+    'pagination' => $pagination,
+    'nextPageLabel' => '<i class="fa fa-forward"></i>',
+    'prevPageLabel' => '<i class="fa fa-backward"></i>',
+]) ?>

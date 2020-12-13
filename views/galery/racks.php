@@ -8,7 +8,7 @@ if(!empty($_GET['page'])){
 
 header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $content[1]));
 //header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $content[0]['last_mod']));
-$this->title = 'Дизайн гардеробной в Чебоксарах от '.Yii::$app->params['company'] . $page;
+$this->title = 'Гардеробные на заказ в Чебоксарах'.Yii::$app->params['company'] . $page;
 $this->registerMetaTag(['name' => 'keywords', 'content' => $content[0]['keywords']]);
 $this->registerMetaTag(['name' => 'description', 'content' => $content[0]['descrition']]);
 
@@ -16,13 +16,13 @@ const IMG_W = 310; // ширина иконок
 const IMG_H = 250; // высота иконок
 ?>
 <div class="galery-small container">
-    <h1 class="header_shadow text-center" >Гардеробная на заказ от <i><?= Yii::$app->params['company'] ?></i></h1>
+    <h1 class="header_shadow text-center" >Гардеробные в Чебоксарах от <i><?= Yii::$app->params['company'] ?></i></h1>
     <?php
     $delay = 0.1;
     ?>
     <div class="flex-center">
     <?php foreach ($imgData as $item): ?>
-        <div class="raised">
+        <div class="raised img-thumbnail">
         <?php
         echo '<figure  class="snip1584"  data-scrollreveal="enter left and move 500px, wait ' .  $delay . 's">'
         ?>
