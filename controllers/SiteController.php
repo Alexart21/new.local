@@ -13,7 +13,15 @@ use yii\web\Controller;
 
 class SiteController extends Controller
 {
-
+    /*public function actionError()
+    {
+        $errorCode = Yii::$app->errorHandler->exception->statusCode;
+        $errorMsg = Yii::$app->errorHandler->exception->getMessage();
+            if ($errorCode == 404) {
+                $this->layout = '_404';
+               return $this->render('_404', ['errorMsg' => $errorMsg]);
+            }
+    }*/
     /**
      * @inheritdoc
      */

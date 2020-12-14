@@ -26,9 +26,15 @@ $(document).ready(function () {
             } else {
                 $('.has-subnav > a').before('<span class="toggle-link"> Open submenu </span>');
                 $('.toggle-link').click(function (e) {
-                    var $this = $(this);
+                    console.log('submenu');
+                    let $this = $(this);
                     $this.toggleClass('active').siblings('ul').toggleClass('active');
                 });
+                /*$('.has-subnav').click(function (e) {
+                    console.log('submenu');
+                    let $this = $(this);
+                    $this.toggleClass('active').siblings('ul').toggleClass('active');
+                });*/
             }
         } else {
             $('.toggle-link').empty();

@@ -26,6 +26,7 @@ AppAsset::register($this);
     <meta name="yandex-verification" content="630983552bc35f28"/>
 </head>
 <body>
+<div id="parent">
 <!-- loader -->
 <div id="container_loading">
     <!--        <i class="fas fa-spinner fa-spin"></i>-->
@@ -47,7 +48,6 @@ AppAsset::register($this);
 </div>
 <!-- end loader -->
 <?php $this->beginBody() ?>
-<div class="parent">
 <div id="wrap">
     <!--Фоновая картинка-->
     <div class="bg"></div>
@@ -114,7 +114,6 @@ AppAsset::register($this);
     <h2>FOOTER</h2>
 </footer>
 </div>
-</div>
 <!--Окно чата-->
 <audio preload="auto">
     <source src="/audio/buben.mp3" type="audio/mpeg">
@@ -141,6 +140,7 @@ AppAsset::register($this);
     </div>
 </div>
 <!--/-->
+</div>
 <?php $this->endBody() ?>
 </body>
 </html>

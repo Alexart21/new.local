@@ -17,6 +17,11 @@ html {
     font-family: Verdana, sans-serif;
 }
 
+#parent {
+    max-width: 1920px;
+    position: relative;
+}
+
 h1, .h1 {
     font-size: 30px;
     line-height: 42px;
@@ -48,18 +53,18 @@ h6, .h6 {
 }
 
 
-#wrap, main, .bg{
+#wrap, main, footer{
     position: relative;
     max-width: 1920px !important;
-    margin: auto;
+    /*margin: auto;*/
 }
 
 main {
-    /*background-color: lime;*/
+    background: #eee;
     display: block;
     position: relative;
-    /*background: #ddd;*/
-    /*height: 100vh;*/
+    background: #ddd;
+    /*height: 100% !important;*/
 }
 
 .header_shadow {
@@ -94,18 +99,32 @@ header {
     font-weight: lighter;
 }
 .bg {
+    max-width: 1920px !important;
     display: block;
     position: fixed;
-    top: 0;
-    /*left: calc(100vw - 1366px)/2;*/
     width: 100vw;
     height: 100vh;
+    top: 0;
+    left: 0;
     background: url('/img/head/bg8.jpg') center no-repeat;
     background-size: cover;
-    /*z-index: -1;*/
+    z-index: -1;
+}
+
+footer{
+    text-align: center;
 }
 /************************************************************/
 /* MEDIA */
+@media screen and (min-width: 1920px) {
+    #wrap, .bg, .menu-wrapper{
+        width: 1920px;
+        margin: 0 auto;
+        left: calc((100vw - 1920px)/2);
+        /*background: lime;*/
+    }
+}
+
 @media screen and (max-width: 768px) {
     .logo-block{
         display: none;
