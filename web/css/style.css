@@ -1,20 +1,38 @@
 :root{
-    --logo-color: #e61b05;
+    --logo-color: #E20015;
     --viber-color: #774E98;
     --watsapp-color: #12940A;
     --tg-color: #52ADDE;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@font-face {
+    font-family: clematis;
+    src: url(/fonts/clematis.woff);
 }
 
-html {
+@font-face {
+    font-family: corpid;
+    src: url(/fonts/corpid2.woff);
+}
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+html,body {
+    min-width: 760px;
     /*font-family: sans-serif;*/
     /*font-family: pt_suns;*/
     font-family: Verdana, sans-serif;
+}
+
+a, a:visited{
+    text-decoration: none;
 }
 
 #parent {
@@ -53,17 +71,19 @@ h6, .h6 {
 }
 
 
-#wrap, main, footer{
+#wrap, main{
     position: relative;
     max-width: 1920px !important;
-    /*margin: auto;*/
+    min-width: 760px;
+    /*background: #fff;*/
 }
 
 main {
-    background: #eee;
+    padding: 2vw;
+    background: #fff;
     display: block;
     position: relative;
-    background: #ddd;
+    padding-bottom: 2em;
     /*height: 100% !important;*/
 }
 
@@ -83,12 +103,14 @@ header {
 .header-content {
     position: relative;
     display: block;
-    color: #FFFFFF;
+    color: #222;
     top: 50%;
+    /*left: 18%;*/
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 5px #000000;
+    text-shadow: 0px 0px 5px #fff;
+    /*background: lime;*/
 }
 .header-content h1 {
     font-size: 3em;
@@ -112,16 +134,71 @@ header {
 }
 
 footer{
+    background: rgba(0,51,51,.3);
+    color: #000;
+    max-width: 1920px;
+    border-top: 1px solid var(--logo-color);
     text-align: center;
+    /*line-height: 0.5;*/
+    /*padding: 1em;*/
 }
+
+footer p{
+    /*background: red;*/
+    margin-bottom: .2em;
+}
+
 /************************************************************/
 /* MEDIA */
 @media screen and (min-width: 1920px) {
     #wrap, .bg, .menu-wrapper{
         width: 1920px;
-        margin: 0 auto;
-        left: calc((100vw - 1920px)/2);
+        left: calc((100vw - 1920px)/2) !important;
         /*background: lime;*/
+    }
+
+    #wrap{
+        border-left: 1px solid var(--logo-color);
+        border-right: 1px solid var(--logo-color);
+        box-shadow: 0 0 40px #222;
+    }
+
+    #msg-block, #scroller{
+        right: calc((100vw - 1920px)/2 + 30px) !important;
+    }
+}
+/**/
+@media screen and (max-width: 1024px) {
+    .menu-wrapper{
+        height: 65px !important;
+    }
+
+    .logo-block{
+        left: 5px !important;
+    }
+
+    .logo-img{
+        width: 134px !important;
+        height: 60px !important;
+    }
+
+    .logo-text{
+        margin-left: 140px !important;
+    }
+
+    .tel-block{
+        left: 140px !important;
+        top: 0 !important;
+        font-size: 80% !important;
+    }
+
+    .mail-block{
+        left: 326px !important;
+        /*top: 0 !important; */
+    }
+
+    .tel{
+        /*font-size: 80% !important;*/
     }
 }
 
@@ -134,11 +211,11 @@ footer{
         display: block !important;
         position: absolute;
         font-size: 40px;
-        right: 0;
+        right: 5px;
         z-index: 1000000000000;
-        color: #fff;
         text-shadow: 2px 2px #000;
         cursor: pointer;
+        color: var(--logo-color);
     }
 
     .m-logo-block > strong{
@@ -147,6 +224,21 @@ footer{
 
     .menu-wrapper .menu{
         /*padding-left: 30px !important;*/
+    }
+
+
+    .tel-block, .mail-block{
+        left: 70px !important;
+        top: 25px !important;
+        font-size: 80% !important;
+    }
+
+    .tel{
+        font-size: 80% !important;
+    }
+
+    .mail-block{
+        top: 63px !important;
     }
 }
 /* END MEDIA */
@@ -181,6 +273,8 @@ footer{
 #scroller {
     display: none;
     position: fixed;
+    cursor: pointer;
+    right: 30px;
     z-index: 10000;
     bottom: 120px;
     font-size: 50px;
@@ -191,6 +285,7 @@ footer{
 /* конец Кнопка наверх */
 .logo-block{
     position: absolute;
+    left: 5%;
 }
 
 .m-logo-block{
@@ -220,6 +315,41 @@ footer{
     text-shadow: 1px 1px #fff;
 }
 /**/
+/* Контактная информация в шапке */
+.tel-block, .mail-block{
+    position: absolute;
+    display: inline-block;
+    top: 7px;
+    left: 310px;
+    /*margin-top: -60px;*/
+    line-height: 1;
+    /*background: #ddd;*/
+    text-transform: lowercase;
+}
+
+.mail-block{
+    top: 44px;
+}
+
+.tel-block a, .mail-block a{
+    font-size: 17px;
+    letter-spacing: 1px !important;
+    color: #222 !important;
+    /*background-color:#fff;*/
+}
+
+.tel-block > .fa, .mail-block i{
+    color: var(--logo-color);
+}
+
+.tel, .mail-block {
+    color: #222;
+    text-shadow: 1px 1px #fff;
+    font-family: corpid;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 /* блок с иконками мессенджеров*/
 #msg-block {
     display: none;
@@ -411,4 +541,66 @@ footer{
 audio:not([controls]) {
     display: none;
 }
-/**/
+p{
+    text-indent: 1em;
+}
+
+/* STYLE INDEX.PHP */
+.underline{
+    text-decoration: underline;
+    /*text-underline-style: double;*/
+}
+
+.index-icon{
+    /*display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3em;*/
+}
+
+.icon-block{
+    /*background: #ddd;*/
+    position: relative;
+    max-width: 300px;
+    box-shadow: 0 0 20px #eee inset;
+    margin: 1em;
+    padding: 1em;
+    border: 0 solid transparent;
+    border-radius: 16px;
+}
+
+.icon-block i{
+    /*position: absolute;*/
+    display: block;
+    margin-left: 80px;
+    margin-top: -80px;
+}
+
+.icon-block p{
+    margin-top: 1em;
+}
+
+.btn-index{
+    position: relative;
+    top: -28px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 20px;
+    padding: 14px;
+    background: var(--logo-color);
+    border: 0px solid transparent;
+    border-radius: 26px;
+    box-shadow: 0 0 20px #222;
+}
+
+.btn-index:hover{
+    text-decoration: none;
+    top: -30px;
+}
+
+.index-hr{
+    margin: 2em auto;
+    width: 80%;
+    border-top: 2px dashed #222;
+}

@@ -34,7 +34,7 @@ class GaleryController extends AppAdminController
 
     public function beforeAction($action)
     {
-        $this->stop(); // пускаем только админа (описана в AppAdminController)
+//        $this->stop(); // пускаем только админа (описана в AppAdminController)
         return parent::beforeAction($action);
     }
 

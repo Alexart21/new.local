@@ -61,51 +61,67 @@ GaleryAsset::register($this);
         <header>
             <!-- Menu -->
             <div class="menu-wrapper">
-                <div class="m-logo-block">SOLO <strong>мебель</strong></div>
-                <div class="logo-block">
-                    <img class="logo-img" src="/img/logo/logo223x100.png" alt="логотип компании Соло мебель">
-                    <span class="logo-text">мебель</span>
-                </div>
-                <a href="#menu" class="menu-link" style="font-size: 40px;color: #fff;padding-top: -20px !important;"> <span class="fa fa-align-justify"></span>
-                </a>
-                <nav id="menu" role="navigation">
-                    <div class="menu">
-                        <ul  class="menu">
-                            <li>
-                                <a href="#" class="top-link">Team</a>
-                            </li>
-                            <li>
-                                <a href="#" class="top-link">News</a>
-                            </li>
-                            <li  class="has-subnav">
-                                <a href="#" class="top-link">Категории</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="/galery/kitchen" class="top-link">Кухни</a>
-                                    </li>
-                                    <li>
-                                        <a href="/galery/kitchen" class="top-link">Кухни</a>
-                                    </li>
-                                    <li>
-                                        <a href="/galery/kitchen" class="top-link">Ралиусные шкафы купе</a>
-                                    </li>
-                                    <li>
-                                        <a href="/galery/kitchen" class="top-link">Кухни</a>
-                                    </li>
-                                    <li>
-                                        <a href="/galery/kitchen" class="top-link">Кухни</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="top-link">Our Work</a>
-                            </li>
-                            <li>
-                                <a href="#" class="top-link">Contact us</a>
-                            </li>
-                        </ul>
+                <a href="/"><div class="m-logo-block">SOLO <strong>мебель</strong></div></a>
+                <a href="/">
+                    <div class="logo-block">
+                        <img class="logo-img" src="/img/logo/logo223x100.png" alt="логотип компании Соло мебель">
+                        <span class="logo-text">мебель</span>
                     </div>
-                </nav>
+                </a>
+                <!---->
+                <div class="tel-block">
+                    <!--<i class="fa fa-phone-alt"></i>--><a href="tel:<?= Yii::$app->params['tel1_small'] ?>"><span class="tel" itemprop="telephone"><?= Yii::$app->params['tel1_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<span class="tel" style="font-weight: normal"><img
+                                src="/img/icon/map.png" alt="" style="margin-top: 1px"> ТЦ "Мега молл" 4 этаж</span><br>
+                    <!--<i class="fa fa-phone-alt" style="visibility: hidden">--></i><a href="<?= Yii::$app->params['tel2_small'] ?>"><span class="tel" itemprop="telephone"><?= Yii::$app->params['tel2_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<img
+                            src="/img/icon/time.png" alt="" style="margin-top: 1px"><span class="tel" style="font-weight: normal"> <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
+        &nbsp;&nbsp;Вс 10<sup>00</sup>&mdash;20<sup>00</span>
+                </div>
+                <div class="mail-block">
+                    <a rel="nofollow" href="/#contacts"  title="написать письмо">
+                        <i class="far fa-envelope"></i> mail@s-solo.ru
+                    </a>
+                </div>
+                <!---->
+                <a href="#menu" class="menu-link"> <span class="fa fa-align-justify" style="font-size: 60px;color: #003333"></span>
+                    <!--            <a href="#menu" class="menu-link" style="color: #fff; !important;">MENU</a>-->
+                    <nav id="menu" role="navigation">
+                        <div class="menu">
+                            <ul  class="menu">
+                                <li  class="has-subnav">
+                                    <a href="#" class="top-link main-link">категории</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/galery/kitchen" class="top-link">кухни</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/lkupe" class="top-link">шкафы купе</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/kupe" class="top-link">радиусные шкафы купе</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/wall" class="top-link">стенки</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/office" class="top-link">офисная мебель</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/childrens" class="top-link">детские комнаты</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/hall" class="top-link">прихожие</a>
+                                        </li>
+                                        <li>
+                                            <a href="/galery/bedroom" class="top-link">спальные гарнитуры</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/#contacts" class="top-link main-link" title="контакты">контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
             </div>
             <!-- end Menu -->
         </header>
@@ -113,10 +129,37 @@ GaleryAsset::register($this);
             <?= $content ?>
         </main>
         <footer>
-            <h2>FOOTER</h2>
+            <p>
+                <b style="font-size: 120%;color: #e61b05">SOLO</b> мебель&nbsp;Copyright
+                &copy;&nbsp;&nbsp;2007&mdash;<?= date('Y') ?>.
+                <strong>Проектирование и производство кухонной мебели в Чебоксарах.</strong>
+            </p>
+            <p>
+            <span class="tel">
+                <b class="header_shadow">Тел.</b> <b style="letter-spacing: 2px">+7(8352) 37-57-00 &nbsp;&nbsp;</b>
+            </span>
+                <b class="header_shadow">Часы работы :</b>
+                <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
+                &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</span>
+            </p>
+            <p>
+                <b class="text-center"><b class="header_shadow">Адрес :</b> ул. Калинина 105а (Мега молл)</b>
+            </p>
+            <div>
+                <img src="/img/brands/blum.jpg" width="188" height="52" alt="фурнитура blum">
+                <img src="/img/brands/hettich.jpg" width="188" height="52" alt="фурнитура hettich">
+                <img src="/img/brands/mak.jpg" width="188" height="52" alt="фурнитура makmart">
+            </div>
+            <p>
+            <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
+            </p>
+            <br>
         </footer>
     </div>
 </div>
+<!--кнопка вверх-->
+<div id="scroller" class="fa fa-chevron-circle-up"></div>
+<!--/-->
 <?php $this->endBody() ?>
 <script>
     window.onload = () => {

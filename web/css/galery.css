@@ -304,6 +304,7 @@ ul > .pagination li .active a:hover {
     /*width: 100% !important;*/
     max-width: 1200px;
     margin: 100px auto;
+    top: -50px !important;
 }
 
 #modal-img .modal-content img{
@@ -367,6 +368,7 @@ ul > .pagination li .active a:hover {
     opacity: 1 !important;
     z-index: 1000;
     padding-left: 1em;
+    text-align: center;
 }
 
 .snip1361 img {
@@ -419,3 +421,19 @@ ul > .pagination li .active a:hover {
 .snip1361.hover figcaption {
     bottom: 0px;
 }
+
+h1 i{
+    font-size: 150%;
+}
+
+figcaption h3{
+    text-align: center !important;
+}
+/* MEDIA */
+/*
+@media screen and (min-width: 1920px) {
+    footer{
+        width: 1920px !important;
+        left: calc((100vw - 1920px)/2) !important;
+    }
+}*/

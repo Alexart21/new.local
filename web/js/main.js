@@ -7,7 +7,7 @@ $(window).scroll(function(){
 
 function parallax(){
     const scrolled = $(window).scrollTop();
-    $('.bg').css('top',-(scrolled*0.1)+'px');
+    $('.bg').css('top',-(scrolled*0.2)+'px');
     $('.header-content').css('top',50+(scrolled*0.1)+'%');
     $('.header-content').css('opacity',1-(scrolled*0.01)/10);
     $('.header-content').css('opacity',1-(scrolled*0.01)/10);
@@ -150,3 +150,17 @@ window.onscroll = () => {
     }
 };
 /**/
+/* кнопка наверх */
+const scr = document.getElementById('scroller');
+window.addEventListener('scroll', () => {
+    let top = window.pageYOffset; // сколько проскролено
+    if (top > 500) {
+        scr.style.display = 'block';
+    } else {
+        scr.style.display = 'none';
+    }
+});
+scr.addEventListener('click', () => {
+    // $('body,html').animate({scrollTop: 0}, 300);
+    window.scrollTo(0, 0);
+});

@@ -26,7 +26,18 @@ class GaleryController extends \yii\web\Controller
 //        return $this->renderAjax('ajax');
         $request = Yii::$app->request;
         if ($request->isAjax) {
+            $cache = Yii::$app->cache;
+            $key = (int)$id;
+            /* Проверяем кэш */
+            $imgData = $cache->get($key);
+            if ($imgData) {
+                return $this->renderAjax('ajax', ['imgData' => $imgData]);
+            }
+
             $imgData = Galery::getImg($id);
+            // set cache
+            //15552000 - 180 суток
+            $cache->set($key, $imgData, 15552000);
             return $this->renderAjax('ajax', ['imgData' => $imgData]);
         }
     }

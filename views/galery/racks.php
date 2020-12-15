@@ -22,24 +22,20 @@ const IMG_H = 250; // высота иконок
     ?>
     <div class="flex-center">
     <?php foreach ($imgData as $item): ?>
-        <div class="raised img-thumbnail">
-        <?php
-        echo '<figure  class="snip1584"  data-scrollreveal="enter left and move 500px, wait ' .  $delay . 's">'
-        ?>
-        <!--        <figure  class="snip1584"  data-scrollreveal="enter left and move 100px, wait ".--><?//= $delay ?><!--. "s>"-->
-        <img width="<?= IMG_W ?>" height="<?= IMG_H ?>" src="/upload/resize_img/Galeries/Galery<?= $item['itemId'] ?>/<?= $item['urlAlias'] ?>.jpg" alt=""/>
-        <figcaption>
-            <h3><?= $item['title'] ?></h3>
-            <?php if ($item['price']) : ?>
-                <h5><?= $item['price'] ?>&nbsp;<i class="fa fa-ruble-sign"></i></h5>
-            <?php endif; ?>
-        </figcaption>
-        <a class="pjax" href="/galery/ajax?id=<?= $item['id'] ?>"></a>
-
-        </figure>
-        <?php
-        $delay += 0.1;
-        ?>
+        <div class="raised flex-center img-thumbnail">
+            <figure  class="snip1584"  data-scrollreveal="enter left and move 500px, wait <?= $delay ?>s">
+                <img width="<?= IMG_W ?>" height="<?= IMG_H ?>" src="/upload/resize_img/Galeries/Galery<?= $item['itemId'] ?>/<?= $item['urlAlias'] ?>.jpg" alt=""/>
+                <figcaption>
+                    <h3><?= $item['title'] ?></h3>
+                    <?php if ($item['price']) : ?>
+                        <h5><?= $item['price'] ?>&nbsp;<i class="fa fa-ruble-sign"></i></h5>
+                    <?php endif; ?>
+                </figcaption>
+                <a class="pjax" href="/galery/ajax?id=<?= $item['id'] ?>"></a>
+            </figure>
+            <?php
+            $delay += 0.1;
+            ?>
         </div>
     <?php endforeach; ?>
     </div>
