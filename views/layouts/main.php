@@ -3,12 +3,7 @@
 use app\assets\AppAsset;
 use yii\helpers\Html;
 use Yii;
-use yii\widgets\Pjax;
-use yii\bootstrap\ActiveForm;
-use yii\widgets\MaskedInput;
-use app\models\IndexForm;
 
-/* ДИЧь */
 
 //use y/ii\widgets\Spaceless;
 AppAsset::register($this);
@@ -86,7 +81,7 @@ AppAsset::register($this);
                 </div>
                 <div class="mail-block">
                     <a rel="nofollow" href="/#contacts" title="написать письмо">
-                        <i class="far fa-envelope"></i> mail@s-solo.ru
+                        <a rel="nofollow" href="/contact" class="pjax"><i class="far fa-envelope"></i> mail@s-solo.ru</a>
                     </a>
                 </div>
                 <!---->
@@ -150,10 +145,8 @@ AppAsset::register($this);
                 <b class="header_shadow">Часы работы :</b>
                 <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
                 &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</span>
-            </p>
             <p>
                 <b class="text-center"><b class="header_shadow">Адрес :</b> ул. Калинина 105а (Мега молл)</b>
-            </p>
             <div>
                 <img src="/img/brands/blum.jpg" width="188" height="52" alt="фурнитура blum">
                 <img src="/img/brands/hettich.jpg" width="188" height="52" alt="фурнитура hettich">
@@ -161,7 +154,8 @@ AppAsset::register($this);
             </div>
             <p>
             <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
-            </p>
+            <a href="/politic" class="small">Политика обработки персональных данных</a><br>
+            <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
             <br>
         </footer>
     </div>
@@ -196,6 +190,66 @@ AppAsset::register($this);
     <!--/-->
 </div>
 <?php $this->endBody() ?>
+<script>
+    $(document).on('pjax:beforeSend', function () {
+        document.body.style.cursor = 'progress';
+        $('#container_loading').show();
+    });
+    $(document).on('pjax:complete', function () {
+        document.body.style.cursor = 'default';
+        $('#container_loading').hide();
+    });
+    ///
+    window.scrollReveal = new scrollReveal();
+    window.onload = () => {
+
+        // const ldr = document.querySelector('#container_loading');
+
+        //////////////
+        let msgBlock = document.getElementById('msg-block'),
+            msgContent = document.getElementById('msg-content'),
+            msgImg = document.querySelector('.msg-img'),
+            msgClosed = document.querySelector('.msg-closed');
+        // несколько задержек
+        setTimeout(showMsg, 3000); //  показываем блок с чатом
+        setTimeout(showTooltip, 6000); // показываем всплывающую подсказку/приглашение
+        setTimeout(rmTooltip, 14000); // скрываем подсказку
+        setTimeout(rmMsgAnim, 30000); // выключаем анимацию
+
+        msgContent.addEventListener('click', () => { // разворачиваем окно чата
+            if (msgBlock.hasAttribute('data-closed')) { // свернуто
+                // msgBlock.style.height = '370px';
+                msgBlock.classList.add('msg-opened');
+                msgBlock.style.background = 'url(/img/wats-bg.gif)';
+                msgBlock.style.boxShadow = '0 0 30px #999';
+                msgImg.style.right = '134px';
+                msgImg.style.opacity = '0.7';
+                msgClosed.style.display = 'none';
+                msgBlock.removeAttribute('data-closed');
+                showMsg();
+            }
+        });
+//
+        const msgClose = document.querySelector('#msg-block button');
+        msgClose.addEventListener('click', () => { // сворачиваем окно чата
+            if (!msgBlock.hasAttribute('data-closed')) { // окно не свернуто
+                msgImg.style.right = '';
+                msgImg.style.opacity = '';
+                // msgBlock.style.height = '';
+                msgBlock.classList.remove('msg-opened');
+                msgBlock.style.background = '';
+                msgBlock.style.boxShadow = '';
+                msgClosed.style.display = '';
+                msgBlock.setAttribute('data-closed', '');
+            }
+        });
+//
+
+        msgBlock.addEventListener('mouseover', () => { // по наведению мыши тож прибиваем
+            rmTooltip();
+        });
+    };
+</script>
 </body>
 </html>
 <?php //Spaceless::end()?>

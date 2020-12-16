@@ -68,39 +68,31 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request;
         $indexForm = new IndexForm();
-        if($request->isPost){ // отправка с формы на главной странице
-//            var_dump($request->post('pdf'));die;
-            $subject = 'Обратный звонок';
-            $mess = $request->post('mess') ? Html::encode(mb_ucfirst($request->post('mess'))) : null;
-            $name = $request->post('name') ? Html::encode(mb_ucfirst($request->post('name'))) : null;
-            $tel = $request->post('tel') ? Html::encode($request->post('tel')) : null;
+        if ($request->isAjax && $request->isPost){
+            if($indexForm->load($request->post()) && $indexForm->validate()) {
+                $subject = 'Обратный звонок';
+                $name = $indexForm->name ? $indexForm->name : null;
+                $tel = $indexForm->tel ? $indexForm->tel : null;
+//                var_dump($name);
+//                die();
+                $body = 'Клиент &nbsp;<b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b>&nbsp; просит перезвонить.<br>' .
+                    'Тел. :&nbsp;&nbsp;<b style="font-size: 110%;>' . $tel . '</b>';
 
-            $body = 'Клиент &nbsp;<b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b>&nbsp; просит перезвонить.<br>' .
-                'Тел. :&nbsp;&nbsp;<b style="font-size: 110%;>' . $tel . '</b>';
-
-            $success = Yii::$app->mailer->compose()
-                ->setTo('mail@s-solo.ru')
-                ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
-                ->setSubject($subject)
-                ->setHtmlBody($body)
-                ->send();
-            if ($success) {
-                /* Мудак придумал этот редирект на pdf файл */
-            if ($request->post('pdf') == '1') {
-                    return $this->redirect('/catalog');
+                $success = Yii::$app->mailer->compose()
+                    ->setTo('mail@s-solo.ru')
+                    ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
+                    ->setSubject($subject)
+                    ->setHtmlBody($body)
+                    ->send();
+                if ($success) {
+                    $msg = '<h3 style="color:green;text-align: center">Спасибо,' . $name . '  ожидайте звонка!</h3>';
+                } else {
+                    $msg = '<h3 style="color:red;text-align: center">Ошибка !</h3>';
                 }
-                $msg = '<h3 style="color:green;text-align: center">Спасибо,' . $name . '  ожидайте звонка!</h3>';
-            } else{
-                $msg = '<h3 style="color:red;text-align: center">Ошибка !</h3>';
+
+                return $this->renderAjax('zvonok_ok', compact('name', 'tel', 'msg', 'body'));
+                }
             }
-
-            /* Мудак придумал этот редирект на pdf файл */
-//            if ($request->post('pdf') == '1') {
-//                header('Refresh:3;url= http://solo.local/catalog');
-//            }
-
-            return $this->renderAjax('zvonok_ok', compact('name', 'tel', 'msg', 'body'));
-        }
 
         $model = new Content();
         $data = $model->getContent();
@@ -149,12 +141,12 @@ class SiteController extends Controller
     /* Форма отправки сообщения */
     public function actionContact()
     {
+        $request = Yii::$app->request;
         $model = new ContactForm();
-
-        if ($model->load(Yii::$app->request->post())) { // данные пришли
-//            sleep(2);
-            $model->contactSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
-
+        if ($request->isAjax && $request->isPost) {
+            if ($model->load($request->post()) && $model->validate()) {
+                $model->contactSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
+            }
         }
         //  выводим контактную форму
         return $this->renderAjax('contact', ['model' => $model]);
@@ -196,15 +188,17 @@ class SiteController extends Controller
     /* Виджет обратного звонка */
     public function actionCall()
     {
-        $model = new callForm();
+
         $request = Yii::$app->request;
-        if ($request->isAjax && $request->isPost) { // форма отправлена
-            if($model->load($request->post()) && $model->validate()) {
-                $msg = $model->callSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
-                return $this->renderAjax('call', compact('msg'));
-            }
+        $model = new callForm();
+        if ($request->isAjax && $request->isPost){
+                if ($model->load($request->post()) && $model->validate()) {
+                    $msg = $model->callSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
+                    die($msg);
+                }
+
         }
-        // выводим форму
+        // выводим форму  в модальном окне
         return $this->renderAjax('call', ['model' => $model]);
     }
 

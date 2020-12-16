@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alex
- * Date: 19.08.2018
- * Time: 13:41
- */
-
 namespace app\models;
 
 use Yii;

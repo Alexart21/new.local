@@ -1,12 +1,6 @@
 <?php
-if (!empty($msg)) die($msg); // сообщение об успехе/ошибке
-//die('view');
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\ContactForm */
-//if ($success) die('OK');
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\widgets\ActiveForm;
+use yii\bootstrap4\Modal;
 use yii\helpers\Html;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
@@ -16,8 +10,7 @@ $this->title = 'Call';
 <?php
 Modal::begin([
     'id' => 'callback',
-    'header' => '<h3>Укажите Ваш номер телефона и мы перезвоним Вам</h3>',
-//    'footer' => 'TEST'
+    'title' => '<h3>Укажите Ваш номер телефона и мы перезвоним Вам</h3>',
 ]);
 ?>
 <div class="row call2">
@@ -34,7 +27,7 @@ Modal::begin([
 
         <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]], ['id' => 'call-form', 'class' => 'call']); ?>
 
-        <?= $form->field($model, 'name')->textInput(['required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
+        <?= $form->field($model, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
 
         <?= $form->field($model, 'tel')->textInput(['class' => 'phone', 'required' => true])
@@ -48,10 +41,10 @@ Modal::begin([
         ?>
 
 
-<!--        --><?//= $form->field($model, 'robot')->checkboxList(['r' => '__Я не робот'])->label(false); ?>
+        <!--        --><?//= $form->field($model, 'robot')->checkboxList(['r' => '__Я не робот'])->label(false); ?>
 
         <div class="form-group">
-            <?= Html::submitButton('жду звонка!', ['class' => 'btn-red', 'id' => 'call-btn', 'style' => 'width:220px']) ?>
+            <?= Html::submitButton('жду звонка!', ['class' => 'btn-zamer']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>
@@ -61,17 +54,6 @@ Modal::begin([
 <?php
 Modal::end();
 ?>
-
 <script>
     $('#callback').modal('show');
-
-    $(document).on('pjax:beforeSend', function () {
-        document.body.style.cursor = 'progress';
-    });
-    $(document).on('pjax:complete', function () {
-        document.body.style.cursor = 'default';
-    });
-    $('button.close').on('click', function () {
-        // window.open('/catalog', '_self');
-    });
 </script>

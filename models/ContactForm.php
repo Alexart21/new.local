@@ -14,8 +14,6 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
-    public $robot;
-//    public $verifyCode;
 
 
     /**
@@ -31,15 +29,8 @@ class ContactForm extends Model
             ['email', 'email', 'message' => 'Некорректный e-mail адрес !'],
             ['subject', 'trim'],
             ['subject', 'string', 'max' => 1000, 'tooLong' => 'не более 1000 символов'],
-            ['robot', 'required', 'message' => 'Вы робот ???']
         ];
     }
-
-    /*public function myRule($attr){
-        if( $this->$attr[0] != 'r'){
-            $this->addError($attr, 'Вы робот ???');
-        }
-    }*/
 
     /**
      * @return array customized attribute labels
@@ -47,12 +38,10 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-//            '_csrf' => '',
             'name' => 'Ваше Имя',
             'email' => 'Email',
             'subject' => 'Тема',
             'body' => 'Сообщение',
-//            'robot' => 'Поставьте галочку',
         ];
     }
 
@@ -73,14 +62,12 @@ class ContactForm extends Model
                 ->setHtmlBody($body)
                 ->send();
 
-            If ($success && clr_get($this->robot[0]) === 'r') {
+            If ($success) {
                     die('<h3 style="color:green">Спасибо, ' . $name . ', Ваше сообщение отправлено</h3>');
             } else {
                 die('<h3 style="color:red">Ошибка !</h3>');
             }
-        }/* else {
-            die('<h3 style="color:red">Некорректные данные !</h3>');
-        }*/
+        }
     }
 
 }

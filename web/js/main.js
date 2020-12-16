@@ -7,7 +7,7 @@ $(window).scroll(function(){
 
 function parallax(){
     const scrolled = $(window).scrollTop();
-    $('.bg').css('top',-(scrolled*0.2)+'px');
+    $('.bg').css('top',-(scrolled*0.1)+'px');
     $('.header-content').css('top',50+(scrolled*0.1)+'%');
     $('.header-content').css('opacity',1-(scrolled*0.01)/10);
     $('.header-content').css('opacity',1-(scrolled*0.01)/10);
@@ -16,28 +16,7 @@ function parallax(){
 /**/
 // Окно чата/мессенджеров
 window.onload = () => {
-    // блок в шапке с иконками мессенджеров
-    /*$('#ms').show(400);
-
-    let selectedEl;
-    const mess =  document.querySelector('#msg-icon');
-    mess.onclick = (e) => {
-        let el = e.target;
-        if(!el) return;
-        // console.log(el);
-        highlight(el);
-    };
-    // подсветка
-    function highlight(el) {
-        if (selectedEl) { // убрать существующую подсветку, если есть
-            selectedEl.classList.remove('selected-mess');
-        }
-        selectedEl = el;
-        selectedEl.classList.add('selected-mess'); // подсветить новый li
-    }*/
-
-    ///
-    let msgBlock = document.getElementById('msg-block'),
+    /*let msgBlock = document.getElementById('msg-block'),
         msgContent = document.getElementById('msg-content'),
         msgImg = document.querySelector('.msg-img'),
         msgClosed = document.querySelector('.msg-closed');
@@ -78,14 +57,8 @@ window.onload = () => {
 
     msgBlock.addEventListener('mouseover', () => { // по наведению мыши тож прибиваем
         rmTooltip();
-    });
+    });*/
 
-    /* Позиционируем чат */
-    if (w > 1366){
-        // console.log(w);
-        // console.log((w - 1366)/2);
-        msgBlock.style.left = (w - 1366)/2 +'px';
-    }
 };
 /* Далее ф-ии */
 // показ окна чата с анимацией
