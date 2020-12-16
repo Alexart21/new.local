@@ -557,6 +557,11 @@ p{
     /*text-underline-style: double;*/
 }
 
+.underline-red{
+    text-decoration: underline;
+    text-decoration-color: var(--logo-color) !important;
+}
+
 .index-icon{
     /*display: flex;
     justify-content: center;
@@ -828,11 +833,46 @@ p{
     list-style-type: none;
 }
 
-.bla-bla ul li:before{
-    content: url("/img/l2.png");
+.bla-bla ul li:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    margin:0 5px 0 -15px;
+    color: var(--logo-color);
 }
 
 /* Формы модальные */
 #call input{
     width: 300px !important;
+}
+
+/**/
+.credit{
+    width: 743px;
+    height: 947px;
+    margin: 0 auto;
+    background-image: url('/img/credit_bg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.credit-title{
+    padding: 80px 0;
+    text-align: center;
+}
+
+.credit-form-block{
+    width: 500px;
+    height: 560px;
+    margin: 0 auto;
+    padding: 1em;
+    /*background: lime;*/
+    box-shadow: 0 0 20px #444;
+    text-align: center;
+}
+
+#credit-form input{
+    display: block;
+    width: 250px;
+    /*margin: 0 auto;*/
 }

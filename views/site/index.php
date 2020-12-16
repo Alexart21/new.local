@@ -3,8 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
-use yii\helpers\Html;
-use app\models\IndexForm;
+//use yii\helpers\Html;
 
 header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $data[0]['last_mod']));
 $this->title = $data[0]['title'];
@@ -408,6 +407,65 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <!---->
 <br>
 <br>
+<br>
+<div class="credit">
+    <div class="credit-title">
+        <div class="h3 header_shadow">ИНДИВИДУАЛЬНАЯ РАССРОЧКА ПОД 0%</div>
+        <b>ОТ КОМПАНИИ SOLO МЕБЕЛЬ. БЕЗ УЧАСТИЯ БАНКА</b>
+    </div>
+    <div class="credit-form-block">
+        <div class="h2 underline-red">ЗАПОЛНИТЕ КОРОТКУЮ АНКЕТУ.</div>
+        И уже через месяц наслаждайтесь приготовление блюд на новенькой кухне.
+        <div class="" >
+            <?php Pjax::begin([
+                'clientOptions' => [
+                    'method' => 'POST',
+                    'data-pjax-container' => '#credit-out',
+                ],
+                'id' => 'call',
+                'enablePushState' => false,
+                'formSelector' => '#credit-form',
+                'timeout' => 20000,
+            ]);
+            ?>
+            <output id="credit-out"></output>
+            <?php Pjax::end(); ?>
+
+            <?php $form = ActiveForm::begin([
+                'options' => ['id' => 'credit-form', 'data-pjax' => true],
+            ]);
+            ?>
+            <div class="h3">Ваше имя:</div>
+            <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
+
+            <div class="h3" style="margin-bottom: -15px">Тел:</div>
+            <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
+                ->widget(MaskedInput::className(), [
+                    'name' => 'taxi',
+                    'mask' => '+7 (999) - 999 - 99 - 99',
+                ]);
+            ?>
+            <br>
+            <div class="h3">Рассчитываемый бюджет на кухню:</div>
+            <input class="index-field" type="text"  name="sum" placeholder="например 100 000" required>
+            <div class="h3">Желаемый ежемесячный платеж:</div>
+            <input class="index-field" type="text" name="payments" placeholder="например 10 000">
+            <?/*= $form->field($indexForm, 'reCaptcha')->widget(
+                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
+                [
+                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
+                    'action' => 'index',
+                ]);
+            */?>
+            <br>
+            <button type="submit"  class="btn-zamer">оставить заявку</button>
+            <?php ActiveForm::end(); ?>
+        </div>
+    </div>
+</div>
+<!---->
+<br>
+<br>
 <div class="h1 text-center header_shadow">Анкеты-отзывы</div>
 <div class="h2 text-center">КОТОРЫЕ ЗАПОЛНЯЕТ КЛИЕНТ ПОСЛЕ УСТАНОВКИ КУХНИ</div>
 <div class="d-flex flex-row justify-content-center flex-wrap">
@@ -483,7 +541,57 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <img width="208" height="243" src="/img/call.jpg" alt="" data-scrollreveal="enter right and move 100px, wait 0.4s">
 </div>
 <!---->
+<div class="bla-bla container">
 <br>
 <br>
-<h2 class="text-center h1">Кухни в Чебоксарах от "<span class="header_shadow">Solo</span> мебель" - почувствуйте удовольствие от готовки на собственной кухне!</h2>
+<h2 class="text-center h1">Кухни в Чебоксарах от "<span class="header_shadow" style="font-size: inherit">Solo мебель</span>" - почувствуйте удовольствие от готовки на собственной кухне!</h2>
+    <p>
+        Приготовление новых блюд, тихие семейные вечера на новой кухне - наслаждайтесь вместе с кухней от “МебельМакс”. В основе нашей работы заложены определенные принципы: мы никогда не навязываем клиенту дополнительных услуг, не предлагаем некачественные материалы, полностью погружаемся в желания и идеи заказчика. С нами вы сможете воплотить в жизнь самые необычные идеи! Клиенты любят нас за то, что мы открыты к ним:
+    </p>
+    <ul>
+        <li>
+            Держим цены от производителя. Купить кухонный гарнитур — затратное мероприятие даже для решений эконом-класса. Мы работаем без посредников, поэтому в «Solo мебель» можно купить кухню без наценок.
+        </li>
+        <li>
+            Предлагаем простые условия рассрочки. Покупка мебели в рассрочку (особенно если это кухня в Чебоксарах) часто связана с бумажной волокитой. Оформляем рассрочку без участия банка, без справок о доходах и даже без процентов.
+        </li>
+        <li>
+            Мы заботимся о клиентах, поэтому выкупаем старую кухню. Не продавайте и не выбрасывайте ваш гарнитур — при оформлении заказа на кухню мы возьмём старый гарнитур в зачёт нового.
+        </li>
+        <li>
+            Не экономим на качестве. Используем долговечные акриловые фасады и австрийскую фурнитуру Blum — продукцию лидирующего на рынке производителя.
+        </li>
+        <li>
+            Даём гарантию. Мы настолько уверены в качестве наших гарнитуров, что предоставляем 10-летнюю гарантию на все материалы и работу.
+        </li>
+        <li>
+            Мы не оставляем после себя мусора! Вы можете начинать пить чай уже через минуту после того, как мы покинем вашу кухню и оставим там новенький гарнитур!
+        </li>
+    </ul>
+    <p>
+        Пользуйтесь надёжной кухонной мебелью с «Solo мебель» и наслаждайтесь вкусом любимых блюд!</p>
+    <h2 class="text-center">Для тех, у кого остались вопросы по дизайну кухни</h2>
+    <p>Продумаем дизайн интерьера кухни и поможем найти уютное и функциональное решение даже для непростых планировок:</p>
+    <ul>
+        <li>
+            Хрущёвки и квартиры с маленькой кухней. Найдём компромисс между эстетикой и функциональностью и воплотим его в жизнь.
+        </li>
+        <li>
+            Квартиры-студии. Правильно зонируем квартиру.
+        </li>
+        <li>
+            Нестандартные планировки. Для маленьких пространств предлагаем создать дизайн угловой кухни — это отличное сочетание комфорта и функциональности.
+        </li>
+        <li>
+            Выезд дизайнера на замеры всегда бесплатный, даже если вам не понравится ни один из вариантов гарнитуров.
+        </li>
+    </ul>
+    <h2 class="text-center">Если остались вопросы по кухонным гарнитурам</h2>
+    <p>
+        В ассортименте — кухонные гарнитуры для маленькой кухни (угловые и обычные), решения для квартир-студий и домашних пространств любой планировки.
+    </p>
+    <p>
+        Если вам не понравился ни один из представленных в каталоге гарнитуров - ничего страшного! Дизайнер приедет к вам, сделает замеры и подготовит варианты. Вы можете подъехать к нам в офис на бесплатном такси, и мы вместе выберем индивидуальный дизайн кухни!
+    </p>
+</div>
 <!---->
