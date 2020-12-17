@@ -17,12 +17,7 @@ $this->title = 'Вход в админку';
     }
 </style>
 <div class="site-login container">
-    <?php /* echo Yii::$app->getSecurity()->generatePasswordHash('dtkbxbtcjkj21')*/?><!--
-    <br>
-    --><?php /* echo Yii::$app->getSecurity()->generatePasswordHash('solomeb')*/?>
-    <br>
-    <br>
-    <br>
+    <?php /* echo Yii::$app->getSecurity()->generatePasswordHash('')*/?>
     <h3>Введите данные для входа:</h3>
     <br>
     <?php $form = ActiveForm::begin([

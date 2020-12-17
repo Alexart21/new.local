@@ -48,3 +48,6 @@ $user = strtolower(Yii::$app->user->identity->username);
         ?>
     </ol>
 </div>
+<br>
+<a href="/admin/default/phpinfo"><span class="fab fa-php text-primary" style="color: #00ff;font-size: 50px"></span><span style="line-height: 50px">PHPINFO</span></a>
+<hr>

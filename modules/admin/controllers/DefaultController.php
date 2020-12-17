@@ -116,5 +116,11 @@ class DefaultController extends AppAdminController
         return $this->renderAjax('modal', compact('fileCount', 'dirCount', 'errCount', 'header', 'clearSize', 'dirArr'));
 //        return $this->renderAjax('modal');
     }
+
+    public function actionPhpinfo()
+    {
+        return $this->render('phpinfo');
+
+    }
     
 }

@@ -18,6 +18,7 @@ class AdminAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'fontawesome/css/all.min.css',
         'css/admin_style.css',
 //        'css/bootsrap.css',
     ];    public $js = [

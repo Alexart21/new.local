@@ -1,4 +1,6 @@
 <?php
+$user = Yii::$app->user->identity->username;
+
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -52,26 +54,24 @@ AdminAsset::register($this);
         ],
     ]);
     ?>
-    <?php if (strtolower(Yii::$app->user->identity->username) === Yii::$app->params['admin']){
-        $_user = 'solo<span style="text-shadow: none;text-transform: lowercase"> (администратор)</span>';
-    }else{
-        $_user = Yii::$app->user->identity->username . '<span style="text-shadow: none;text-transform: lowercase"> (модератор)</span>';
-    }
-    ?>
-    <span class="user" style="color: #000;background: #fff;line-height: 50px;text-transform: uppercase;float: right;margin-left: 1em;padding: 0 1em"><?= $_user ?></span>
-
 <?php
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'на сайт', 'url' => ['/']],
             ['label' => 'главная', 'url' => ['/admin']],
-            ['label' => 'выйти', 'url' => ['/site/logout']], // разлогиниваем админа
         ],
 
     ]);
+    ?>
+    <span style="float: right;letter-spacing: 2px"><span style="background: #fff;line-height: 30px;font-weight: bold;padding: 26px;"><?= $user ?>(admin)</span>
+    <a href="/logout" data-method = "post" style="line-height: 50px;color: #fff">выйти</a>
+    </span>
+
+    <?php
     NavBar::end();
     ?>
+
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

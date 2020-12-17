@@ -51,7 +51,7 @@ AppAsset::register($this);
         <!--/-->
         <header>
             <div class="header-content">
-                <h1>Кухни в Чебоксарах</h1>
+                <h1 class="top-h1">Кухни в Чебоксарах</h1>
                 <div class="h3">По вашим размерам с гарантией</div>
             </div>
             <!-- Menu -->
@@ -133,6 +133,7 @@ AppAsset::register($this);
             <?= $content ?>
         </main>
         <footer>
+            <br>
             <p>
                 <b style="font-size: 120%;color: #e61b05">SOLO</b> мебель&nbsp;Copyright
                 &copy;&nbsp;&nbsp;2007&mdash;<?= date('Y') ?>.
@@ -156,6 +157,9 @@ AppAsset::register($this);
             <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
             <a href="/politic" class="small">Политика обработки персональных данных</a><br>
             <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
+            <br>
+            <span class="small">Этот сайт защищен Google reCAPTCHA в соответствии с <a href="https://policies.google.com/privacy">политикой конфиденциальности</a> и <a href="https://policies.google.com/terms">условиями применения</a>.</span>
+            <br>
             <br>
         </footer>
     </div>
@@ -198,6 +202,8 @@ AppAsset::register($this);
     $(document).on('pjax:complete', function () {
         document.body.style.cursor = 'default';
         $('#container_loading').hide();
+        // let method = $.pjax.options.type;
+        // console.log(method);
     });
     ///
     window.scrollReveal = new scrollReveal();
@@ -249,6 +255,12 @@ AppAsset::register($this);
             rmTooltip();
         });
     };
+</script>
+<script>
+    /*window.replainSettings = { id: 'a5f39b2c-c464-4efa-be14-9656e0c2dc4a' };
+    (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');*/
 </script>
 </body>
 </html>

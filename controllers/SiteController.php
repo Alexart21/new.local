@@ -3,13 +3,15 @@
 namespace app\controllers;
 
 use Yii;
-use yii\helpers\Html;
+//use yii\helpers\Html;
 use app\models\ContactForm;
 use app\models\Content;
 use app\models\LoginForm;
 use app\models\callForm;
 use app\models\IndexForm;
 use yii\web\Controller;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 
 class SiteController extends Controller
 {
@@ -28,23 +30,23 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            /*'access' => [
+            'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['login', 'logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
-            ],*/
-            /*'verbs' => [
+            ],
+            'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],*/
+            ],
         ];
     }
 

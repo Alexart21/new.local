@@ -28,6 +28,7 @@ Modal::end();
 
 <script>
     $('#zv').modal('show');
+    // document.querySelector('audio').play();
     // через 4 сек удаляем сообщение
     setTimeout(function() {
         $('#zv').modal('hide');

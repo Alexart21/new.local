@@ -152,7 +152,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <div class="solo-text">
 
         <div class="h2">
-            ЧТО ДЕЛАЕТ КОМАНДА <span class="header_shadow" style="color: #e20017;font-size: inherit">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
+            ЧТО ДЕЛАЕТ КОМАНДА <span class="solo">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
             ЧТОБЫ ВЫ ПОЛУЧИЛИ НАИВЫСШЕЕ КАЧЕСТВО И ЧУВСТВО ВОСТОРГА ОТ ВАШЕЙ КУХНИ.
         </div>
         <div class="solo-text-block">
@@ -300,62 +300,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         </div>
     </div>
 </div>
-<!---->
-<br>
-<br>
-<div class="city d-flex flex-row justify-content-center flex-wrap position-relative">
-<div class="taxi-img">
-    <img  class="taxi-img" src="/img/taxi.png" width="652" height="428" alt="" data-scrollreveal="enter left and move 300px, wait 0.3s">
-</div>
-
-    <div class="zamer-form-block"  id="taxi-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
-        <div class="zv-form-group">
-            <div class="h2 underline underline-red" style="margin-bottom: -10px">Оставить заявку</div>
-            <?php Pjax::begin([
-                'clientOptions' => [
-                    'method' => 'POST',
-                    'data-pjax-container' => '#taxi-out',
-                ],
-                'id' => 'call',
-                'enablePushState' => false,
-                'formSelector' => '#taxi',
-                'timeout' => 20000
-            ]);
-            ?>
-            <output id="taxi-out"></output>
-            <?php Pjax::end(); ?>
-
-            <?php $form = ActiveForm::begin([
-                'options' => ['id' => 'taxi', 'data-pjax' => true],
-            ]);
-            ?>
-            <div class="h3">Ваше имя:</div>
-            <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
-
-            <div class="h3" style="margin-bottom: -15px">Тел:</div>
-            <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
-                ->widget(MaskedInput::className(), [
-                    'name' => 'taxi',
-                    'mask' => '+7 (999) - 999 - 99 - 99',
-                ]);
-            ?>
-            <br>
-            <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-                [
-                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
-                    'action' => 'index',
-                ]);
-            */?>
-            <button type="submit"  class="btn-zamer">оставить заявку</button>
-            <br>
-            <br>
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
-
-</div>
-<!---->
 <div class="calc d-flex flex-row justify-content-center flex-wrap">
     <div>
     <span class="h1 header_shadow">Экспресс расчет<br>
@@ -411,7 +355,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="credit">
     <div class="credit-title">
         <div class="h3 header_shadow">ИНДИВИДУАЛЬНАЯ РАССРОЧКА ПОД 0%</div>
-        <b>ОТ КОМПАНИИ SOLO МЕБЕЛЬ. БЕЗ УЧАСТИЯ БАНКА</b>
+        <b>ОТ КОМПАНИИ <span class="solo">SOLO</span> МЕБЕЛЬ. БЕЗ УЧАСТИЯ БАНКА</b>
     </div>
     <div class="credit-form-block">
         <div class="h2 underline-red">ЗАПОЛНИТЕ КОРОТКУЮ АНКЕТУ.</div>
@@ -544,7 +488,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="bla-bla container">
 <br>
 <br>
-<h2 class="text-center h1">Кухни в Чебоксарах от "<span class="header_shadow" style="font-size: inherit">Solo мебель</span>" - почувствуйте удовольствие от готовки на собственной кухне!</h2>
+<h2 class="text-center h1">Кухни в Чебоксарах от "<span class="solo">Solo</span> мебель" - почувствуйте удовольствие от готовки на собственной кухне!</h2>
     <p>
         Приготовление новых блюд, тихие семейные вечера на новой кухне - наслаждайтесь вместе с кухней от “МебельМакс”. В основе нашей работы заложены определенные принципы: мы никогда не навязываем клиенту дополнительных услуг, не предлагаем некачественные материалы, полностью погружаемся в желания и идеи заказчика. С нами вы сможете воплотить в жизнь самые необычные идеи! Клиенты любят нас за то, что мы открыты к ним:
     </p>
@@ -594,4 +538,63 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         Если вам не понравился ни один из представленных в каталоге гарнитуров - ничего страшного! Дизайнер приедет к вам, сделает замеры и подготовит варианты. Вы можете подъехать к нам в офис на бесплатном такси, и мы вместе выберем индивидуальный дизайн кухни!
     </p>
 </div>
+<!---->
+<!---->
+<br>
+<br>
+<div class="city d-flex flex-row justify-content-center flex-wrap">
+    <div class="taxi-out item1">
+        <img  class="taxi-inner" src="/img/taxi.png" width="652" height="354" alt="" data-scrollreveal="enter left and move 300px, wait 0.3s">
+    </div>
+    <div class="taxi-out item2">
+        <div class="zamer-form-block"  id="taxi-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
+            <div class="zv-form-group">
+                <div class="h2 underline underline-red" style="margin-bottom: -10px">Оставьте заявку на бесплатное такси до <span class="solo">SOLO</span> мебель</div>
+                <?php Pjax::begin([
+                    'clientOptions' => [
+                        'method' => 'POST',
+                        'data-pjax-container' => '#taxi-out',
+                    ],
+                    'id' => 'call',
+                    'enablePushState' => false,
+                    'formSelector' => '#taxi',
+                    'timeout' => 20000
+                ]);
+                ?>
+                <output id="taxi-out"></output>
+                <?php Pjax::end(); ?>
+
+                <?php $form = ActiveForm::begin([
+                    'options' => ['id' => 'taxi', 'data-pjax' => true],
+                ]);
+                ?>
+                <div class="h3">Ваше имя:</div>
+                <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
+
+                <div class="h3" style="margin-bottom: -15px">Тел:</div>
+                <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
+                    ->widget(MaskedInput::className(), [
+                        'name' => 'taxi',
+                        'mask' => '+7 (999) - 999 - 99 - 99',
+                    ]);
+                ?>
+                <br>
+                <?/*= $form->field($indexForm, 'reCaptcha')->widget(
+                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
+                [
+                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
+                    'action' => 'index',
+                ]);
+            */?>
+                <button type="submit"  class="btn-zamer">оставить заявку</button>
+                <br>
+                <br>
+                <?php ActiveForm::end(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
 <!---->
