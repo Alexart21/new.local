@@ -129,6 +129,7 @@ GaleryAsset::register($this);
             <?= $content ?>
         </main>
         <footer>
+            <br>
             <p>
                 <b style="font-size: 120%;color: #e61b05">SOLO</b> мебель&nbsp;Copyright
                 &copy;&nbsp;&nbsp;2007&mdash;<?= date('Y') ?>.
@@ -141,10 +142,8 @@ GaleryAsset::register($this);
                 <b class="header_shadow">Часы работы :</b>
                 <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
                 &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</span>
-            </p>
             <p>
                 <b class="text-center"><b class="header_shadow">Адрес :</b> ул. Калинина 105а (Мега молл)</b>
-            </p>
             <div>
                 <img src="/img/brands/blum.jpg" width="188" height="52" alt="фурнитура blum">
                 <img src="/img/brands/hettich.jpg" width="188" height="52" alt="фурнитура hettich">
@@ -152,7 +151,11 @@ GaleryAsset::register($this);
             </div>
             <p>
             <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
-            </p>
+            <a href="/politic" class="small">Политика обработки персональных данных</a><br>
+            <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
+            <br>
+            <span class="small">Этот сайт защищен Google reCAPTCHA в соответствии с <a href="https://policies.google.com/privacy">политикой конфиденциальности</a> и <a href="https://policies.google.com/terms">условиями применения</a>.</span>
+            <br>
             <br>
         </footer>
     </div>

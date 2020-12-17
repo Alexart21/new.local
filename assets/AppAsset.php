@@ -12,6 +12,7 @@ class AppAsset extends AssetBundle
         'css/style.css',
         'fontawesome/css/all.min.css',
         'css/top-menu.css',
+//        'css/3d-anim.css',
     ];
     public $js = [
         'js/velocity.min.js',

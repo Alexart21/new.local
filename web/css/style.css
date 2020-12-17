@@ -901,3 +901,90 @@ p{
     /*font-size: 120%;*/
     font-size: inherit;
 }
+
+/* Другая мебель */
+.other-meb-block{
+    width: 500px;
+    height: 375px;
+    margin: 2em;
+    overflow: hidden;
+}
+
+.view-tenth img {
+    transform: scaleY(1);
+    transition: all 0.7s ease-in-out;
+}
+.view-tenth .mask {
+    background-color: var(--logo-color);
+    transition: all 0.5s linear;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.view-tenth h4 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin: 20px 40px 0px 40px;
+    transform: scale(0);
+    transition: all 0.5s linear;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+.view-tenth p {
+    color: #333;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+}
+.view-tenth:hover img,.w3l_banner_nav_right_banner3_btml:hover .view-tenth img{
+    transform: scale(10);
+    opacity: 0;
+}
+.view-tenth:hover .mask,.w3l_banner_nav_right_banner3_btml:hover .view-tenth .mask{
+    opacity: 1;
+}
+.view-tenth:hover h4,.view-tenth:hover p,.w3l_banner_nav_right_banner3_btml:hover .view-tenth h4,.w3l_banner_nav_right_banner3_btml:hover .view-tenth p{
+    transform: scale(1);
+    opacity: 1;
+}
+.view {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.view .mask,.view .content {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.view img {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.view h4 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin:5em 0 0;
+}
+.view p {
+    font-style: italic;
+    font-size: 14px;
+    position: relative;
+    color: #fff;
+    padding: 10px 45px 0px;
+    text-align: center;
+    line-height: 1.8em;
+    text-shadow: 0 0 10px #fff;
+}
+
+.h-bg2{
+    background: linear-gradient(to right,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(178,178,178,1) 100%) !important;
+}
+/**/

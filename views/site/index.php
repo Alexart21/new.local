@@ -438,7 +438,53 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <!---->
 <br>
 <br>
+<!---->
+<h2 class="h1 heder_shadow text-center">Мы также производим другую корпусную мебель на заказ</h2>
 <br>
+<div class="d-flex flex-row justify-content-center flex-wrap">
+    <div class="other-meb-block view view-tenth">
+        <a href="/galery/lkupe">
+        <img src="/img/hall/kupe.jpg" alt="">
+        <div class="mask">
+            <h4 class="h-bg2">Шкафы купе</h4>
+            <p>Шкафы купе и гардеробные.А так же радиусные шкафы купе</p>
+        </div>
+        </a>
+    </div>
+    <div class="other-meb-block view view-tenth">
+        <a href="/galery/childrens">
+            <img src="/img/childrens/childrens.jpg" alt="">
+            <div class="mask">
+                <h4 class="h-bg2">Детская мебель</h4>
+                <p>Детские комнаты и все виды мебели для детей</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="d-flex flex-row justify-content-center flex-wrap">
+    <div class="other-meb-block view view-tenth">
+        <a href="/galery/wall">
+            <img src="/img/wall/wall.jpg" alt="">
+            <div class="mask">
+                <h4 class="h-bg2">Мебель для гостинной</h4>
+                <p>Стенки, журнальные столы и другая мебель для дома</p>
+            </div>
+        </a>
+    </div>
+    <div class="other-meb-block view view-tenth">
+        <a href="/galery/office">
+            <img src="/img/hall/other.jpg" alt="">
+            <div class="mask">
+                <h4 class="h-bg2">Офисная мебель</h4>
+                <p>Все виды офисной и другой мебели для бизнеса.</p>
+            </div>
+        </a>
+    </div>
+</div>
+<br>
+<br>
+<!---->
 <div class="h1 text-center">Остались вопросы?</div>
 <div class="h3 text-center">Мы с радостью на них ответим</div>
 <div class="d-flex flex-row justify-content-center flex-wrap">
