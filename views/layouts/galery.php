@@ -77,7 +77,7 @@ GaleryAsset::register($this);
         &nbsp;&nbsp;Вс 10<sup>00</sup>&mdash;20<sup>00</span>
                 </div>
                 <div class="mail-block">
-                    <a rel="nofollow" href="/#contacts"  title="написать письмо">
+                    <a rel="nofollow" class="pjax" href="/contact"  title="написать письмо">
                         <i class="far fa-envelope"></i> mail@s-solo.ru
                     </a>
                 </div>
@@ -87,6 +87,9 @@ GaleryAsset::register($this);
                     <nav id="menu" role="navigation">
                         <div class="menu">
                             <ul  class="menu">
+                                <li>
+                                    <a href="/" class="top-link">главная</a>
+                                </li>
                                 <li  class="has-subnav">
                                     <a href="#" class="top-link main-link">категории</a>
                                     <ul class="sub-menu">
@@ -151,10 +154,11 @@ GaleryAsset::register($this);
             </div>
             <p>
             <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
-            <a href="/politic" class="small">Политика обработки персональных данных</a><br>
+            <a href="/politic" class="small">Политика конфиденциальности</a><br>
             <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
             <br>
             <span class="small">Этот сайт защищен Google reCAPTCHA в соответствии с <a href="https://policies.google.com/privacy">политикой конфиденциальности</a> и <a href="https://policies.google.com/terms">условиями применения</a>.</span>
+            <br>
             <br>
             <br>
         </footer>

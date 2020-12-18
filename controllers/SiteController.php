@@ -73,10 +73,8 @@ class SiteController extends Controller
         if ($request->isAjax && $request->isPost){
             if($indexForm->load($request->post()) && $indexForm->validate()) {
                 $subject = 'Обратный звонок';
-                $name = $indexForm->name ? $indexForm->name : null;
+                $name = $indexForm->name ? mb_ucfirst($indexForm->name) : null;
                 $tel = $indexForm->tel ? $indexForm->tel : null;
-//                var_dump($name);
-//                die();
                 $body = 'Клиент &nbsp;<b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b>&nbsp; просит перезвонить.<br>' .
                     'Тел. :&nbsp;&nbsp;<b style="font-size: 110%;>' . $tel . '</b>';
 

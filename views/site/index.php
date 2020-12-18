@@ -95,17 +95,17 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <div class="kitchen-icon-item">
         <img src="/img/new-icon/classic.png" width="150" height="150" alt="">
         <div class="h4">КЛАССИЧЕСКИЕ КУХНИ</div>
-        <a href="/catalog" class="kitchen-icon-btn">перейти в каталог</a>
+        <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
     <div class="kitchen-icon-item">
         <img src="/img/new-icon/modern.png" width="150" height="150" alt="">
         <div class="h4">СОВРЕМЕННЫЕ КУХНИ</div>
-        <a href="/catalog" class="kitchen-icon-btn">перейти в каталог</a>
+        <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
     <div class="kitchen-icon-item">
         <img src="/img/new-icon/loft.png" width="150" height="150" alt="">
         <div class="h4">КУХНИ ЛОФТ</div>
-        <a href="/catalog" class="kitchen-icon-btn">перейти в каталог</a>
+        <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
 </div>
 <h2 class="h1 h-bg text-center">Соло мебель &mdash; кухни на заказ</h2>
@@ -146,7 +146,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <a href="/call" class="pjax kitchen-icon-btn btn-2">ЗАКАЗАТЬ РАСЧЕТ СТОИМОСТИ</a>
 <br>
 <br>
-<div class="d-flex flex-row justify-content-center flex-wrap">
+<div id="design" class="anchors"></div>
+<div class="d-flex flex-row justify-content-center">
 <!--    <div style="width: 300px;height: 300px;background: lime"></div>-->
 <!--    <div style="width: 300px;height: 300px;background: red"></div>-->
     <div class="solo-text">
@@ -174,13 +175,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <span class="h3">3  ВЫЕЗД ДИЗАЙНЕРА</span><br>
             В удобное для Вас время к Вам приедет один из дизайнеров. Вы покажете ему свой интерьер, расскажете пожелания, особенности, заполните анкету. Дизайнер снимет размеры помещения.
             Сделает фотографии помещения. Проконсультирует Вас по возникшим вопросам. Посоветует разные планировки и дизайн сразу же на месте. После этой встречи, Вы точно будете знать что хотите, в каком дизайне и каких размеров. Осталось это воплотить в 3-D визуализацию, что бы окончательно убедиться. А это следующий шаг…
-            <a href="/catalog" class="pjax"><div class="btn-red icon-block1-btn"; style="margin: 0 auto;">смотреть полностью</div></a>
                 </div>
     </div>
 
-    <div id="design" class="zamer-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
+    <div class="zamer-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
         <div class="zv-form-group">
-            <div class="h2 underline underline-red" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
+            <div class="h2 header_shadow" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
 
             <?php Pjax::begin([
                 'clientOptions' => [
@@ -200,6 +200,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 'options' => ['id' => 'zvonok-form', 'data-pjax' => true],
             ]);
             ?>
+            <br>
             <div class="h3">Ваше имя:</div>
             <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
@@ -314,7 +315,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <img src="/img/kitchen.jpg" alt="" width="557" height="494">
 </div>
 <!---->
-<div class="h1 text-center">Как нас найти ?</div>
+<div id="contacts" class="h1 text-center anchors">Как нас найти ?</div>
 <div class="text-center h3">г.Чебоксары ТЦ "<b>Мега молл</b>" 4 этаж (ул. Калинина 105а)</div>
 
 <div class="d-flex flex-row justify-content-center flex-wrap">
@@ -484,7 +485,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 </div>
 <br>
 <br>
+<a href="/catalog" class="btn-zamer center-block">перейти в каталог</a>
 <!---->
+<br>
 <div class="h1 text-center">Остались вопросы?</div>
 <div class="h3 text-center">Мы с радостью на них ответим</div>
 <div class="d-flex flex-row justify-content-center flex-wrap">
