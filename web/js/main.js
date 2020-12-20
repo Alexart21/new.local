@@ -77,7 +77,7 @@ const showTooltip = () => {
             console.log(err.message);
         });
     }
-    $('[data-toggle="tooltip"]').tooltip('show');
+    $('#msg-block').tooltip('show');
     // document.cookie = "msg=1;max-age=3600;path=/"; // куку на час(в течении этого времени больше не будет всплывающих подсказок)
     // }
 };
@@ -104,7 +104,9 @@ function readCookie(name) {
 // верхнее меню
 const m = document.querySelector('.menu-wrapper'),
 logo = document.querySelector('.logo-img'),
-logoText= document.querySelector('.logo-text');
+logoText= document.querySelector('.logo-text'),
+    menuText = $('.top-link');
+
 window.onscroll = () => {
     let top = $(this).scrollTop(); // сколько проскролено
     // let m = document.querySelector('.menu-wrapper')
@@ -114,12 +116,14 @@ window.onscroll = () => {
         logo.classList.add('logo-img-anim');
         logoText.style.marginLeft = '140px';
         logoText.style.marginTop = '-30px';
+        menuText.css('text-shadow', 'none');
     } else {
         // m.animate({height: ''}, 300);
         m.classList.remove('menu-wrapper-anim');
         logo.classList.remove('logo-img-anim');
         logoText.style.marginLeft = '';
         logoText.style.marginTop = '';
+        menuText.css('text-shadow', 'none');
     }
 };
 /**/

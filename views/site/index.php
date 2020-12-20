@@ -24,16 +24,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 ?>
 <output id="call_box"></output>
 <?php Pjax::end(); ?>
-<p class="h2 text-left header_shadow" style="width: 50%">
-<span class="underline h2">Замерим</span>, продумаем дизайн и функционал под ваш бюджет, сделаем план электрики, изготовим, <span class="underline h2">установим</span>, подключим
+<p class="h2 text-left" style="width: 50%">
+<span class="header_shadow h2">Замерим</span>, продумаем дизайн и функционал под ваш бюджет, сделаем план электрики, изготовим, <span class="header_shadow h2">установим</span>, подключим
 электрику и сантехнику, уберем мусор.
 </p>
 
 <div class="index-icon">
  <div class="d-flex flex-row justify-content-center">
             <div class="icon-block">
-            <img src="/img/icon/piggy-bank.png" alt="">
-                    <i class="h3 header_shadow">лучшие цены на рынке</i>
+            <img src="/img/icon/piggy-bank.png" class="position-absolute" alt="">
+                    <i class="h3 header_shadow">приемлемые цены</i>
                     <p>
                         Производим от Премиум до Эконом класса.
                         Без наценки магазина, напрямую с производства. Сэкономь до 20% от рыночных цен.
@@ -41,7 +41,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             </div>
 
             <div class="icon-block">
-            <img src="/img/icon/scientist-woman.png" alt="">
+            <img src="/img/icon/scientist-woman.png" class="position-absolute" alt="">
                 <i class="h3 header_shadow">наивысшее качество</i>
                 <p>
                     Средний стаж каждого сотрудника компании «Solo мебель», более 10 лет в индустрии мебели. Все сотрудники получают оплату, только после 100% сдачи заказа.
@@ -49,7 +49,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             </div>
 
             <div class="icon-block">
-            <img src="/img/icon/coins.png" alt="">
+            <img src="/img/icon/coins.png" class="position-absolute" alt="">
                 <i class="h3 header_shadow">возможность рассрочки</i>
                 <p>
                     Производим от Премиум до Эконом класса.
@@ -60,7 +60,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
 <div class="d-flex flex-row justify-content-center">
             <div class="icon-block">
-            <img src="/img/icon/credit-card.png" alt="">
+            <img src="/img/icon/credit-card.png" class="position-absolute" alt="">
                 <i class="h3 header_shadow">оплата любым удобным способом</i>
                 <p>
                     Наличный расчет, банковская карта,
@@ -70,7 +70,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             </div>
 
             <div class="icon-block">
-            <img src="/img/icon/oven.png" alt="">
+            <img src="/img/icon/oven.png" class="position-absolute" alt="">
                 <i class="h3 header_shadow">скидки на технику</i>
                 <p>
                     При покупке кухни, Вы получаете скидку на встраиваимую технику в подарок.
@@ -78,8 +78,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             </div>
 
             <div class="icon-block">
-            <img src="/img/icon/certificate.png" alt="">
-                <i class="h3 header_shadow">10 лет гарантии от производителя</i>
+            <img src="/img/icon/certificate.png" class="position-absolute" alt="">
+                <i class="h3 header_shadow">5 лет гарантии от производителя</i>
                 <p>
                     Послегарантийное обслуживание прописывается в договоре
                 </p>
@@ -108,7 +108,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
 </div>
+<br>
 <h2 class="h1 h-bg text-center">Соло мебель &mdash; кухни на заказ</h2>
+<br>
 <br>
 <div class="d-flex flex-row justify-content-md-around flex-wrap">
     <div class="kitchen-icon-item2">
@@ -152,10 +154,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <!--    <div style="width: 300px;height: 300px;background: red"></div>-->
     <div class="solo-text">
 
-        <div class="h2">
+            <p class="h2">
             ЧТО ДЕЛАЕТ КОМАНДА <span class="solo">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
             ЧТОБЫ ВЫ ПОЛУЧИЛИ НАИВЫСШЕЕ КАЧЕСТВО И ЧУВСТВО ВОСТОРГА ОТ ВАШЕЙ КУХНИ.
-        </div>
         <div class="solo-text-block">
             <span class="h3">
                     1  КАТАЛОГ КУХОННЫХ ГАРНИТУРОВ
@@ -179,9 +180,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     </div>
 
     <div class="zamer-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
-        <div class="zv-form-group">
             <div class="h2 header_shadow" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
-
             <?php Pjax::begin([
                 'clientOptions' => [
                     'method' => 'POST',
@@ -226,17 +225,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                     'action' => 'index',
                 ]);
             */?>
-            <button type="submit"  class="btn-zamer">записаться на замер</button>
-            <br>
-            <br>
+            <button type="submit"  class="btn btn-zamer">записаться на замер</button>
             <?php ActiveForm::end(); ?>
-            <p class="small font-italic">
-                Нажимая на кнопку «записаться на замер», я даю согласие на <a class="underline" rel="nofollow" href="/politic">обработку
-                    персональных
-                    данных</a> в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных»
-                <br>
-                <br>
-        </div>
     </div>
 </div>
 
@@ -250,7 +240,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <p>
                 Пригласите дизайнера в удобное для вас время. Это совершенно бесплатно
             </p>
-            <a href="#design" class="btn-zamer" style="width: 300px">пригласить дизайнера</a>
+            <a href="#design" class="btn btn-zamer" style="width: 14em">пригласить дизайнера</a>
         </div>
 
         <div class="icon-block2">
@@ -309,7 +299,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <p>
         Если вы уже заказывали эскиз кухонного гарнитура в другом месте,<br> отправьте нам чертежи с размерами, мы сделаем<br> экспресс расчет за 15мин с Более выгодным предложением.
     </p>
-        <a href="/call" class="pjax kitchen-icon-btn btn-2">ЗАКАЗАТЬ экспресс расчет</a>
+        <a href="/call" class="pjax kitchen-icon-btn header_shadow">заказать экспресс расчет</a>
     </div>
 
     <img src="/img/kitchen.jpg" alt="" width="557" height="494">
@@ -323,7 +313,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <img class="" src="/img/mega.jpg" alt="">
         <div class="">
             <div class="h3">Тел: +7(8352) 37-57-00</div>
-            <a rel="nofollow" href="/contact" class="pjax" title="написать письмо" style="margin-top: -15px;color:#000;">
+            <a rel="nofollow" href="/contact" class="pjax"  data-toggle="tooltip" title="написать письмо" style="margin-top: -15px;color:#000;">
                 <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;mail@s-solo.ru
             </a>
             <br>
@@ -403,7 +393,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 ]);
             */?>
             <br>
-            <button type="submit"  class="btn-zamer">оставить заявку</button>
+            <button type="submit"  class="btn btn-zamer">оставить заявку</button>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
@@ -433,7 +423,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <br>
         <br>
         <br>
-        <a href="/contact" class="pjax btn-zamer">оставить отзыв</a>
+        <a href="/contact" class="pjax btn btn-zamer">оставить отзыв</a>
     </div>
 </div>
 <!---->
@@ -485,7 +475,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 </div>
 <br>
 <br>
-<a href="/catalog" class="btn-zamer center-block">перейти в каталог</a>
+<a href="/catalog" target="_blank" class="btn btn-zamer center-block">перейти в каталог</a>
 <!---->
 <br>
 <div class="h1 text-center">Остались вопросы?</div>
@@ -514,7 +504,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
         <div class="h3" style="margin-bottom: -15px">Тел:</div>
-        <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
+        <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true, 'placeholder' => 'В любом формате'])
             ->widget(MaskedInput::className(), [
                 'name' => 'taxi',
                 'mask' => '+7 (999) - 999 - 99 - 99',
@@ -528,7 +518,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                     'action' => 'index',
                 ]);
             */?>
-        <button type="submit"  class="btn-zamer">оставить заявку</button>
+        <button type="submit"  class="btn btn-zamer">задать вопрос</button>
         <?php ActiveForm::end(); ?>
     </div>
     <img width="208" height="243" src="/img/call.jpg" alt="" data-scrollreveal="enter right and move 100px, wait 0.4s">
@@ -596,8 +586,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <img  class="taxi-inner" src="/img/taxi.png" width="652" height="354" alt="" data-scrollreveal="enter left and move 300px, wait 0.3s">
     </div>
     <div class="taxi-out item2">
-        <div class="zamer-form-block"  id="taxi-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
-            <div class="zv-form-group">
+        <div class="zamer-form-block"  data-scrollreveal="enter right and move 300px, wait 0.3s">
                 <div class="h2 underline underline-red" style="margin-bottom: -10px">Оставьте заявку на бесплатное такси до <span class="solo">SOLO</span> мебель</div>
                 <?php Pjax::begin([
                     'clientOptions' => [
@@ -635,11 +624,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                     'action' => 'index',
                 ]);
             */?>
-                <button type="submit"  class="btn-zamer">оставить заявку</button>
+                <button type="submit"  class="btn btn-zamer">оставить заявку</button>
                 <br>
                 <br>
                 <?php ActiveForm::end(); ?>
-            </div>
         </div>
     </div>
 </div>

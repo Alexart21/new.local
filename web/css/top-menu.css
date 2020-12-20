@@ -20,10 +20,10 @@
   height: 65px;
   background: #fff;
   /*border-left: 1px solid #e61b05;*/
-  border-bottom: 1px dashed #222;
+  border-bottom: 1px dotted rgba(34,34,34,.5);
   /*border-right: 1px solid #e61b05;*/
   transition: all .4s;
-  /*opacity: .7;*/
+  opacity: .9;
   box-shadow: 0 0 20px #fff;
 }
 
@@ -50,6 +50,7 @@
   background: silver;
 }
 .top-link {
+  font-family: LatoRegular;
   letter-spacing: 3px;
   display: block;
   position: relative;

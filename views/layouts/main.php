@@ -2,7 +2,7 @@
 
 use app\assets\AppAsset;
 use yii\helpers\Html;
-use Yii;
+//use Yii;
 
 
 //use y/ii\widgets\Spaceless;
@@ -80,7 +80,7 @@ AppAsset::register($this);
         &nbsp;&nbsp;Вс 10<sup>00</sup>&mdash;20<sup>00</span>
                 </div>
                 <div class="mail-block">
-                    <a rel="nofollow" class="pjax" href="/contact" title="написать письмо">
+                    <a rel="nofollow" class="pjax" href="/contact"  data-toggle="tooltip" title="написать письмо">
                        <i class="far fa-envelope"></i> mail@s-solo.ru
                     </a>
                 </div>
@@ -258,10 +258,9 @@ AppAsset::register($this);
     };
 </script>
 <script>
-    /*window.replainSettings = { id: 'a5f39b2c-c464-4efa-be14-9656e0c2dc4a' };
-    (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
-        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
-    })('https://widget.replain.cc/dist/client.js');*/
+    $(document).ready(function(){
+        $('[href="/contact"]').tooltip();
+    });
 </script>
 </body>
 </html>
