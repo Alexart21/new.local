@@ -60,12 +60,13 @@ AdminAsset::register($this);
         'items' => [
             ['label' => 'на сайт', 'url' => ['/']],
             ['label' => 'главная', 'url' => ['/admin']],
+            ['label' => 'выйти', 'url' => ['/site/logout'], 'linkOptions' => ['data' => ['method' => 'post']]], // разлогиниваем админа
         ],
 
     ]);
     ?>
     <span style="float: right;letter-spacing: 2px"><span style="background: #fff;line-height: 30px;font-weight: bold;padding: 26px;"><?= $user ?>(admin)</span>
-    <a href="/logout" data-method = "post" style="line-height: 50px;color: #fff">выйти</a>
+<!--    <a href="/logout" data-method = "post" style="line-height: 50px;color: #fff">выйти</a>-->
     </span>
 
     <?php

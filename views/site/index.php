@@ -116,7 +116,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <div class="kitchen-icon-item2">
         <img src="/img/new-icon/1presentation.png" alt="" width="50" height="46">
         <p>
-        <div class="h3 header_shadow">Онлайн-расчёт за 5 минут</div>
+        <div class="h3 header_shadow">Онлайн-расчёт за 15 минут</div>
         бесплатный проект от дизайнера, посоветуем лучшее решение
     </div>
     <div class="kitchen-icon-item2">

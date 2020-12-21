@@ -9,13 +9,13 @@ header("Cache-Control: no-store, no-cache");
 
 //заголовок в картинку и в тег title
 $title = !empty($imgData['title']) ? $imgData['title'] : 'Фото ' . $imgData['id'];
-$this->title = $title;
+//$this->title = $title;
 
-$keywords = !empty($imgData['keywords']) ? $imgData['keywords'] : '';
-$this->registerMetaTag(['name' => 'keywords', 'content' => $keywords]);
+//$keywords = !empty($imgData['keywords']) ? $imgData['keywords'] : '';
+//$this->registerMetaTag(['name' => 'keywords', 'content' => $keywords]);
 
-$desc = !empty($imgData['description']) ? $imgData['description'] : '';
-$this->registerMetaTag(['name' => 'description', 'content' => $desc]);
+//$desc = !empty($imgData['description']) ? $imgData['description'] : '';
+//$this->registerMetaTag(['name' => 'description', 'content' => $desc]);
 
 // подробное описание
 $text = !empty($imgData['full_text']) ? $imgData['full_text'] : null;
@@ -33,7 +33,7 @@ Modal::begin([
 ]);
 ?>
 <div class="ajax-img-wrap" style="width: <?= $width ?>px;height: <?= $height ?>px">
-    <button class="close" data-dismiss="modal"><span style="font-size: .7em">&times;</span></button>
+    <div class="my-close" data-dismiss="modal"><span class="fa fa-times"></span></div>
     <figure class="snip1361">
         <img alt="<?= $title ?>" <?php echo $w_h ?> src="/upload/original_img/<?= $imgData['filePath'] ?>">
         <figcaption>

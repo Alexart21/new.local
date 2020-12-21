@@ -47,7 +47,7 @@
 .menu-wrapper a.menu-link {
   display: none;
   padding: 0.7em 0;
-  background: silver;
+  background: #fff;
 }
 .top-link {
   font-family: LatoRegular;
@@ -75,7 +75,7 @@ a.main-link{
   position: relative;
   z-index: 12;
   background: #f5d4d4;
-  color: lime;
+  /*color: lime;*/
   border-bottom: 1px solid transparent;
 }
 .menu-wrapper .menu > .current-menu-item > a:hover,
@@ -89,7 +89,7 @@ a.main-link{
 .menu-wrapper .menu > .current-menu-item > a:after,
 .menu-wrapper .menu > .current-menu-ancestor > a:after {
   top: 100%;
-  border: solid transparent;
+  /*border: solid transparent;*/
   content: " ";
   height: 0;
   width: 0;
@@ -115,9 +115,10 @@ a.main-link{
 }
 .menu-wrapper .sub-menu li {
   display: block;
-  background: silver;
+  background: #ddd;
   margin-left: 0.7em;
   margin-right: 0.7em;
+  padding-bottom: .5em;
 }
 .menu-wrapper .sub-menu a {
   margin: 0;
