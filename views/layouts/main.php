@@ -81,7 +81,7 @@ AppAsset::register($this);
                 </div>
                 <div class="mail-block">
                     <a rel="nofollow" class="pjax" href="/contact"  data-toggle="tooltip" title="написать письмо">
-                       <i class="far fa-envelope"></i> mail@s-solo.ru
+                       <i class="far fa-envelope"></i> <?= Yii::$app->params['email'] ?>
                     </a>
                 </div>
                 <!---->
@@ -141,13 +141,18 @@ AppAsset::register($this);
             </p>
             <p>
             <span class="tel">
-                <b class="header_shadow">Тел.</b> <b style="letter-spacing: 2px">+7(8352) 37-57-00 &nbsp;&nbsp;</b>
+                <b class="f-sh">Тел: </b> <b style="letter-spacing: 2px"><span style="font-size: 120%"> +7(8352) 37-57-00</span> &nbsp;&nbsp;</b>
             </span>
-                <b class="header_shadow">Часы работы :</b>
+                <br>
+                <span>
+                    <b class="f-sh">E-mail:</b> <a rel="nofollow" href="/contact" class="pjax"><b style="letter-spacing: 2px"><span style="font-size: 120%"><?= Yii::$app->params['email'] ?></b></a>
+                </span>
+                <br>
+                <b class="f-sh">Часы работы :</b>
                 <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
                 &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</span>
             <p>
-                <b class="text-center"><b class="header_shadow">Адрес :</b> ул. Калинина 105а (Мега молл)</b>
+                <b class="text-center"><b class="f-sh">Адрес :</b> ул. Калинина 105а (Мега молл)</b>
             <div>
                 <img src="/img/brands/blum.jpg" width="188" height="52" alt="фурнитура blum">
                 <img src="/img/brands/hettich.jpg" width="188" height="52" alt="фурнитура hettich">
@@ -157,6 +162,8 @@ AppAsset::register($this);
             <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
             <a href="/politic" class="small">Политика конфиденциальности</a><br>
             <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
+            <br>
+            <span class="small">Информация размешенная на сайте не является публичной офертой.</span>
             <br>
             <span class="small">Этот сайт защищен Google reCAPTCHA в соответствии с <a href="https://policies.google.com/privacy">политикой конфиденциальности</a> и <a href="https://policies.google.com/terms">условиями применения</a>.</span>
             <br>

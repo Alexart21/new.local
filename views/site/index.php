@@ -148,88 +148,89 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <a href="/call" class="pjax kitchen-icon-btn btn-2">ЗАКАЗАТЬ РАСЧЕТ СТОИМОСТИ</a>
 <br>
 <br>
-<div id="design" class="anchors"></div>
-<div class="d-flex flex-row justify-content-center">
-<!--    <div style="width: 300px;height: 300px;background: lime"></div>-->
-<!--    <div style="width: 300px;height: 300px;background: red"></div>-->
-    <div class="solo-text">
+<!---->
+<p class="h2">
+    ЧТО ДЕЛАЕТ КОМАНДА <span class="solo">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
+    ЧТОБЫ ВЫ ПОЛУЧИЛИ НАИВЫСШЕЕ КАЧЕСТВО И ЧУВСТВО ВОСТОРГА ОТ ВАШЕЙ КУХНИ.
 
-            <p class="h2">
-            ЧТО ДЕЛАЕТ КОМАНДА <span class="solo">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
-            ЧТОБЫ ВЫ ПОЛУЧИЛИ НАИВЫСШЕЕ КАЧЕСТВО И ЧУВСТВО ВОСТОРГА ОТ ВАШЕЙ КУХНИ.
+<div class="d-flex flex-row justify-content-center flex-wrap">
+    <div class="solo-text">
         <div class="solo-text-block">
-            <span class="h3">
+            <span class="h3 underline-2">
                     1  КАТАЛОГ КУХОННЫХ ГАРНИТУРОВ
             </span><br>
             Мы предполагаем, что принципиальный интерес к выбору кухонного гарнитура у Вас есть, поэтому предлагаем сделать первый легкий шаг, и ознакомиться с каталогом кухонных гарнитуров разной стилистики, предлагаемых компанией МебельМакс.
 
             Вы обязательно найдете кухню, от которой внутри Вас, кто-то сильно закричит «хочу!»
         </div>
-            <div class="solo-text-block">
-            <span class="h3">
+        <div class="solo-text-block">
+            <span class="h3 underline-2">
                     2  ПОДРОБНАЯ КОНСУЛЬТАЦИЯ
                 </span><br>
             Менеджер, который свяжется с Вами, проконсультирует Вас по всем первичным интересующим вопросам.
             После этой консультации  Вы будете знать о кухонных гарнитурах от А до Я.
-            </div>
-                <div class="solo-text-block">
-            <span class="h3">3  ВЫЕЗД ДИЗАЙНЕРА</span><br>
+        </div>
+        <div class="solo-text-block">
+            <span class="h3 underline-2">3  ВЫЕЗД ДИЗАЙНЕРА</span><br>
             В удобное для Вас время к Вам приедет один из дизайнеров. Вы покажете ему свой интерьер, расскажете пожелания, особенности, заполните анкету. Дизайнер снимет размеры помещения.
             Сделает фотографии помещения. Проконсультирует Вас по возникшим вопросам. Посоветует разные планировки и дизайн сразу же на месте. После этой встречи, Вы точно будете знать что хотите, в каком дизайне и каких размеров. Осталось это воплотить в 3-D визуализацию, что бы окончательно убедиться. А это следующий шаг…
-                </div>
+        </div>
     </div>
 
+    <div id="design" class="anchors"></div>
     <div class="zamer-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
-            <div class="h2 header_shadow" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
-            <?php Pjax::begin([
-                'clientOptions' => [
-                    'method' => 'POST',
-                    'data-pjax-container' => '#form1-box',
-                ],
-                'id' => 'call',
-                'enablePushState' => false,
-                'formSelector' => '#zvonok-form',
-                'timeout' => 20000
-            ]);
-            ?>
-            <output id="form1-box"></output>
-            <?php Pjax::end(); ?>
+        <div class="h2 header_shadow" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
+        <?php Pjax::begin([
+            'clientOptions' => [
+                'method' => 'POST',
+                'data-pjax-container' => '#form1-box',
+            ],
+            'id' => 'call',
+            'enablePushState' => false,
+            'formSelector' => '#zvonok-form',
+            'timeout' => 20000
+        ]);
+        ?>
+        <output id="form1-box"></output>
+        <?php Pjax::end(); ?>
 
-            <?php $form = ActiveForm::begin([
-                'options' => ['id' => 'zvonok-form', 'data-pjax' => true],
-            ]);
-            ?>
-            <br>
-            <div class="h3">Ваше имя:</div>
-            <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
+        <?php $form = ActiveForm::begin([
+            'options' => ['id' => 'zvonok-form', 'data-pjax' => true],
+        ]);
+        ?>
+        <br>
+        <div class="h3">Ваше имя:</div>
+        <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-            <div class="h3" style="margin-bottom: -15px">Тел:</div>
-            <?= $form->field($indexForm, 'tel')->textInput(['class' => 'index-field', 'required' => true])
-                ->widget(MaskedInput::className(), [
-                    'name' => 'zamer',
-                    'mask' => '+7 (999) - 999 - 99 - 99',
-                ]);
-            ?>
-            <div class="h3">Адрес:</div>
-            <input class="index-field" type="text" name="adress" tabindex="3" placeholder="улица дом.кв." required>
-            <br>
-            <br>
-            <div class="h3">Удобное Вам время:</div>
-            <input class="index-field" type="text" name="dop" tabindex="4" placeholder="напр. после 17-00">
-            <br>
-            <br>
-            <?/*= $form->field($indexForm, 'reCaptcha')->widget(
+        <div class="h3" style="margin-bottom: -15px">Тел:</div>
+        <?= $form->field($indexForm, 'tel')->textInput(['class' => 'index-field', 'required' => true])
+            ->widget(MaskedInput::className(), [
+                'name' => 'zamer',
+                'mask' => '+7 (999) - 999 - 99 - 99',
+            ]);
+        ?>
+        <div class="h3">Адрес:</div>
+        <input class="index-field" type="text" name="adress" tabindex="3" placeholder="улица дом.кв." required>
+        <br>
+        <br>
+        <div class="h3">Удобное Вам время:</div>
+        <input class="index-field" type="text" name="dop" tabindex="4" placeholder="напр. после 17-00">
+        <br>
+        <br>
+        <?/*= $form->field($indexForm, 'reCaptcha')->widget(
                 \himiklab\yii2\recaptcha\ReCaptcha3::className(),
                 [
                     'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
                     'action' => 'index',
                 ]);
             */?>
-            <button type="submit"  class="btn btn-zamer">записаться на замер</button>
-            <?php ActiveForm::end(); ?>
+        <button type="submit"  class="btn btn-zamer">записаться на замер</button>
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
-
+<br>
+<br>
+<br>
 <!---->
 <div class="h2 header_shadow text-center">Этапы работы</div>
 <div class="index-icon">
@@ -370,10 +371,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 'options' => ['id' => 'credit-form', 'data-pjax' => true],
             ]);
             ?>
-            <div class="h3">Ваше имя:</div>
+            <div class="h3 text-left">Ваше имя:</div>
             <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-            <div class="h3" style="margin-bottom: -15px">Тел:</div>
+            <div class="h3 text-left" style="margin-bottom: -15px">Тел:</div>
             <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
                 ->widget(MaskedInput::className(), [
                     'name' => 'taxi',
@@ -381,9 +382,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 ]);
             ?>
             <br>
-            <div class="h3">Рассчитываемый бюджет на кухню:</div>
+            <div class="h3 text-left">Рассчитываемый бюджет на кухню:</div>
             <input class="index-field" type="text"  name="sum" placeholder="например 100 000" required>
-            <div class="h3">Желаемый ежемесячный платеж:</div>
+            <br>
+            <div class="h3 text-left">Желаемый ежемесячный платеж:</div>
             <input class="index-field" type="text" name="payments" placeholder="например 10 000">
             <?/*= $form->field($indexForm, 'reCaptcha')->widget(
                 \himiklab\yii2\recaptcha\ReCaptcha3::className(),
@@ -610,7 +612,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
                 <div class="h3" style="margin-bottom: -15px">Тел:</div>
-                <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
+                <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true, 'placeholder' => 'в любом формате'])
                     ->widget(MaskedInput::className(), [
                         'name' => 'taxi',
                         'mask' => '+7 (999) - 999 - 99 - 99',

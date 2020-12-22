@@ -2,6 +2,7 @@
 
 return [
     'siteUrl' => 's-solo.ru',
+    'email' => 'mail@s-solo.ru',
     'company' => 'solo',
     'admin' => 'solo',
     'manager' => 'Сергей',

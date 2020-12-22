@@ -725,10 +725,14 @@ p{
 }
 
 /**/
-.solo-text{
-   /*max-width: calc(100% - 400px);*/
+/*.solo-text{
     min-width: 400px;
     margin: 2em;
+}*/
+
+.solo-text{
+    max-width: calc(100% - 350px);
+    min-width: 450px;
 }
 
 .solo-text-block{
@@ -742,6 +746,7 @@ p{
 
 .zamer-form-block{
     width: 300px;
+    margin-left: 1em;
     /*height: 400px;*/
     padding: 1em;
     border: 1px solid #222;
@@ -756,6 +761,8 @@ p{
 }*/
 
 .index-field, #indexform-tel, #callform-tel{
+    width: 200px !important;
+    height: inherit !important;
    border: none !important;
     outline: none !important;
     border-bottom: 2px solid var(--logo-color) !important;
@@ -902,7 +909,7 @@ p{
 
 .credit-form-block{
     width: 500px;
-    height: 560px;
+    height: 600px;
     margin: 0 auto;
     padding: 1em;
     /*background: lime;*/
@@ -1014,4 +1021,12 @@ p{
 /* email ajax links */
 a[href="/contact"]:hover{
     text-decoration: none !important;
+}
+/**/
+.underline-2{
+    border-bottom: 1px dotted var(--logo-color);
+}
+
+.f-sh{
+    text-shadow: .5px .5px #fff;
 }
