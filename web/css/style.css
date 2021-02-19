@@ -731,7 +731,7 @@ p{
 }*/
 
 .solo-text{
-    max-width: calc(100% - 350px);
+    max-width: calc(100% - 450px);
     min-width: 450px;
 }
 
@@ -745,7 +745,7 @@ p{
 /****/
 
 .zamer-form-block{
-    width: 300px;
+    width: 340px;
     margin-left: 1em;
     /*height: 400px;*/
     padding: 1em;
@@ -866,11 +866,6 @@ p{
     display: flex;
 }
 
-.otziv{
-    max-width: 50%;
-    margin: 0 2em;
-}
-
 .help-block{
     color: red !important;
 }
@@ -893,28 +888,23 @@ p{
 }
 
 /**/
-.credit{
-    width: 743px;
-    height: 947px;
-    margin: 0 auto;
-    background-image: url('/img/credit_bg.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-}
 
 .credit-title{
-    padding: 80px 0;
+    padding: 30px 0;
     text-align: center;
 }
 
 .credit-form-block{
+    /*position: relative;*/
     width: 500px;
-    height: 600px;
+    /*height: 600px;*/
     margin: 0 auto;
     padding: 1em;
     /*background: lime;*/
-    box-shadow: 0 0 20px #444;
-    text-align: center;
+    /*box-shadow: 0 0 20px #444;*/
+    /*text-align: center;*/
+    box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2), inset 0 0 30px #ddd;
+    border: 1px solid #e61b05;
 }
 
 #credit-form input{
@@ -1029,4 +1019,87 @@ a[href="/contact"]:hover{
 
 .f-sh{
     text-shadow: .5px .5px #fff;
+}
+/* carousel кухни */
+#carousel-meb .carousel-inner{
+    width: 1054px;
+    height: 640px;
+    margin: 0 auto !important;
+}
+
+#carousel-meb .carousel-indicators{
+    top: 1em;
+}
+
+#carousel-meb .carousel-indicators li{
+    width: 25%;
+    height: 2em;
+    border: 1px solid var(--logo-color);
+    border-radius: 3px;
+    text-indent: 0;
+    text-align: center;
+    line-height: 2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#carousel-meb .carousel-indicators li .active{
+    box-shadow: 0 0 20px #fff;
+}
+/* / */
+/* карусель отзывы */
+#carousel-otz{
+    position: relative;
+    width: 500px;
+    max-width: 50%;
+    margin: 0 2em;
+}
+
+#carousel-otz .carousel-item img{
+    margin: 1em;
+}
+
+#carousel-otz .carousel-caption{
+    width: 230px;
+    position: relative;
+    top: -200px;
+    left: 230px;
+    color: #222;
+}
+
+#carousel-otz .carousel-indicators{
+    bottom: 100px;
+}
+
+#carousel-otz .carousel-indicators li{
+    background: #003333;
+    /*color: #003333;*/
+    height: 4px !important;
+    border: none !important;
+}
+
+#carousel-otz .carousel-indicators li .active{
+    background: var(--logo-color);
+}
+
+#carousel-otz .carousel-control-prev-icon{
+    position: absolute;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    top: 100px;
+    left: -30px;
+    transform: scale(2);
+    opacity: .4;
+}
+
+#carousel-otz .carousel-control-next-icon{
+    position: absolute;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    top: 100px;
+    right: -10px;
+    transform: scale(2);
+    opacity: .4;
+}
+
+.icon-shadow{
+    box-shadow: 5px 10px 20px #555;
 }

@@ -1,6 +1,17 @@
 <?php
-
+/* Критичные данные не сливаем на GitHub храним отдельно !!! */
+$my_config = parse_ini_file(__DIR__ . '/../../secret_solo/config.ini');
+if(!$my_config){
+    die('Не найден файл ' . __DIR__ . '/../../secret_solo/config.ini');
+}
 $params = require(__DIR__ . '/params.php');
+
+/* Сливаем секреты с обычными данными */
+/* В этом файле доступ к секретам через $my_config[]
+    в других частях приложения через Yii::$app->params
+ */
+$params = array_merge($params, $my_config);
+//var_dump($my_config);die;
 
 $config = [
     /* Сайт на техобслуживании */
@@ -77,8 +88,8 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true, // локалка
-//            'useFileTransport' => false, // на боевом поставить false
+//            'useFileTransport' => true, // локалка
+            'useFileTransport' => false, // на боевом поставить false
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'mail.s-solo.ru',
@@ -108,6 +119,13 @@ $config = [
 //                '<controller:(site|galery|test)>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
+        ],
+        'reCaptcha' => [
+            'class' => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
+            'siteKeyV2' => $my_config['siteKeyV2'],
+            'secretV2' => $my_config['secretV2'],
+            'siteKeyV3' => $my_config['siteKeyV3'],
+            'secretV3' => $my_config['secretV3'],
         ],
     ],
     'controllerMap' => [

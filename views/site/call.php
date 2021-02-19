@@ -43,6 +43,13 @@ Modal::begin([
 
         <!--        --><?//= $form->field($model, 'robot')->checkboxList(['r' => '__Я не робот'])->label(false); ?>
 
+        <?= $form->field($model, 'reCaptcha')->widget(
+            \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+            [
+                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+            ]
+        ) ?>
+
         <div class="form-group">
             <?= Html::submitButton('жду звонка!', ['class' => 'btn-zamer']) ?>
         </div>

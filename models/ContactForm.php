@@ -14,6 +14,7 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
+    public $reCaptcha;
 
 
     /**
@@ -29,6 +30,9 @@ class ContactForm extends Model
             ['email', 'email', 'message' => 'Некорректный e-mail адрес !'],
             ['subject', 'trim'],
             ['subject', 'string', 'max' => 1000, 'tooLong' => 'не более 1000 символов'],
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::className(),
+                'secret' => Yii::$app->params['secretV2'], // unnecessary if reСaptcha is already configured
+                'uncheckedMessage' => 'Подтвердите, что вы не робот'],
         ];
     }
 
@@ -42,6 +46,7 @@ class ContactForm extends Model
             'email' => 'Email',
             'subject' => 'Тема',
             'body' => 'Сообщение',
+            'reCaptcha' => '',
         ];
     }
 

@@ -27,6 +27,13 @@ $height = $img_arr[1]; // высота
 $w_h = $img_arr[3]; // ширина и высота для тега img
 ?>
 
+<style>
+    .modal-backdrop{
+        background-color: #fff;
+        opacity: .8 !important;
+    }
+</style>
+
 <?php
 Modal::begin([
     'id' => 'modal-img',

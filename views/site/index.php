@@ -3,6 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
+use yii\bootstrap4\Carousel;
 //use yii\helpers\Html;
 
 header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $data[0]['last_mod']));
@@ -218,12 +219,19 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <br>
         <br>
         <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-                [
-                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
-                    'action' => 'index',
-                ]);
-            */?>
+            \himiklab\yii2\recaptcha\ReCaptcha3::className(),
+            [
+                'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
+                'action' => 'index',
+            ]);
+        */?>
+        <?= $form->field($indexForm, 'reCaptcha')->widget(
+            \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+            [
+                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+            ]
+        ) ?>
+
         <button type="submit"  class="btn btn-zamer">записаться на замер</button>
         <?php ActiveForm::end(); ?>
     </div>
@@ -344,7 +352,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <br>
 <br>
-<div class="credit">
     <div class="credit-title">
         <div class="h3 header_shadow">ИНДИВИДУАЛЬНАЯ РАССРОЧКА ПОД 0%</div>
         <b>ОТ КОМПАНИИ <span class="solo">SOLO</span> МЕБЕЛЬ. БЕЗ УЧАСТИЯ БАНКА</b>
@@ -390,16 +397,21 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <?/*= $form->field($indexForm, 'reCaptcha')->widget(
                 \himiklab\yii2\recaptcha\ReCaptcha3::className(),
                 [
-                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
+                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
                     'action' => 'index',
                 ]);
             */?>
+            <?= $form->field($indexForm, 'reCaptcha')->widget(
+                \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+                [
+                    'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+                ]
+            ) ?>
             <br>
             <button type="submit"  class="btn btn-zamer">оставить заявку</button>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
-</div>
 <!---->
 <br>
 <br>
@@ -409,7 +421,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <div class="otziv">
         <img src="/img/doc.png" alt="">
     </div>
-    <div class="otziv">
+    <!--<div class="otziv">
         <b class="h3">Федоров А.С.</b><br>
         <span style="opacity: .6">заказывали в компании "Solo мебель"</span><br>
         <b class="h4">кухонный гарнитур</b>
@@ -426,7 +438,48 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <br>
         <br>
         <a href="/contact" class="pjax btn btn-zamer">оставить отзыв</a>
-    </div>
+    </div>-->
+        <!-- Carousel -->
+        <div id="carousel-otz" class="carousel slide">
+            <div class="carousel-inner">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-otz" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-otz" data-slide-to="1"></li>
+                    <li data-target="#carousel-otz" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-item active">
+                    <img src="/img/user/user1.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="header_shadow">Светлана Сергеева</h3>
+                        <p>Довольна уровенем сервиса. Кухню доставили в оговоренные сроки.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/user/user2.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="header_shadow">Алексей Минаев</h3>
+                        <p>Приемлемые цены.Отдельно заслуживает благодарности что убрали мусор.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/user/user3.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="header_shadow">Ольга</h3>
+                        <p>Довольна качеством работ.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-otz" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-otz" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <a href="/contact" class="pjax btn btn-zamer">оставить отзыв</a>
+        </div>
+        <!---->
 </div>
 <!---->
 <br>
@@ -516,10 +569,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <?/*= $form->field($indexForm, 'reCaptcha')->widget(
                 \himiklab\yii2\recaptcha\ReCaptcha3::className(),
                 [
-                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
+                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
                     'action' => 'index',
                 ]);
             */?>
+        <?= $form->field($indexForm, 'reCaptcha')->widget(
+            \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+            [
+                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+            ]
+        ) ?>
         <button type="submit"  class="btn btn-zamer">задать вопрос</button>
         <?php ActiveForm::end(); ?>
     </div>
@@ -530,6 +589,29 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <br>
 <h2 class="text-center h1">Кухни в Чебоксарах от "<span class="solo">Solo</span> мебель" - почувствуйте удовольствие от готовки на собственной кухне!</h2>
+    <!-- Carousel -->
+    <div id="carousel-meb" class="carousel slide" data-ride="carousel" data-interval="3500">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-meb" data-slide-to="0" class="active">минимализм</li>
+            <li data-target="#carousel-meb" data-slide-to="1">современный стиль</li>
+            <li data-target="#carousel-meb" data-slide-to="2">кантри</li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/carousel_img/img1.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/carousel_img/img2.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/carousel_img/img3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!---->
+    <br>
+    <br>
+    <br>
     <p>
         Приготовление новых блюд, тихие семейные вечера на новой кухне - наслаждайтесь вместе с кухней от “МебельМакс”. В основе нашей работы заложены определенные принципы: мы никогда не навязываем клиенту дополнительных услуг, не предлагаем некачественные материалы, полностью погружаемся в желания и идеи заказчика. С нами вы сможете воплотить в жизнь самые необычные идеи! Клиенты любят нас за то, что мы открыты к ним:
     </p>
@@ -622,10 +704,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 <?/*= $form->field($indexForm, 'reCaptcha')->widget(
                 \himiklab\yii2\recaptcha\ReCaptcha3::className(),
                 [
-                    'siteKey' => '6Le5fgIaAAAAAP5WhDlLtheUqavfIo-QbRlk6IMM', // unnecessary is reCaptcha component was set up
+                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
                     'action' => 'index',
                 ]);
-            */?>
+                */?>
+
+            <?= $form->field($indexForm, 'reCaptcha')->widget(
+                \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+                [
+                    'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+                ]
+            ) ?>
+
                 <button type="submit"  class="btn btn-zamer">оставить заявку</button>
                 <br>
                 <br>
@@ -636,4 +726,3 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <br>
 <br>
-<!---->

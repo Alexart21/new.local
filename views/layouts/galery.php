@@ -158,7 +158,7 @@ GaleryAsset::register($this);
                 <img src="/img/brands/mak.jpg" width="188" height="52" alt="фурнитура makmart">
             </div>
             <p>
-            <div>сайт разработан группой <a href="http://l917678y.beget.tech"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
+            <div>сайт разработан группой <a href="https://alexart.houme21.ru"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
             <a href="/politic" class="small">Политика конфиденциальности</a><br>
             <span class="small">Использование сайта означает Ваше согласие на прием и передачу файлов Cookie.</span>
             <br>
