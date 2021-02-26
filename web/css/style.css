@@ -761,7 +761,7 @@ p{
 }*/
 
 .index-field, #indexform-tel, #callform-tel{
-    width: 200px !important;
+    width: 240px !important;
     height: inherit !important;
    border: none !important;
     outline: none !important;
@@ -770,6 +770,8 @@ p{
     border-bottom-left-radius: 5px !important;
     padding-left: 1em;
     font-size: 18px;
+    font-weight: bold;
+    font-family: corpid;
 }
 
 .btn-zamer{
@@ -1061,6 +1063,8 @@ a[href="/contact"]:hover{
 
 #carousel-otz .carousel-caption{
     width: 230px;
+    height: 200px;
+    font-family: Helvetica, Arial, sans-serif;
     position: relative;
     top: -200px;
     left: 230px;
@@ -1078,8 +1082,8 @@ a[href="/contact"]:hover{
     border: none !important;
 }
 
-#carousel-otz .carousel-indicators li .active{
-    background: var(--logo-color);
+#carousel-otz > div > ol > li.active{
+    background: var(--logo-color) !important;
 }
 
 #carousel-otz .carousel-control-prev-icon{

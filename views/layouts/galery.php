@@ -72,7 +72,7 @@ GaleryAsset::register($this);
                 <div class="tel-block">
                     <!--<i class="fa fa-phone-alt"></i>--><a href="tel:<?= Yii::$app->params['tel1_small'] ?>"><span class="tel" itemprop="telephone"><?= Yii::$app->params['tel1_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<span class="tel" style="font-weight: normal"><img
                                 src="/img/icon/map.png" alt="" style="margin-top: 1px"> ТЦ "Мега молл" 4 этаж</span><br>
-                    <!--<i class="fa fa-phone-alt" style="visibility: hidden">--></i><a href="<?= Yii::$app->params['tel2_small'] ?>"><span class="tel" itemprop="telephone"><?= Yii::$app->params['tel2_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<img
+                    <!--<i class="fa fa-phone-alt" style="visibility: hidden">--></i><a href="tel:<?= Yii::$app->params['tel2_small'] ?>"><span class="tel" itemprop="telephone"><?= Yii::$app->params['tel2_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<img
                             src="/img/icon/time.png" alt="" style="margin-top: 1px"><span class="tel" style="font-weight: normal"> <span itemprop="openingHours" datetime="Mo-Fr 10:00−21:00">Пн-Сб 10<sup>00</sup>&mdash;21<sup>00</span>
         &nbsp;&nbsp;Вс 10<sup>00</sup>&mdash;20<sup>00</span>
                 </div>

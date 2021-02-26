@@ -16,9 +16,8 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = false;
-//    public $verifyCode;
-
     private $_user = false;
+    public $reCaptcha;
 
 
     /**
@@ -33,8 +32,9 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
-            // verifyCode needs to be entered correctly
-//            ['verifyCode', 'captcha'],
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::className(),
+                'secret' => Yii::$app->params['secretV2'], // unnecessary if reСaptcha is already configured
+                'uncheckedMessage' => 'Подтвердите, что вы не робот'],
         ];
     }
 
@@ -44,7 +44,7 @@ class LoginForm extends Model
             'username' => 'Логин',
             'password' => 'Пароль',
             'rememberMe' => 'Запомнить меня',
-//            'verifyCode' => 'Введите код',
+            'reCaptcha' => '',
         ];
     }
 

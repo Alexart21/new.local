@@ -41,6 +41,13 @@ $this->title = 'Вход в админку';
         'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
     ]) ?>
 
+    <?= $form->field($model, 'reCaptcha')->widget(
+        \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+        [
+            'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
+        ]
+    ) ?>
+
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
             <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

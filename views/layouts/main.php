@@ -72,7 +72,7 @@ AppAsset::register($this);
                             class="tel" style="font-weight: normal"><img
                                 src="/img/icon/map.png" alt="" style="margin-top: 1px"> ТЦ "Мега молл" 4 этаж</span><br>
                     <!--<i class="fa fa-phone-alt" style="visibility: hidden">--></i><a
-                            href="<?= Yii::$app->params['tel2_small'] ?>"><span class="tel"
+                            href="tel:<?= Yii::$app->params['tel2_small'] ?>"><span class="tel"
                                                                                 itemprop="telephone"><?= Yii::$app->params['tel2_large'] ?></span></a>&nbsp;&nbsp;&nbsp;<img
                             src="/img/icon/time.png" alt="" style="margin-top: 1px"><span class="tel"
                                                                                           style="font-weight: normal"> <span
@@ -166,6 +166,7 @@ AppAsset::register($this);
             <span class="small">Информация размешенная на сайте не является публичной офертой.</span>
             <br>
             <span class="small">Этот сайт защищен Google reCAPTCHA в соответствии с <a href="https://policies.google.com/privacy">политикой конфиденциальности</a> и <a href="https://policies.google.com/terms">условиями применения</a>.</span>
+            <br>
             <br>
             <br>
             <br>

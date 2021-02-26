@@ -3,7 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
-use yii\bootstrap4\Carousel;
+//use yii\bootstrap4\Carousel;
 //use yii\helpers\Html;
 
 header('Last-Modified:' . gmdate("D, d M Y H:i:s \G\M\T", $data[0]['last_mod']));
@@ -203,11 +203,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <div class="h3">Ваше имя:</div>
         <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-        <div class="h3" style="margin-bottom: -15px">Тел:</div>
-        <?= $form->field($indexForm, 'tel')->textInput(['class' => 'index-field', 'required' => true])
+        <div class="h3">Тел:</div>
+        <?= $form->field($indexForm, 'tel')->textInput()
             ->widget(MaskedInput::className(), [
                 'name' => 'zamer',
                 'mask' => '+7 (999) - 999 - 99 - 99',
+                'options' => [
+                    'id' => 'mask1',
+                    'class' => 'index-field',
+                ],
+
             ]);
         ?>
         <div class="h3">Адрес:</div>
@@ -357,7 +362,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <b>ОТ КОМПАНИИ <span class="solo">SOLO</span> МЕБЕЛЬ. БЕЗ УЧАСТИЯ БАНКА</b>
     </div>
     <div class="credit-form-block">
-        <div class="h2 underline-red">ЗАПОЛНИТЕ КОРОТКУЮ АНКЕТУ.</div>
+        <div class="h2 underline-red">ЗАПОЛНИТЕ КОРОТКУЮ АНКЕТУ</div>
         И уже через месяц наслаждайтесь приготовление блюд на новенькой кухне.
         <div class="" >
             <?php Pjax::begin([
@@ -382,10 +387,14 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
             <div class="h3 text-left" style="margin-bottom: -15px">Тел:</div>
-            <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true])
+            <?= $form->field($indexForm, 'tel')->textInput()
                 ->widget(MaskedInput::className(), [
                     'name' => 'taxi',
                     'mask' => '+7 (999) - 999 - 99 - 99',
+                    'options' => [
+                        'id' => 'mask2',
+                        'class' => 'index-field',
+                    ],
                 ]);
             ?>
             <br>
@@ -449,21 +458,21 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 </ol>
                 <div class="carousel-item active">
                     <img src="/img/user/user1.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption">
                         <h3 class="header_shadow">Светлана Сергеева</h3>
                         <p>Довольна уровенем сервиса. Кухню доставили в оговоренные сроки.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="/img/user/user2.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption">
                         <h3 class="header_shadow">Алексей Минаев</h3>
                         <p>Приемлемые цены.Отдельно заслуживает благодарности что убрали мусор.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="/img/user/user3.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption">
                         <h3 class="header_shadow">Ольга</h3>
                         <p>Довольна качеством работ.</p>
                     </div>
@@ -558,11 +567,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <div class="h3">Ваше имя:</div>
         <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-        <div class="h3" style="margin-bottom: -15px">Тел:</div>
-        <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true, 'placeholder' => 'В любом формате'])
+        <div class="h3">Тел:</div>
+        <?= $form->field($indexForm, 'tel')->textInput()
             ->widget(MaskedInput::className(), [
                 'name' => 'taxi',
                 'mask' => '+7 (999) - 999 - 99 - 99',
+                'options' => [
+                    'id' => 'mask3',
+                    'class' => 'index-field',
+                ],
             ]);
         ?>
         <br>
@@ -693,11 +706,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 <div class="h3">Ваше имя:</div>
                 <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-                <div class="h3" style="margin-bottom: -15px">Тел:</div>
-                <?= $form->field($indexForm, 'tel')->textInput(['id' =>'taxi-f', 'class' => 'index-field', 'required' => true, 'placeholder' => 'в любом формате'])
+                <div class="h3">Тел:</div>
+                <?= $form->field($indexForm, 'tel')->textInput()
                     ->widget(MaskedInput::className(), [
                         'name' => 'taxi',
                         'mask' => '+7 (999) - 999 - 99 - 99',
+                        'options' => [
+                            'id' => 'mask4',
+                            'class' => 'index-field',
+                        ],
                     ]);
                 ?>
                 <br>
