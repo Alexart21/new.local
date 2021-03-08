@@ -30,11 +30,12 @@ $(document).ready(function () {
                     let $this = $(this);
                     $this.toggleClass('active').siblings('ul').toggleClass('active');
                 });
-                /*$('.has-subnav').click(function (e) {
-                    console.log('submenu');
+                //
+                $('.main-link').click(function (e) {
+                    console.log('submenu2');
                     let $this = $(this);
                     $this.toggleClass('active').siblings('ul').toggleClass('active');
-                });*/
+                });
             }
         } else {
             $('.toggle-link').empty();

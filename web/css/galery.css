@@ -93,9 +93,9 @@ header{
     position: absolute;
     top: 10%;
     z-index: 1;
-    align-items: center;
     text-align: center;
     font-family: "Roboto", sans-serif;
+    width: calc(100% - 10px);
 }
 .snip1584 h3,
 .snip1584 h5 {

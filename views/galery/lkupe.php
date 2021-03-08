@@ -20,7 +20,7 @@ const IMG_H = 250; // высота иконок
     <?php foreach ($imgData as $item): ?>
         <div class="raised flex-center img-thumbnail">
             <figure  class="snip1584"  data-scrollreveal="enter left and move 500px, wait <?= $delay ?>s">
-                <img width="<?= IMG_W ?>" height="<?= IMG_H ?>" src="/upload/resize_img/Galeries/Galery<?= $item['itemId'] ?>/<?= $item['urlAlias'] ?>.jpg" alt=""/>
+                <img width="<?= IMG_W ?>" height="<?= IMG_H ?>" src="/upload/resize_img/Galeries/Galery<?= $item['itemId'] ?>/<?= $item['urlAlias'] ?>.jpg" alt="<?= $item['title'] ?>"/>
                 <figcaption>
                     <h3><?= $item['title'] ?></h3>
                     <?php if ($item['price']) : ?>

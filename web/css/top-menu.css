@@ -113,6 +113,11 @@ a.main-link{
   text-align: left;
   text-transform: none;
 }
+
+/*#menu > div > ul > li.has-subnav > ul:hover{
+   overflow-y: scroll;
+   max-height: 300px;
+ }*/
 .menu-wrapper .sub-menu li {
   display: block;
   background: #ddd;
@@ -259,19 +264,20 @@ a.main-link{
     -webkit-font-smoothing: antialiased;
   }
 
-  .menu-wrapper .menu .has-subnav > .toggle-link:after {
+  /*.menu-wrapper .menu .has-subnav > .toggle-link:after {
     content: "\2261";
     position: absolute;
     width: 50px;
     top: 50%;
-    margin-top: -15px;
-    bottom: 50%;
-    right: 4px;
+    !*margin-top: -15px;*!
+    !*bottom: 50%;*!
+    right: 50%;
     font-size: 28px;
-    color: #fff;
+    color: #000;
+    text-shadow: 1px 1px #e61b05;
   }
   .menu-wrapper .menu .has-subnav > .toggle-link.active:after {
     content: "\2261";
     margin-top: -1px;
-  }
+  }*/
 }
