@@ -223,15 +223,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <input class="index-field" type="text" name="dop" tabindex="4" placeholder="напр. после 17-00">
         <br>
         <br>
-        <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-            [
-                'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
-                'action' => 'index',
-            ]);
-        */?>
         <?= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+            \himiklab\yii2\recaptcha\ReCaptcha2::class,
             [
                 'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
             ]
@@ -403,15 +396,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <br>
             <div class="h3 text-left">Желаемый ежемесячный платеж:</div>
             <input class="index-field" type="text" name="payments" placeholder="например 10 000">
-            <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-                [
-                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
-                    'action' => 'index',
-                ]);
-            */?>
             <?= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+                \himiklab\yii2\recaptcha\ReCaptcha2::class,
                 [
                     'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
                 ]
@@ -579,15 +565,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             ]);
         ?>
         <br>
-        <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-                [
-                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
-                    'action' => 'index',
-                ]);
-            */?>
+
         <?= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+            \himiklab\yii2\recaptcha\ReCaptcha2::class,
             [
                 'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
             ]
@@ -718,16 +698,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                     ]);
                 ?>
                 <br>
-                <?/*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::className(),
-                [
-                    'siteKey' => Yii::$app->params['siteKeyV3'], // unnecessary is reCaptcha component was set up
-                    'action' => 'index',
-                ]);
-                */?>
-
             <?= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+                \himiklab\yii2\recaptcha\ReCaptcha2::class,
                 [
                     'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
                 ]

@@ -32,7 +32,7 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
-            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::className(),
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::class,
                 'secret' => Yii::$app->params['secretV2'], // unnecessary if reСaptcha is already configured
                 'uncheckedMessage' => 'Подтвердите, что вы не робот'],
         ];
