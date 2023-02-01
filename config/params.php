@@ -5,7 +5,7 @@ return [
     'email' => 'mail@s-solo.ru',
     'adminEmail' => 'mail@s-solo.ru',
     'company' => 'solo',
-    'admin' => 'solo',
+    'admin' => 'ssolo',
     'manager' => 'Сергей',
     'msgNum' => '79023274546',
     'tel1_small' => '+78352375700',

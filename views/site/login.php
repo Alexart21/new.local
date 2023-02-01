@@ -17,8 +17,8 @@ $this->title = 'Вход в админку';
     }
 </style>
 <div class="site-login container">
-    <?php /* echo Yii::$app->getSecurity()->generatePasswordHash('')*/?>
-    <h3>Введите данные для входа:</h3>
+<?php //echo Yii::$app->getSecurity()->generatePasswordHash('Dtkbxbtcjkj21') ?>
+    <h3>Введите данные для входа</h3>
     <br>
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
@@ -38,12 +38,12 @@ $this->title = 'Вход в админку';
         'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
     ]) ?>
 
-    <?= $form->field($model, 'reCaptcha')->widget(
+    <?/*= $form->field($model, 'reCaptcha')->widget(
         \himiklab\yii2\recaptcha\ReCaptcha2::class,
         [
             'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
         ]
-    ) ?>
+    ) */?>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">

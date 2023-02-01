@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-<!--    --><?//= $form->field($model, 'path')->textInput(['maxlength' => true]) ?>
+    <?php //echo $form->field($model, 'path')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'image')->fileInput() ?>
 
     <?= $form->field($model, 'category')->dropDownList([
