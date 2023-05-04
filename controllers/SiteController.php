@@ -114,8 +114,13 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            $user = strtolower(Yii::$app->user->identity->username);
+            if ($user === Yii::$app->params['admin']){
+                return $this->redirect('/admin');
+            }
             return $this->goBack();
         }
+//        die('here2');
         return $this->render('login', [
             'model' => $model,
         ]);
