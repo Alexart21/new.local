@@ -172,35 +172,49 @@ AppAsset::register($this);
             <br>
         </footer>
     </div>
-    <!--Окно чата-->
-    <audio preload="auto">
-        <source src="/audio/buben.mp3" type="audio/mpeg">
-        <source src="/audio/buben.ogg" type="audio/ogg">
-    </audio>
-    <div id="msg-block" data-closed data-toggle="tooltip" data-trigger="manual"
-         title="<?= hello() ?>,я <?= Yii::$app->params['manager'] ?>.Чем могу помочь ?">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-        <div id="msg-content">
-            <div class="msg-closed button-anim">
-                <i class="fab fa-viber viber"></i> <i class="fab fa-whatsapp wats"></i>
-                <b class="msg-closed-text">Начните чат</b>
-            </div>
-            <img class="msg-img msg-img rounded-circle img-thumbnail" src="/img/msg.jpg" alt="">
-            <div class="msg-text">
-                <div class="text-center"><?= hello() ?>,я <?= Yii::$app->params['manager'] ?>.</div>
-                <div class="text-center text-info">выберите мессенджер и начните чат</div>
-                <i style="display:block;text-align: right"><span class="fa fa-check"></span><?= date('H:i') ?>&nbsp;&nbsp;</i>
-            </div>
-            <hr>
-            <a class="msg-btn viber-bg" href="viber://chat?number=<?= Yii::$app->params['msgNum'] ?>"
-               target="_blank"><i class="fab fa-viber""></i> Viber</a>
-            <a class="msg-btn watsap-bg" href="whatsapp://send?phone=<?= Yii::$app->params['msgNum'] ?>"
-               target="_blank"><i class="fab fa-whatsapp"></i> Watsapp</a>
-        </div>
-    </div>
     <!--кнопка вверх-->
     <div id="scroller" class="fa fa-chevron-circle-up"></div>
     <!--/-->
+    <!-- чат replane -->
+    <a id="tg-btn-outher" href="https://t.me/Mihalych211" target="_blank"><div class="tg-btn"></div></a>
+    <script>
+        window.addEventListener('load', () => {
+            if (!('ontouchstart' in window || navigator.maxTouchPoints)){ // для десктопов
+                console.log('desktop');
+                setTimeout(() => {
+                    window.replainSettings = {
+                        id: '3c5fb190-8bb5-4a75-a72d-ae633d121544',
+                        onClientOpenedChat: () => {
+                            // клиент открыл чат или открылся по таймеру
+                            // куку на 1 час
+                            // в течении часа не будет всплывашек
+                            document.cookie = 'chat_open=1;max-age=3600';
+                        },
+                    };
+                    (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+                        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+                    })('https://widget.replain.cc/dist/client.js');
+                }, 3000);
+
+                window.addEventListener('scroll', () => {
+                    // откроем через .. после скрола
+                    setTimeout(() => {
+                        if(!readCookie('chat_open')){
+                            window.ReplainAPI('open');
+                            // установить стартовое сообщение (Перебивает то что было в настройках)
+                            // window.ReplainAPI('setStartMessage', 'Привет!!! 👋');
+                            // звук
+                            beep();
+                        }
+                    }, 3000);
+                })
+            }else { // для мобил просто кнопка с ссылкой
+                console.log('mobile');
+                document.getElementById('tg-btn-outher').style.display = 'block';
+            }
+        });
+    </script>
+    <!-- конец чат replane -->
 </div>
 <?php $this->endBody() ?>
 <script>
@@ -216,54 +230,6 @@ AppAsset::register($this);
     });
     ///
     window.scrollReveal = new scrollReveal();
-    window.onload = () => {
-
-        // const ldr = document.querySelector('#container_loading');
-
-        //////////////
-        let msgBlock = document.getElementById('msg-block'),
-            msgContent = document.getElementById('msg-content'),
-            msgImg = document.querySelector('.msg-img'),
-            msgClosed = document.querySelector('.msg-closed');
-        // несколько задержек
-        setTimeout(showMsg, 3000); //  показываем блок с чатом
-        setTimeout(showTooltip, 6000); // показываем всплывающую подсказку/приглашение
-        setTimeout(rmTooltip, 14000); // скрываем подсказку
-        setTimeout(rmMsgAnim, 30000); // выключаем анимацию
-
-        msgContent.addEventListener('click', () => { // разворачиваем окно чата
-            if (msgBlock.hasAttribute('data-closed')) { // свернуто
-                // msgBlock.style.height = '370px';
-                msgBlock.classList.add('msg-opened');
-                msgBlock.style.background = 'url(/img/wats-bg.gif)';
-                msgBlock.style.boxShadow = '0 0 30px #999';
-                msgImg.style.right = '134px';
-                msgImg.style.opacity = '0.7';
-                msgClosed.style.display = 'none';
-                msgBlock.removeAttribute('data-closed');
-                showMsg();
-            }
-        });
-//
-        const msgClose = document.querySelector('#msg-block button');
-        msgClose.addEventListener('click', () => { // сворачиваем окно чата
-            if (!msgBlock.hasAttribute('data-closed')) { // окно не свернуто
-                msgImg.style.right = '';
-                msgImg.style.opacity = '';
-                // msgBlock.style.height = '';
-                msgBlock.classList.remove('msg-opened');
-                msgBlock.style.background = '';
-                msgBlock.style.boxShadow = '';
-                msgClosed.style.display = '';
-                msgBlock.setAttribute('data-closed', '');
-            }
-        });
-//
-
-        msgBlock.addEventListener('mouseover', () => { // по наведению мыши тож прибиваем
-            rmTooltip();
-        });
-    };
 </script>
 <script>
     $(document).ready(function(){
