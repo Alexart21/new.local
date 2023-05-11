@@ -176,7 +176,7 @@ AppAsset::register($this);
     <div id="scroller" class="fa fa-chevron-circle-up"></div>
     <!--/-->
     <!-- чат replane -->
-    <a id="tg-btn-outher" href="https://t.me/Mihalych211" target="_blank"><div class="tg-btn"></div></a>
+    <a id="tg-btn-outher" href="https://t.me/+79023274546" target="_blank"><div class="tg-btn"></div></a>
     <script>
         window.addEventListener('load', () => {
             if (!('ontouchstart' in window || navigator.maxTouchPoints)){ // для десктопов

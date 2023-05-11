@@ -71,7 +71,9 @@ class SiteController extends Controller
         $request = Yii::$app->request;
         $indexForm = new IndexForm();
         if ($request->isAjax && $request->isPost){
+//            die('here1');
             if($indexForm->load($request->post()) && $indexForm->validate()) {
+//                die('here2');
                 $subject = 'Обратный звонок';
                 $name = $indexForm->name ? mb_ucfirst($indexForm->name) : null;
                 $tel = $indexForm->tel ? $indexForm->tel : null;
