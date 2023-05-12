@@ -26,70 +26,122 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 ?>
 <output id="call_box"></output>
 <?php Pjax::end(); ?>
-<p class="h2 text-left" style="width: 50%">
-    <span class="header_shadow h2">Замерим</span>, продумаем дизайн и функционал под ваш бюджет, сделаем план электрики,
-    изготовим, <span class="header_shadow h2">установим</span>, подключим
-    электрику и сантехнику, уберем мусор.
-</p>
-
-<div class="index-icon">
-    <div class="d-flex flex-row justify-content-center">
-        <div class="icon-block">
-            <img src="/img/icon/piggy-bank.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">приемлемые цены</i>
-            <p>
-                Производим от Премиум до Эконом класса.
-                Без наценки магазина, напрямую с производства. Сэкономь до 20% от рыночных цен.
-            </p>
-        </div>
-
-        <div class="icon-block">
-            <img src="/img/icon/scientist-woman.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">наивысшее качество</i>
-            <p>
-                Средний стаж каждого сотрудника компании «Solo мебель», более 10 лет в индустрии мебели. Все сотрудники
-                получают оплату, только после 100% сдачи заказа.
-            </p>
-        </div>
-
-        <div class="icon-block">
-            <img src="/img/icon/coins.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">возможность рассрочки</i>
-            <p>
-                Производим от Премиум до Эконом класса.
-                Без наценки магазина, напрямую с производства. Сэкономь до 20% от рыночных цен.
-            </p>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row justify-content-center">
-        <div class="icon-block">
-            <img src="/img/icon/credit-card.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">оплата любым удобным способом</i>
-            <p>
-                Наличный расчет, банковская карта,
-                оплата на расчетный счет компании
-                при работе с юр. лицами.
-            </p>
-        </div>
-
-        <div class="icon-block">
-            <img src="/img/icon/oven.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">скидки на технику</i>
-            <p>
-                При покупке кухни, Вы получаете скидку на встраиваимую технику в подарок.
-            </p>
-        </div>
-
-        <div class="icon-block">
-            <img src="/img/icon/certificate.png" class="position-absolute" alt="">
-            <i class="h3 header_shadow">5 лет гарантии от производителя</i>
-            <p>
-                Послегарантийное обслуживание прописывается в договоре
-            </p>
+<div class="advantages">
+    <h2 class="advantages__title">Кухни под ключ здесь и сейчас</h2>
+    <div class="advantages__items">
+        <div class="advantages__wrapper">
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="agicn-project animate-svg" viewBox="0 0 64 64" id="3d33687ffc9fba719e0932932be7a369"><path fill="none" stroke="#00B4EB" stroke-width="2" d="M48 62H13c-1.7 0-3-1.3-3-3V5c0-1.7 1.3-3 3-3h38c1.7 0 3 1.3 3 3v54c0 1.7-1.3 3-3 3h-1"></path><path fill="none" stroke="#00B4EB" stroke-width="2" d="M45 6v3c0 1.7-1.3 3-3 3H22c-1.7 0-3-1.3-3-3V6m6.5 1h14M21 23h22m-22 6h22m-22 6h22m-22 6h12m9 4c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Проектируем</h3>
+                    <p class="advantage__descr">Делаем замеры и&nbsp;создаем индивидуальный дизайн-проект
+                        с&nbsp;учетом особенностей вашей кухни</p>
+                </div>
+            </div>
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="aoicn-production animate-svg" viewBox="0 0 64 64" id="9c60803b26798fd29de9d8fada79e10d"><path fill="none" stroke="#E82626" stroke-width="2" d="M41.1 55.3L54 52l-2.5-4.3 9.5-9.3-4.3-2.5 3.6-12.8h-5l-3.3-13-4.3 2.5-9.3-9.5-2.6 4.3L23 3.8v5l-12.9 3.3 2.5 4.3-9.5 9.3 4.3 2.6-3.6 12.8h5L12.1 54l4.3-2.5 9.3 9.5 2.5-4.3L41 60.3"></path><path fill="none" stroke="#E82626" stroke-width="2" d="M32 17c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Производим</h3>
+                    <p class="advantage__descr">Автоматика и&nbsp;опытный персонал гарантируют точность раскроя
+                        до&nbsp;0,1&nbsp;мм и&nbsp;четкое соблюдение технологии производства</p>
+                </div>
+            </div>
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="anicn-complete animate-svg" viewBox="0 0 64 64" id="9a33e9884abdd15319c3e1ffea25a389"><path fill="none" stroke="#EDB500" stroke-width="2" d="M22 26l10 10 22-22v-4H10v44h44V21"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Комплектуем</h3>
+                    <p class="advantage__descr">Фурнитура, столешницы, встроенная техника и&nbsp;освещение:
+                        подбираем детали согласно вашему запросу</p>
+                </div>
+            </div>
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="abicn-delivery animate-svg" viewBox="0 0 64 64" id="0f7b410c73635f94b1109aad0f689121"><path fill="none" stroke="#BD10E0" stroke-width="2" d="M5 44H1V12h36c1.7 0 3 1.3 3 3v29m0-26h11l12 12v14h-4"></path><path fill="none" stroke="#BD10E0" d="M51 43.5c.3 0 .5.2.5.5s-.2.5-.5.5-.5-.2-.5-.5.2-.5.5-.5"></path><path fill="none" stroke="#BD10E0" stroke-width="2" d="M51 38c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6M0 34h40"></path><path fill="none" stroke="#BD10E0" stroke-width="2" stroke-linecap="square" d="M1 54h62"></path><path fill="none" stroke="#BD10E0" stroke-width="2" d="M21 44h22m-30-6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6"></path><path fill="none" stroke="#BD10E0" d="M13 43.5c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Доставляем</h3>
+                    <p class="advantage__descr">В&nbsp;удобное для вас время мы&nbsp;доставим новую кухню точно
+                        по&nbsp;адресу и&nbsp;бережно поднимем на&nbsp;нужный этаж</p>
+                </div>
+            </div>
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ajicn-install animate-svg" viewBox="0 0 64 64" id="58b2a6fba0e6e5435fcb046eeef9ca07"><path fill="none" stroke="#C42F58" stroke-width="2" d="M3 46.7v.2C2.9 48.6 4.2 50 5.9 50h6.3c1.7 0 3.5-1.4 3.9-3.1l2.7-11.1c.3-1.1.7-2.8 1.9-2.8H33c1.6 0 2.9-1.3 2.9-2.8V16.8c0-1.6-1.3-2.8-2.8-2.8H11.3c-4.9 0-6.3 3.1-6.6 6.6 0 0-.6 14.2-1.4 23.4m38.6-15.5h-6m0-10h6m0-2h8c3.9 0 7 3.1 7 7s-3.1 7-7 7h-8v-14zm15 7H62"></path><path fill="none" stroke="#C42F58" stroke-width="2" d="M18.6 36.8h5.5c1.1 0 1.9-.9 1.9-1.9V33M12 18c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Собираем</h3>
+                    <p class="advantage__descr">Наши мастера работают уверенно, потому что знают особенности
+                        каждой детали, включая фурнитуру и&nbsp;электрику</p>
+                </div>
+            </div>
+            <div class="advantages__col">
+                <div class="advantage advantages__item">
+                    <div class="advantage__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="acicn-guarantee animate-svg" viewBox="0 0 64 64" id="0f7f7e1c02964c6157a0455e4116cb6e"><path fill="none" stroke="#7ED321" stroke-width="2" d="M12 13.8l.3-2.1c7.7.9 15-2.7 18.2-4.6l1.5-.9 1.5.9C36.7 9 44 12.7 51.7 11.7c1.8 15 8.8 33.4-15.3 44.4l-2.1.9c-.6.3-2 .8-2 .8l-.3.2-.2-.2s-1.4-.5-2-.8l-2.1-.9C6 46.1 9.5 30.2 11.7 16.2"></path><path fill="none" stroke="#7ED321" stroke-width="2" d="M19.4 30.7l6.6 6.7 18.5-13.6"></path></svg>
+                    </div>
+                    <h3 class="advantage__name">Гарантируем</h3>
+                    <p class="advantage__descr">Мы&nbsp;даем гарантию 24 месяца на&nbsp;всю кухонную мебель, потому
+                        что уверены в&nbsp;качестве своей продукции</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="instruction">
+    <h2 class="instruction__title">До&nbsp;новой кухни — один клик</h2>
+    <div class="instruction__wrapper">
+        <div class="instruction__col">
+            <div class="instruction-step">
+                <div class="instruction-step__num instruction-step__num_blue">1</div>
+                <div class="instruction-step__text">
+                    <h3 class="instruction-step__title">Вызвать дизайнера</h3>
+                    <p class="instruction-step__descr">выезд, замер, проект&nbsp;— <br>бесплатно</p>
+                </div>
+            </div>
+        </div>
+        <div class="instruction__col">
+            <div class="instruction-step">
+                <div class="instruction-step__num instruction-step__num_red">2</div>
+                <div class="instruction-step__text">
+                    <h3 class="instruction-step__title">Согласовать проект</h3>
+                    <p class="instruction-step__descr">дизайнер предложит <br>оптимальную планировку</p>
+                </div>
+            </div>
+        </div>
+        <div class="instruction__col">
+            <div class="instruction-step">
+                <div class="instruction-step__num instruction-step__num_yellow">3</div>
+                <div class="instruction-step__text">
+                    <h3 class="instruction-step__title">Внести предоплату</h3>
+                    <p class="instruction-step__descr">картой или наличными, <br>беспроцентной рассрочкой</p>
+                </div>
+            </div>
+        </div>
+        <div class="instruction__col">
+            <div class="instruction-step">
+                <div class="instruction-step__num instruction-step__num_vinous step__num">4</div>
+                <div class="instruction-step__text">
+                    <h3 class="instruction-step__title">Получить кухню</h3>
+                    <p class="instruction-step__descr">через 30 дней кухня <br>будет готова к&nbsp;монтажу</p>
+                </div>
+            </div>
+        </div>
+        <div class="instruction__text">И&nbsp;всё это не&nbsp;выходя из&nbsp;дома</div>
+    </div>
+    <div class="index-hr">
+    <a href="/call" class="pjax d-block btn-index" style="width: 300px">ВЫЗВАТЬ ДИЗАЙНЕРА</a>
+    </div>
+    <p class="call__note">Выезд, замер и проект — <span class="call__accent">бесплатно</span></p>
+</div>
+<p class="seo container">
+    Мы разработали методы, которые позволяют снизить цены на продукцию, не ухудшая ее качество. Для этого мы улучшили работу в каждом из наших производственных цехов, создали собственную службу доставки и отдел контроля качества продукции. Мы обнаружили, что контроль за всеми процессами производства самостоятельно не только полезен для обеспечения высокого качества продукции, но и экономически выгоден.  Дополнительная информация: Оптимизация производственных процессов - это один из ключевых методов снижения затрат на производство продукции. Она включает в себя рационализацию технологических процессов, улучшение качества сырья и материалов, автоматизацию и механизацию производства, а также оптимизацию логистических процессов. Все это позволяет снизить затраты на производство и повысить эффективность бизнеса.
+</p>
 <div class="index-hr">
     <a href="/call" class="pjax d-block btn-index" style="width: 300px">УЗНАТЬ ПОДРОБНОСТИ</a>
 </div>
@@ -249,69 +301,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <br>
 <br>
-<!---->
-<div class="h2 header_shadow text-center">Этапы работы</div>
-<div class="index-icon">
-    <div class="d-flex flex-row justify-content-center">
-        <div class="icon-block2">
-            <div class="num">1</div>
-            <img src="/img/new-icon/1design.png" alt="">
-            <p>
-                Пригласите дизайнера в удобное для вас время. Это совершенно бесплатно
-            </p>
-            <a href="#design" class="btn btn-zamer" style="width: 14em">пригласить дизайнера</a>
-        </div>
-
-        <div class="icon-block2">
-            <div class="num">2</div>
-            <img src="/img/new-icon/2zamer.png" alt="">
-            <i class="h3 header_shadow">ЗАМЕР</i>
-            <p>
-                Дизайнер-проектировщик, измерит помещение, выслушает ваши пожелания, и подскажет, как совместить в кухне
-                уют с функциональностью
-            </p>
-        </div>
-
-        <div class="icon-block2">
-            <div class="num">3</div>
-            <img src="/img/new-icon/33d-modeling.png" alt="">
-            <i class="h3 header_shadow">3D-ПРОЕКТ</i>
-            <p>
-                Узнайте, как будет выглядеть ваша кухня благодаря 3д-проекту гарнитура, сделанному по вашим размерам
-            </p>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row justify-content-center">
-        <div class="icon-block2">
-            <div class="num">4</div>
-            <img src="/img/new-icon/4repair.png" alt="">
-            <i class="h3 header_shadow">ИЗГОТОВЛЕНИЕ</i>
-            <p>
-                Ваша кухня изготавливается за срок до 50 дней и до момента доставки хранится на складе, что гарантирует
-                её целостность.
-            </p>
-        </div>
-
-        <div class="icon-block2">
-            <div class="num">5</div>
-            <img src="/img/new-icon/5delivery.png" alt="">
-            <i class="h3 header_shadow">ДОСТАВКА</i>
-            <p>
-                Доставка в назначенный срок и подъём на этаж. Об этом вы предварительно договоритесь с нашим менеджером.
-            </p>
-        </div>
-
-        <div class="icon-block2">
-            <div class="num">6</div>
-            <img src="/img/new-icon/6repair.png" alt="">
-            <i class="h3 header_shadow">СБОРКА</i>
-            <p>
-                Монтаж кухни профессиональной бригадой сборщиков.
-            </p>
-        </div>
-    </div>
-</div>
 <div class="calc d-flex flex-row justify-content-center flex-wrap">
     <div>
     <span class="h1 header_shadow">Экспресс расчет<br>

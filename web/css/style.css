@@ -1129,3 +1129,316 @@ a[href="/contact"]:hover{
     width: 600px;
     height: 450px;
 }
+/* новые иконки привезем-соберем */
+.advantages{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    color: #2c303e;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 1000px;
+}
+
+.advantages__title{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: #414551;
+    letter-spacing: -0.03em;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.advantages__items{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #2c303e;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.advantages__wrapper{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #2c303e;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.advantages__col{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #2c303e;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin-bottom: 50px;
+    max-width: 320px;
+    padding: 0 20px;
+    width: 33.333%;
+}
+
+.advantage advantages__item{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+    color: #2c303e;
+    margin: 0 auto;
+    max-width: none;
+}
+
+.advantage__icon{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    color: #2c303e;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+}
+
+.advantage__name{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    color: #2c303e;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.advantage__descr{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+    color: #2c303e;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.25;
+}
+/* конец новые иконки привезем-соберем */
+/* иконки оплаты */
+.footer-payment__list{
+    margin: -1em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-payment__item{
+    margin: 1em;
+}
+/* конец иконки оплаты */
+/*  */
+.instruction{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: #414551;
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 1000px;
+}
+.instruction__title{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: #414551;
+    letter-spacing: -0.03em;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.instruction__wrapper{
+    color: #414551;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.instruction__col{
+    color: #414551;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    width: 25%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.instruction-step{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #414551;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    display: flex;
+    text-align: left;
+}
+
+.instruction-step__num {
+    font-size: 20px;
+    line-height: 32px;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.instruction-step__num {
+    margin: -10px 8px 0 0;
+}
+
+.instruction-step__num_blue {
+    color: #00b2e7;
+}
+
+.step__num_red {
+    color: #e82606;
+}
+
+.instruction-step__num_yellow {
+    color: #efc600;
+}
+
+.instruction-step__num_vinous {
+    color: #c02a56;
+}
+
+.instruction-step__text{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #414551;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.instruction-step__title{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #414551;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.instruction-step__descr{
+    font-family: Decima, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    color: #414551;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.285;
+}
+
+.call__note{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+.call__accent{
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    padding: 0 4px 1px;
+    z-index: 1;
+}
+
+.call__accent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffd200;
+    z-index: -1;
+    transform: skewX(-5deg);
+}
+/*  */
+.seo {
+    font-size: 18px;
+    line-height: 1.33333;
+    padding: 0 20px;
+}
