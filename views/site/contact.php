@@ -10,7 +10,7 @@ $this->title = 'Call';
 <?php
 Modal::begin([
     'id' => 'mail-f',
-    'title' => '<h3>Отправка Email</h3>',
+    'title' => '<h3>Связаться с нами</h3>',
 ]);
 ?>
 
@@ -34,7 +34,9 @@ Modal::begin([
 
 <?= $form->field($model, 'email')->input('email', ['class' => 'index-field', 'tabindex' => '2', 'placeholder' => 'E-mail'])->label(false) ?>
 
-<?= $form->field($model, 'subject')->textInput(['class' => 'index-field', 'tabindex' => '3', 'placeholder' => 'тема'])->label(false) ?>
+<input type="hidden" name="ContactForm[subject]" value="Сообщение с сайта s-solo.ru">
+
+<?php //= $form->field($model, 'subject')->textInput(['class' => 'index-field', 'tabindex' => '3', 'placeholder' => 'тема'])->label(false) ?>
 
 <?= $form->field($model, 'body')->textarea(['rows' => 6, 'tabindex' => '4', 'placeholder' => 'Текст сообщения'])->label(false) ?>
 
