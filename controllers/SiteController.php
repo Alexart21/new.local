@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+
 //use yii\helpers\Html;
 use app\models\ContactForm;
 use app\models\Content;
@@ -12,6 +13,7 @@ use app\models\IndexForm;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 class SiteController extends Controller
 {
@@ -68,12 +70,29 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+
         $request = Yii::$app->request;
         $indexForm = new IndexForm();
-        if ($request->isAjax && $request->isPost){
-//            die('here1');
-            if($indexForm->load($request->post()) && $indexForm->validate()) {
-//                die('here2');
+        if ($request->isPost) {
+            if ($indexForm->load($request->post()) && $indexForm->validate()) {
+//                die('here');
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                // проверка ReCaptcha V3
+                $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+                $recaptcha_secret = Yii::$app->params['secretV3'];
+                $value = $_POST['reCaptcha'];
+                $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $value);
+                $recaptcha = json_decode($recaptcha);
+                $score = $recaptcha->score;
+                $result = $score > 0.5 ?? false;
+                if (!$result) {
+                    $response = [
+                        'success' => false,
+                        'msg' => 'ReCaptcha error'
+                    ];
+                    return $response;
+                }
+//                die('her blin2');
                 $subject = 'Обратный звонок';
                 $name = $indexForm->name ? mb_ucfirst($indexForm->name) : null;
                 $tel = $indexForm->tel ? $indexForm->tel : null;
@@ -86,16 +105,21 @@ class SiteController extends Controller
                     ->setSubject($subject)
                     ->setHtmlBody($body)
                     ->send();
+
                 if ($success) {
-                    $msg = '<h3 style="color:green;text-align: center">Спасибо,' . $name . '  ожидайте звонка!</h3>';
+                    $response = [
+                        'success' => true,
+                        'msg' => 'ok'
+                    ];
                 } else {
-                    $msg = '<h3 style="color:red;text-align: center">Ошибка !</h3>';
+                    $response = [
+                        'success' => false,
+                        'msg' => 'Email error'
+                    ];
                 }
-
-                return $this->renderAjax('zvonok_ok', compact('name', 'tel', 'msg', 'body'));
-                }
+                return $response;
             }
-
+        }
         $model = new Content();
         $data = $model->getContent();
 
@@ -117,7 +141,7 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             $user = strtolower(Yii::$app->user->identity->username);
-            if ($user === Yii::$app->params['admin']){
+            if ($user === Yii::$app->params['admin']) {
                 return $this->redirect('/admin');
             }
             return $this->goBack();
@@ -150,11 +174,35 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request;
         $model = new ContactForm();
-        if ($request->isAjax && $request->isPost) {
+        if ($request->isPost) {
             if ($model->load($request->post()) && $model->validate()) {
-                $model->contactSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
+                $subject = $model->subject ? clr_get($model->subject) : 'Без темы';
+                $name = mb_ucfirst(clr_get($model->name));
+                $body = 'Вам пишет <b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b><br>' . clr_get($model->email) . '<br><br><div style="font-style: italic">' . nl2br(clr_get($model->body)) . '</div>' .
+                    '<br><br>Сообщение отправлено с сайта <b>https://www.s-solo.ru</b>';
+                $success = Yii::$app->mailer->compose()// Yii::$app->params['adminEmail'] [clr_get($this->email) => $name]
+                ->setTo('mail@s-solo.ru')
+                    ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
+                    ->setReplyTo([clr_get($model->email) => $name])
+                    ->setSubject($subject)
+                    ->setHtmlBody($body)
+                    ->send();
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($success) {
+                    $response = [
+                        'success' => true,
+                        'msg' => 'ok'
+                    ];
+                } else {
+                    $response = [
+                        'success' => false,
+                        'msg' => 'Email error'
+                    ];
+                }
+                return $response;
             }
         }
+
         //  выводим контактную форму
         return $this->renderAjax('contact', ['model' => $model]);
     }
@@ -182,7 +230,7 @@ class SiteController extends Controller
     /* Политика конфедициальности */
     public function actionPolitic()
     {
-       return $this->renderFile(__DIR__ . '/../views/site/politic.php');
+        return $this->renderFile(__DIR__ . '/../views/site/politic.php');
     }
 
     /* Вакансии */
@@ -198,11 +246,36 @@ class SiteController extends Controller
 
         $request = Yii::$app->request;
         $model = new callForm();
-        if ($request->isAjax && $request->isPost){
-                if ($model->load($request->post()) && $model->validate()) {
-                    $msg = $model->callSend(); // валидация, отправка почты, вывод сообщения об успехе(ошибке) и завершение скрипта
-                    die($msg);
+        if ($request->isPost) {
+            if ($model->load($request->post()) && $model->validate()) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                $subject = 'Просьба перезвонить';
+                $name = clr_get(mb_ucfirst($model->name));
+                $tel = clr_get($model->tel);
+
+                $body = 'Клиент &nbsp;<b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b>&nbsp; просит перезвонить.<br>' .
+                    'Тел. :&nbsp;&nbsp;<b style="font-size: 110%;>' . $tel . '</b>' .
+                    '<br><br>Сообщение отправлено с сайта <b>https://www.s-solo.ru</b>';
+                $success = Yii::$app->mailer->compose()
+                    ->setTo('mail@s-solo.ru')
+                    ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
+                    ->setSubject($subject)
+                    ->setHtmlBody($body)
+                    ->send();
+
+                if ($success) {
+                    $response = [
+                        'success' => true,
+                        'msg' => 'ok'
+                    ];
+                } else {
+                    $response = [
+                        'success' => false,
+                        'msg' => 'Email error'
+                    ];
                 }
+                return $response;
+            }
 
         }
         // выводим форму  в модальном окне
@@ -218,10 +291,10 @@ class SiteController extends Controller
         header('Content-Disposition: inline; filename="catalog.pdf"');
         header('Cache-Control: private, max-age=0, must-revalidate');
         header('Pragma: public');
-        ini_set('zlib.output_compression','0');
+        ini_set('zlib.output_compression', '0');
 
-       $pdf = file_get_contents(__DIR__ . '/../web/files/catalog.pdf');
-       die($pdf);
+        $pdf = file_get_contents(__DIR__ . '/../web/files/catalog.pdf');
+        die($pdf);
     }
 
 }

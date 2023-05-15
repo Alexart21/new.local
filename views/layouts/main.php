@@ -265,6 +265,8 @@ AppAsset::register($this);
         $('[href="/contact"]').tooltip();
     });
 </script>
+<script async src="https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC"></script>
+<script src="/js/jquery.toaster.js"></script>
 </body>
 </html>
 <?php //Spaceless::end()?>

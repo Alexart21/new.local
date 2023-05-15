@@ -1442,3 +1442,7 @@ a[href="/contact"]:hover{
     line-height: 1.33333;
     padding: 0 20px;
 }
+
+.grecaptcha-badge {
+    visibility: hidden;
+}

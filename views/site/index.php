@@ -33,7 +33,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="agicn-project animate-svg" viewBox="0 0 64 64" id="3d33687ffc9fba719e0932932be7a369"><path fill="none" stroke="#00B4EB" stroke-width="2" d="M48 62H13c-1.7 0-3-1.3-3-3V5c0-1.7 1.3-3 3-3h38c1.7 0 3 1.3 3 3v54c0 1.7-1.3 3-3 3h-1"></path><path fill="none" stroke="#00B4EB" stroke-width="2" d="M45 6v3c0 1.7-1.3 3-3 3H22c-1.7 0-3-1.3-3-3V6m6.5 1h14M21 23h22m-22 6h22m-22 6h22m-22 6h12m9 4c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="agicn-project animate-svg" viewBox="0 0 64 64"
+                             id="3d33687ffc9fba719e0932932be7a369">
+                            <path fill="none" stroke="#00B4EB" stroke-width="2"
+                                  d="M48 62H13c-1.7 0-3-1.3-3-3V5c0-1.7 1.3-3 3-3h38c1.7 0 3 1.3 3 3v54c0 1.7-1.3 3-3 3h-1"></path>
+                            <path fill="none" stroke="#00B4EB" stroke-width="2"
+                                  d="M45 6v3c0 1.7-1.3 3-3 3H22c-1.7 0-3-1.3-3-3V6m6.5 1h14M21 23h22m-22 6h22m-22 6h22m-22 6h12m9 4c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Проектируем</h3>
                     <p class="advantage__descr">Делаем замеры и&nbsp;создаем индивидуальный дизайн-проект
@@ -43,7 +49,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="aoicn-production animate-svg" viewBox="0 0 64 64" id="9c60803b26798fd29de9d8fada79e10d"><path fill="none" stroke="#E82626" stroke-width="2" d="M41.1 55.3L54 52l-2.5-4.3 9.5-9.3-4.3-2.5 3.6-12.8h-5l-3.3-13-4.3 2.5-9.3-9.5-2.6 4.3L23 3.8v5l-12.9 3.3 2.5 4.3-9.5 9.3 4.3 2.6-3.6 12.8h5L12.1 54l4.3-2.5 9.3 9.5 2.5-4.3L41 60.3"></path><path fill="none" stroke="#E82626" stroke-width="2" d="M32 17c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="aoicn-production animate-svg" viewBox="0 0 64 64"
+                             id="9c60803b26798fd29de9d8fada79e10d">
+                            <path fill="none" stroke="#E82626" stroke-width="2"
+                                  d="M41.1 55.3L54 52l-2.5-4.3 9.5-9.3-4.3-2.5 3.6-12.8h-5l-3.3-13-4.3 2.5-9.3-9.5-2.6 4.3L23 3.8v5l-12.9 3.3 2.5 4.3-9.5 9.3 4.3 2.6-3.6 12.8h5L12.1 54l4.3-2.5 9.3 9.5 2.5-4.3L41 60.3"></path>
+                            <path fill="none" stroke="#E82626" stroke-width="2"
+                                  d="M32 17c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Производим</h3>
                     <p class="advantage__descr">Автоматика и&nbsp;опытный персонал гарантируют точность раскроя
@@ -53,7 +65,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="anicn-complete animate-svg" viewBox="0 0 64 64" id="9a33e9884abdd15319c3e1ffea25a389"><path fill="none" stroke="#EDB500" stroke-width="2" d="M22 26l10 10 22-22v-4H10v44h44V21"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="anicn-complete animate-svg" viewBox="0 0 64 64"
+                             id="9a33e9884abdd15319c3e1ffea25a389">
+                            <path fill="none" stroke="#EDB500" stroke-width="2"
+                                  d="M22 26l10 10 22-22v-4H10v44h44V21"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Комплектуем</h3>
                     <p class="advantage__descr">Фурнитура, столешницы, встроенная техника и&nbsp;освещение:
@@ -63,7 +79,21 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="abicn-delivery animate-svg" viewBox="0 0 64 64" id="0f7b410c73635f94b1109aad0f689121"><path fill="none" stroke="#BD10E0" stroke-width="2" d="M5 44H1V12h36c1.7 0 3 1.3 3 3v29m0-26h11l12 12v14h-4"></path><path fill="none" stroke="#BD10E0" d="M51 43.5c.3 0 .5.2.5.5s-.2.5-.5.5-.5-.2-.5-.5.2-.5.5-.5"></path><path fill="none" stroke="#BD10E0" stroke-width="2" d="M51 38c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6M0 34h40"></path><path fill="none" stroke="#BD10E0" stroke-width="2" stroke-linecap="square" d="M1 54h62"></path><path fill="none" stroke="#BD10E0" stroke-width="2" d="M21 44h22m-30-6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6"></path><path fill="none" stroke="#BD10E0" d="M13 43.5c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="abicn-delivery animate-svg" viewBox="0 0 64 64"
+                             id="0f7b410c73635f94b1109aad0f689121">
+                            <path fill="none" stroke="#BD10E0" stroke-width="2"
+                                  d="M5 44H1V12h36c1.7 0 3 1.3 3 3v29m0-26h11l12 12v14h-4"></path>
+                            <path fill="none" stroke="#BD10E0"
+                                  d="M51 43.5c.3 0 .5.2.5.5s-.2.5-.5.5-.5-.2-.5-.5.2-.5.5-.5"></path>
+                            <path fill="none" stroke="#BD10E0" stroke-width="2"
+                                  d="M51 38c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6M0 34h40"></path>
+                            <path fill="none" stroke="#BD10E0" stroke-width="2" stroke-linecap="square"
+                                  d="M1 54h62"></path>
+                            <path fill="none" stroke="#BD10E0" stroke-width="2"
+                                  d="M21 44h22m-30-6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6"></path>
+                            <path fill="none" stroke="#BD10E0"
+                                  d="M13 43.5c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Доставляем</h3>
                     <p class="advantage__descr">В&nbsp;удобное для вас время мы&nbsp;доставим новую кухню точно
@@ -73,7 +103,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ajicn-install animate-svg" viewBox="0 0 64 64" id="58b2a6fba0e6e5435fcb046eeef9ca07"><path fill="none" stroke="#C42F58" stroke-width="2" d="M3 46.7v.2C2.9 48.6 4.2 50 5.9 50h6.3c1.7 0 3.5-1.4 3.9-3.1l2.7-11.1c.3-1.1.7-2.8 1.9-2.8H33c1.6 0 2.9-1.3 2.9-2.8V16.8c0-1.6-1.3-2.8-2.8-2.8H11.3c-4.9 0-6.3 3.1-6.6 6.6 0 0-.6 14.2-1.4 23.4m38.6-15.5h-6m0-10h6m0-2h8c3.9 0 7 3.1 7 7s-3.1 7-7 7h-8v-14zm15 7H62"></path><path fill="none" stroke="#C42F58" stroke-width="2" d="M18.6 36.8h5.5c1.1 0 1.9-.9 1.9-1.9V33M12 18c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ajicn-install animate-svg" viewBox="0 0 64 64"
+                             id="58b2a6fba0e6e5435fcb046eeef9ca07">
+                            <path fill="none" stroke="#C42F58" stroke-width="2"
+                                  d="M3 46.7v.2C2.9 48.6 4.2 50 5.9 50h6.3c1.7 0 3.5-1.4 3.9-3.1l2.7-11.1c.3-1.1.7-2.8 1.9-2.8H33c1.6 0 2.9-1.3 2.9-2.8V16.8c0-1.6-1.3-2.8-2.8-2.8H11.3c-4.9 0-6.3 3.1-6.6 6.6 0 0-.6 14.2-1.4 23.4m38.6-15.5h-6m0-10h6m0-2h8c3.9 0 7 3.1 7 7s-3.1 7-7 7h-8v-14zm15 7H62"></path>
+                            <path fill="none" stroke="#C42F58" stroke-width="2"
+                                  d="M18.6 36.8h5.5c1.1 0 1.9-.9 1.9-1.9V33M12 18c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Собираем</h3>
                     <p class="advantage__descr">Наши мастера работают уверенно, потому что знают особенности
@@ -83,7 +119,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="advantages__col">
                 <div class="advantage advantages__item">
                     <div class="advantage__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="acicn-guarantee animate-svg" viewBox="0 0 64 64" id="0f7f7e1c02964c6157a0455e4116cb6e"><path fill="none" stroke="#7ED321" stroke-width="2" d="M12 13.8l.3-2.1c7.7.9 15-2.7 18.2-4.6l1.5-.9 1.5.9C36.7 9 44 12.7 51.7 11.7c1.8 15 8.8 33.4-15.3 44.4l-2.1.9c-.6.3-2 .8-2 .8l-.3.2-.2-.2s-1.4-.5-2-.8l-2.1-.9C6 46.1 9.5 30.2 11.7 16.2"></path><path fill="none" stroke="#7ED321" stroke-width="2" d="M19.4 30.7l6.6 6.7 18.5-13.6"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="acicn-guarantee animate-svg" viewBox="0 0 64 64"
+                             id="0f7f7e1c02964c6157a0455e4116cb6e">
+                            <path fill="none" stroke="#7ED321" stroke-width="2"
+                                  d="M12 13.8l.3-2.1c7.7.9 15-2.7 18.2-4.6l1.5-.9 1.5.9C36.7 9 44 12.7 51.7 11.7c1.8 15 8.8 33.4-15.3 44.4l-2.1.9c-.6.3-2 .8-2 .8l-.3.2-.2-.2s-1.4-.5-2-.8l-2.1-.9C6 46.1 9.5 30.2 11.7 16.2"></path>
+                            <path fill="none" stroke="#7ED321" stroke-width="2" d="M19.4 30.7l6.6 6.7 18.5-13.6"></path>
+                        </svg>
                     </div>
                     <h3 class="advantage__name">Гарантируем</h3>
                     <p class="advantage__descr">Мы&nbsp;даем гарантию 24 месяца на&nbsp;всю кухонную мебель, потому
@@ -135,12 +176,19 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <div class="instruction__text">И&nbsp;всё это не&nbsp;выходя из&nbsp;дома</div>
     </div>
     <div class="index-hr">
-    <a href="/call" class="pjax d-block btn-index" style="width: 300px">ВЫЗВАТЬ ДИЗАЙНЕРА</a>
+        <a href="/call" class="pjax d-block btn-index" style="width: 300px">ВЫЗВАТЬ ДИЗАЙНЕРА</a>
     </div>
     <p class="call__note">Выезд, замер и проект — <span class="call__accent">бесплатно</span></p>
 </div>
 <p class="seo container">
-    Мы разработали методы, которые позволяют снизить цены на продукцию, не ухудшая ее качество. Для этого мы улучшили работу в каждом из наших производственных цехов, создали собственную службу доставки и отдел контроля качества продукции. Мы обнаружили, что контроль за всеми процессами производства самостоятельно не только полезен для обеспечения высокого качества продукции, но и экономически выгоден.  Дополнительная информация: Оптимизация производственных процессов - это один из ключевых методов снижения затрат на производство продукции. Она включает в себя рационализацию технологических процессов, улучшение качества сырья и материалов, автоматизацию и механизацию производства, а также оптимизацию логистических процессов. Все это позволяет снизить затраты на производство и повысить эффективность бизнеса.
+    Мы разработали методы, которые позволяют снизить цены на продукцию, не ухудшая ее качество. Для этого мы улучшили
+    работу в каждом из наших производственных цехов, создали собственную службу доставки и отдел контроля качества
+    продукции. Мы обнаружили, что контроль за всеми процессами производства самостоятельно не только полезен для
+    обеспечения высокого качества продукции, но и экономически выгоден. Дополнительная информация: Оптимизация
+    производственных процессов - это один из ключевых методов снижения затрат на производство продукции. Она включает в
+    себя рационализацию технологических процессов, улучшение качества сырья и материалов, автоматизацию и механизацию
+    производства, а также оптимизацию логистических процессов. Все это позволяет снизить затраты на производство и
+    повысить эффективность бизнеса.
 </p>
 <div class="index-hr">
     <a href="/call" class="pjax d-block btn-index" style="width: 300px">УЗНАТЬ ПОДРОБНОСТИ</a>
@@ -219,48 +267,55 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <span class="h3 underline-2">
                     1  КАТАЛОГ КУХОННЫХ ГАРНИТУРОВ
             </span><br>
-            Мы предполагаем, что принципиальный интерес к выбору кухонного гарнитура у Вас есть, поэтому предлагаем
-            сделать первый легкий шаг, и ознакомиться с каталогом кухонных гарнитуров разной стилистики, предлагаемых
-            компанией МебельМакс.
-
-            Вы обязательно найдете кухню, от которой внутри Вас, кто-то сильно закричит «хочу!»
+            Мы полагаем, что Вы проявляете особый интерес к выбору кухонной мебели, поэтому предлагаем Вам ознакомиться
+            с каталогом кухонных гарнитуров различных стилей, которые предлагает компания "Соло мебель". В каталоге Вы
+            сможете найти множество вариантов кухонь, которые могут вызвать у Вас желание приобрести их. Кухонный
+            гарнитур - это набор мебели, который включает в себя кухонные шкафы, ящики, полки и другие элементы,
+            необходимые для хранения посуды, продуктов и кухонных принадлежностей. Выбор кухонной мебели зависит от
+            многих факторов, таких как стиль интерьера, размер помещения, функциональность и личные предпочтения.
+            Компания "Соло мебель" предлагает широкий выбор кухонных гарнитуров различных стилей и ценовых категорий,
+            чтобы каждый клиент мог найти оптимальный вариант для своей кухни.
         </div>
         <div class="solo-text-block">
             <span class="h3 underline-2">
                     2  ПОДРОБНАЯ КОНСУЛЬТАЦИЯ
                 </span><br>
-            Менеджер, который свяжется с Вами, проконсультирует Вас по всем первичным интересующим вопросам.
-            После этой консультации Вы будете знать о кухонных гарнитурах от А до Я.
+            Наш менеджер свяжется с вами, чтобы ответить на все ваши вопросы,
+            связанные с кухонными гарнитурами. Он поможет вам разобраться во всех деталях,
+            чтобы вы могли принять информированное решение. Мы уверены, что после консультации вы будете знать все,
+            что нужно знать о кухонных гарнитурах, от начала до конца. Кухонные гарнитуры - это наборы мебели,
+            которые используются для хранения посуды, продуктов и других кухонных принадлежностей. Они могут быть
+            выполнены из
+            различных материалов, таких как дерево, металл, пластик и стекло, и доступны в разных стилях и дизайнах.
+            При выборе кухонной гарнитуры важно учитывать не только ее внешний вид, но и ее функциональность, качество
+            материалов и
+            соответствие вашим потребностям.
         </div>
         <div class="solo-text-block">
             <span class="h3 underline-2">3  ВЫЕЗД ДИЗАЙНЕРА</span><br>
-            В удобное для Вас время к Вам приедет один из дизайнеров. Вы покажете ему свой интерьер, расскажете
-            пожелания, особенности, заполните анкету. Дизайнер снимет размеры помещения.
-            Сделает фотографии помещения. Проконсультирует Вас по возникшим вопросам. Посоветует разные планировки и
-            дизайн сразу же на месте. После этой встречи, Вы точно будете знать что хотите, в каком дизайне и каких
-            размеров. Осталось это воплотить в 3-D визуализацию, что бы окончательно убедиться. А это следующий шаг…
+            Один из дизайнеров приедет к вам в удобное время. Вы покажете ему свой интерьер, расскажете о ваших
+            пожеланиях и
+            особенностях, заполните анкету. Дизайнер снимет размеры помещения и сделает фотографии.
+            Он также ответит на ваши вопросы и предложит различные варианты планировки и дизайна на месте.
+            После этой встречи вы точно будете знать, что вы хотите, в каком дизайне и каких размерах.
+            Осталось только воплотить это в 3D-визуализацию, чтобы окончательно убедиться. Это будет следующим шагом.
+            Тема: процесс дизайна интерьера. В тексте описывается, что при заказе услуги дизайна интерьера,
+            дизайнер приезжает к клиенту, чтобы изучить помещение, выслушать пожелания клиента и предложить различные
+            варианты
+            дизайна.
+            После этого клиент может выбрать подходящий вариант и воплотить его в 3D-визуализацию.
         </div>
     </div>
 
     <div id="design" class="anchors"></div>
     <div class="zamer-form-block" data-scrollreveal="enter right and move 300px, wait 0.3s">
         <div class="h2 header_shadow" style="margin-bottom: -10px">Запишитесь на замер и получите подарок!</div>
-        <?php Pjax::begin([
-            'clientOptions' => [
-                'method' => 'POST',
-                'data-pjax-container' => '#form1-box',
-            ],
-            'id' => 'call',
-            'enablePushState' => false,
-            'formSelector' => '#zvonok-form',
-            'timeout' => 20000
-        ]);
-        ?>
-        <output id="form1-box"></output>
-        <?php Pjax::end(); ?>
-
         <?php $form = ActiveForm::begin([
-            'options' => ['id' => 'zvonok-form', 'data-pjax' => true],
+            'options' => [
+                'id' => 'zvonok-form',
+                'class' => 'index-form',
+                'onsubmit' => 'sendForm(this)'
+            ],
         ]);
         ?>
         <br>
@@ -269,7 +324,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
         <div class="h3">Тел:</div>
         <?= $form->field($indexForm, 'tel')->textInput()
-            ->widget(MaskedInput::className(), [
+            ->widget(MaskedInput::class, [
                 'name' => 'zamer',
                 'mask' => '+7 (999) - 999 - 99 - 99',
                 'options' => [
@@ -285,15 +340,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <br>
         <div class="h3">Удобное Вам время:</div>
         <input class="index-field" type="text" name="dop" tabindex="4" placeholder="напр. после 17-00">
+        <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
         <br>
         <br>
-        <?= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha2::class,
-            [
-                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
-            ]
-        ) ?>
-
         <button type="submit" class="btn btn-zamer">записаться на замер</button>
         <?php ActiveForm::end(); ?>
     </div>
@@ -335,38 +384,40 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</sup></span>
         </div>
         <div id="map"></div>
-            <script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27" type="text/javascript"></script>
-            <script>
-                window.addEventListener('load', () => {
-                    function init() {
-                        let myMap = new ymaps.Map("map", {
-                                // Координаты центра карты.
-                                center: [56.137656, 47.277821],
-                                zoom: 17
-                            }, {
-                                // searchControlProvider: 'yandex#search'
-                            }),
+        <script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27"
+                type="text/javascript"></script>
+        <script>
+            window.addEventListener('load', () => {
+                function init() {
+                    let myMap = new ymaps.Map("map", {
+                            // Координаты центра карты.
+                            center: [56.137656, 47.277821],
+                            zoom: 17
+                        }, {
+                            // searchControlProvider: 'yandex#search'
+                        }),
 
-                            // Создаем геообъект с типом геометрии "Точка".
-                            myGeoObject = new ymaps.GeoObject({
-                                // Описание геометрии.
-                                geometry: {
-                                    type: "Point",
-                                    coordinates: [56.137656, 47.277821],
-                                },
-                                // Свойства.
-                                properties: {
-                                    iconContent: 'Соло мебель в ТЦ МЕГА МОЛЛ',
-                                },
-                            }, {
-                                preset: "islands#redStretchyIcon",
-                            });
-                        myMap.geoObjects
-                            .add(myGeoObject)
-                    }
-                    ymaps.ready(init);
-                })
-            </script>
+                        // Создаем геообъект с типом геометрии "Точка".
+                        myGeoObject = new ymaps.GeoObject({
+                            // Описание геометрии.
+                            geometry: {
+                                type: "Point",
+                                coordinates: [56.137656, 47.277821],
+                            },
+                            // Свойства.
+                            properties: {
+                                iconContent: 'Соло мебель в ТЦ МЕГА МОЛЛ',
+                            },
+                        }, {
+                            preset: "islands#redStretchyIcon",
+                        });
+                    myMap.geoObjects
+                        .add(myGeoObject)
+                }
+
+                ymaps.ready(init);
+            })
+        </script>
     </div>
 </div>
 <!---->
@@ -381,22 +432,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <div class="h2 underline-red">ЗАПОЛНИТЕ КОРОТКУЮ АНКЕТУ</div>
     И уже через месяц наслаждайтесь приготовление блюд на новенькой кухне.
     <div class="">
-        <?php Pjax::begin([
-            'clientOptions' => [
-                'method' => 'POST',
-                'data-pjax-container' => '#credit-out',
-            ],
-            'id' => 'call',
-            'enablePushState' => false,
-            'formSelector' => '#credit-form',
-            'timeout' => 20000,
-        ]);
-        ?>
-        <output id="credit-out"></output>
-        <?php Pjax::end(); ?>
-
         <?php $form = ActiveForm::begin([
-            'options' => ['id' => 'credit-form', 'data-pjax' => true],
+            'options' => [
+                'id' => 'credit-form',
+                'class' => 'index-form',
+                'onsubmit' => 'sendForm(this)'
+            ],
         ]);
         ?>
         <div class="h3 text-left">Ваше имя:</div>
@@ -404,7 +445,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
         <div class="h3 text-left" style="margin-bottom: -15px">Тел:</div>
         <?= $form->field($indexForm, 'tel')->textInput()
-            ->widget(MaskedInput::className(), [
+            ->widget(MaskedInput::class, [
                 'name' => 'taxi',
                 'mask' => '+7 (999) - 999 - 99 - 99',
                 'options' => [
@@ -419,12 +460,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <br>
         <div class="h3 text-left">Желаемый ежемесячный платеж:</div>
         <input class="index-field" type="text" name="payments" placeholder="например 10 000">
-        <?= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha2::class,
-            [
-                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
-            ]
-        ) ?>
+        <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
+        <br>
         <br>
         <button type="submit" class="btn btn-zamer">оставить заявку</button>
         <?php ActiveForm::end(); ?>
@@ -555,22 +592,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="h3 text-center">Мы с радостью на них ответим</div>
 <div class="d-flex flex-row justify-content-center flex-wrap">
     <div class="vopros" data-scrollreveal="enter left and move 100px, wait 0.4s">
-        <?php Pjax::begin([
-            'clientOptions' => [
-                'method' => 'POST',
-                'data-pjax-container' => '#vopros-out',
-            ],
-            'id' => 'call',
-            'enablePushState' => false,
-            'formSelector' => '#vopros-form',
-            'timeout' => 20000,
-        ]);
-        ?>
-        <output id="vopros-out"></output>
-        <?php Pjax::end(); ?>
-
         <?php $form = ActiveForm::begin([
-            'options' => ['id' => 'vopros-form', 'data-pjax' => true],
+            'options' => [
+                'id' => 'vopros-form',
+                'class' => 'index-form',
+                'onsubmit' => 'sendForm(this)'
+            ],
         ]);
         ?>
         <div class="h3">Ваше имя:</div>
@@ -578,7 +605,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
         <div class="h3">Тел:</div>
         <?= $form->field($indexForm, 'tel')->textInput()
-            ->widget(MaskedInput::className(), [
+            ->widget(MaskedInput::class, [
                 'name' => 'taxi',
                 'mask' => '+7 (999) - 999 - 99 - 99',
                 'options' => [
@@ -587,14 +614,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 ],
             ]);
         ?>
-        <br>
-
-        <?= $form->field($indexForm, 'reCaptcha')->widget(
-            \himiklab\yii2\recaptcha\ReCaptcha2::class,
-            [
-                'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
-            ]
-        ) ?>
+        <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
         <button type="submit" class="btn btn-zamer">задать вопрос</button>
         <?php ActiveForm::end(); ?>
     </div>
@@ -630,32 +650,41 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <br>
     <br>
     <p>
-        Приготовление новых блюд, тихие семейные вечера на новой кухне - наслаждайтесь вместе с кухней от “МебельМакс”.
-        В основе нашей работы заложены определенные принципы: мы никогда не навязываем клиенту дополнительных услуг, не
-        предлагаем некачественные материалы, полностью погружаемся в желания и идеи заказчика. С нами вы сможете
-        воплотить в жизнь самые необычные идеи! Клиенты любят нас за то, что мы открыты к ним:
+        Компания "Соло мебель" предлагает создать уютную и функциональную кухню, где вы сможете готовить новые блюда и
+        проводить тихие семейные вечера. Они придерживаются определенных принципов работы, таких как никогда не
+        навязывать клиенту дополнительных услуг и не использовать некачественные материалы. Вместо этого они полностью
+        вникают в желания и идеи заказчика, чтобы помочь им воплотить самые необычные проекты. Компания открыта для
+        общения
+        с клиентами и готова помочь им воплотить все, что они задумали. Информация по теме: Кухня - это одно из самых
+        важных мест в доме, где мы готовим пищу, проводим время с семьей и друзьями. При выборе кухонной мебели и
+        дизайна важно учитывать не только внешний вид, но и функциональность, удобство и качество материалов.
+        Компании, которые специализируются на производстве кухонной мебели, могут помочь вам создать кухню, которая
+        будет отвечать всем вашим потребностям и желаниям.
     </p>
     <ul>
         <li>
-            Держим цены от производителя. Купить кухонный гарнитур — затратное мероприятие даже для решений
-            эконом-класса. Мы работаем без посредников, поэтому в «Solo мебель» можно купить кухню без наценок.
+            Наша компания "Solo мебель" предлагает кухонные гарнитуры по низким ценам, так как мы работаем напрямую с
+            производителем и не имеем посредников. Покупка кухонного гарнитура может быть дорогой, даже для тех, кто
+            выбирает эконом-класс. Однако, благодаря нашей политике без наценок, у нас всегда можно купить кухню по
+            доступной цене.
         </li>
         <li>
-            Предлагаем простые условия рассрочки. Покупка мебели в рассрочку (особенно если это кухня в Чебоксарах)
-            часто связана с бумажной волокитой. Оформляем рассрочку без участия банка, без справок о доходах и даже без
-            процентов.
+            Мы предлагаем легкие условия для оплаты в рассрочку. Когда дело касается покупки мебели в рассрочку,
+            особенно
+            если это кухня в Чебоксарах, часто возникает много бумажной волокиты. Однако, мы можем оформить рассрочку
+            без
+            участия банка, без предоставления справок о доходах и даже без начисления процентов.
         </li>
         <li>
-            Мы заботимся о клиентах, поэтому выкупаем старую кухню. Не продавайте и не выбрасывайте ваш гарнитур — при
-            оформлении заказа на кухню мы возьмём старый гарнитур в зачёт нового.
+            Мы не экономим на качестве и используем долговечные
+            фасады и австрийскую фурнитуру Blum, которые производит лидер на рынке.
         </li>
         <li>
-            Не экономим на качестве. Используем долговечные акриловые фасады и австрийскую фурнитуру Blum — продукцию
-            лидирующего на рынке производителя.
-        </li>
-        <li>
-            Даём гарантию. Мы настолько уверены в качестве наших гарнитуров, что предоставляем 10-летнюю гарантию на все
-            материалы и работу.
+            Мы также предоставляем гарантию на все материалы и работу, так как мы уверены в качестве наших гарнитуров.
+            Тема, связанная с этим текстом, - это производство и установка мебели. Компания, описанная в тексте,
+            использует высококачественные материалы и фурнитуру от лидирующих производителей,
+            чтобы создать долговечную мебель. Кроме того, они предоставляют гарантию на свою продукцию, что говорит о
+            доверии качеству своих гарнитуров.
         </li>
         <li>
             Мы не оставляем после себя мусора! Вы можете начинать пить чай уже через минуту после того, как мы покинем
@@ -708,22 +737,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             <div class="h2 underline underline-red" style="margin-bottom: -10px">Оставьте заявку на бесплатное такси до
                 <span class="solo">SOLO</span> мебель
             </div>
-            <?php Pjax::begin([
-                'clientOptions' => [
-                    'method' => 'POST',
-                    'data-pjax-container' => '#taxi-out',
-                ],
-                'id' => 'call',
-                'enablePushState' => false,
-                'formSelector' => '#taxi',
-                'timeout' => 20000
-            ]);
-            ?>
-            <output id="taxi-out"></output>
-            <?php Pjax::end(); ?>
-
             <?php $form = ActiveForm::begin([
-                'options' => ['id' => 'taxi', 'data-pjax' => true],
+                'options' => [
+                    'id' => 'taxi',
+                    'class' => 'index-form',
+                    'onsubmit' => 'sendForm(this)'
+                ],
             ]);
             ?>
             <div class="h3">Ваше имя:</div>
@@ -731,37 +750,69 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
             <div class="h3">Тел:</div>
             <?= $form->field($indexForm, 'tel')->textInput()
-                ->widget(MaskedInput::className(), [
+                ->widget(MaskedInput::class, [
                     'name' => 'taxi',
                     'mask' => '+7 (999) - 999 - 99 - 99',
                     'options' => [
                         'id' => 'mask4',
-                        'class' => 'index-field',
+                        'class' => 'index-field'
                     ],
                 ]);
             ?>
+            <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
             <br>
-            <?= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha2::class,
-                [
-                    'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
-                ]
-            ) ?>
-            <?php /*= $form->field($indexForm, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::class,
-                [
-                    'siteKey' => Yii::$app->params['siteKeyV3'],
-                    'action' => 'index',
-                ]
-            ) */ ?>
 
             <button type="submit" class="btn btn-zamer">оставить заявку</button>
-            <br>
-            <br>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
+<script>
+    function sendForm(form) {
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            $('#container_loading').show();
+            grecaptcha.ready(function () {
+                grecaptcha
+                    .execute("<?= Yii::$app->params['siteKeyV3']  ?>", {
+                        action: "post",
+                    })
+                    .then(async function (token) {
+                        /!* Все дальнейшие операции только после получения reCaptcha токена !!! *!/
+                        // все hidden инпуты с reCaptcha
+                        let inputs = document.getElementsByClassName("reCaptcha-field");
+                        inputs = Array.from(inputs);
+                        inputs.map((input) => {
+                            input.value = token;
+                        });
+                        let formData = new FormData(form);
+                        let response = await fetch("/", {
+                            method: 'POST',
+                            body: formData
+                        });
+                        if (response.ok) {
+                            result = await response.json();
+                            if (result.success) { // успешно
+                                $.toaster({
+                                    priority: 'success',
+                                    title: 'Спасибо, заявка принята!',
+                                    message: '',
+                                });
+                            }
+                        } else {
+                            $.toaster({
+                                priority: 'danger',
+                                title: 'Ошибка сервера!',
+                                message: ''
+                            });
+                        }
+                        $('#container_loading').hide();
+                        console.log(response);
+                    })
+            });
+        };
+    }
+</script>
 <br>
 <br>
 <br>

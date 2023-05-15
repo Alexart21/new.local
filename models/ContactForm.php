@@ -14,7 +14,6 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
-    public $reCaptcha;
 
 
     /**
@@ -30,9 +29,6 @@ class ContactForm extends Model
             ['email', 'email', 'message' => 'Некорректный e-mail адрес !'],
             ['subject', 'trim'],
             ['subject', 'string', 'max' => 1000, 'tooLong' => 'не более 1000 символов'],
-            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::className(),
-                'secret' => Yii::$app->params['secretV2'], // unnecessary if reСaptcha is already configured
-                'uncheckedMessage' => 'Подтвердите, что вы не робот'],
         ];
     }
 
@@ -46,33 +42,7 @@ class ContactForm extends Model
             'email' => 'Email',
             'subject' => 'Тема',
             'body' => 'Сообщение',
-            'reCaptcha' => '',
         ];
-    }
-
-
-    public function contactSend()
-    {
-//        var_dump($this->robot);die;
-        if ($this->validate()) {
-            $subject = $this->subject ? clr_get($this->subject) : 'Без темы';
-            $name = mb_ucfirst(clr_get($this->name));
-            $body = 'Вам пишет <b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b><br>' . clr_get($this->email) . '<br><br><div style="font-style: italic">' . nl2br(clr_get($this->body)) . '</div>' .
-            '<br><br>Сообщение отправлено с сайта <b>https://www.s-solo.ru</b>';
-            $success = Yii::$app->mailer->compose()// Yii::$app->params['adminEmail'] [clr_get($this->email) => $name]
-            ->setTo('mail@s-solo.ru')
-                ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
-                ->setReplyTo([clr_get($this->email) => $name])
-                ->setSubject($subject)
-                ->setHtmlBody($body)
-                ->send();
-
-            If ($success) {
-                    die('<h3 style="color:green">Спасибо, ' . $name . ', Ваше сообщение отправлено</h3>');
-            } else {
-                die('<h3 style="color:red">Ошибка !</h3>');
-            }
-        }
     }
 
 }

@@ -25,17 +25,3 @@ Modal::begin([
 <?php
 Modal::end();
 ?>
-
-<script>
-    $('#zv').modal('show');
-    // document.querySelector('audio').play();
-    // через 4 сек удаляем сообщение
-    setTimeout(function() {
-        $('#zv').modal('hide');
-        const f = document.forms;
-        for(let i=0; i<f.length; i++){
-            f[i].reset();
-        }
-    }, 4000);
-
-</script>

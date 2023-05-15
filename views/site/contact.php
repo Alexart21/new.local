@@ -2,8 +2,6 @@
 use yii\widgets\ActiveForm;
 use yii\bootstrap4\Modal;
 use yii\helpers\Html;
-use yii\widgets\MaskedInput;
-use yii\widgets\Pjax;
 
 $this->title = 'Call';
 ?>
@@ -14,19 +12,8 @@ Modal::begin([
 ]);
 ?>
 
-<?php Pjax::begin([
-    'clientOptions' => [
-        'method' => 'POST'
-    ],
-    'id' => 'contact',
-    'enablePushState' => false,
-    'timeout' => 20000
-]);
-?>
-
 <?php $form = ActiveForm::begin([
     'id' => 'contact-form',
-    'options' => ['data-pjax' => true],
 ]);
 ?>
 
@@ -39,24 +26,63 @@ Modal::begin([
 <?php //= $form->field($model, 'subject')->textInput(['class' => 'index-field', 'tabindex' => '3', 'placeholder' => 'тема'])->label(false) ?>
 
 <?= $form->field($model, 'body')->textarea(['rows' => 6, 'tabindex' => '4', 'placeholder' => 'Текст сообщения'])->label(false) ?>
-
-<?= $form->field($model, 'reCaptcha')->widget(
-    \himiklab\yii2\recaptcha\ReCaptcha2::className(),
-    [
-        'siteKey' => Yii::$app->params['siteKeyV2'], // unnecessary is reCaptcha component was set up
-    ]
-) ?>
+<input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
 
 <div class="form-group">
     <?= Html::submitButton('Отправить', ['class' => 'btn-zamer', 'name' => 'contact-button']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>
-<?php Pjax::end(); ?>
 
 <?php
 Modal::end();
 ?>
 <script>
     $('#mail-f').modal('show');
+</script>
+<script>
+    let contactForm = document.getElementById('contact-form');
+    contactForm.onsubmit = (e) => {
+        e.preventDefault();
+        $('#container_loading').show();
+        grecaptcha.ready(function () {
+            grecaptcha
+                .execute("<?= Yii::$app->params['siteKeyV3']  ?>", {
+                    action: "post",
+                })
+                .then(async function (token) {
+                    /* Все дальнейшие операции только после получения reCaptcha токена !!! */
+                    // все hidden инпуты с reCaptcha
+                    let inputs = document.getElementsByClassName("reCaptcha-field");
+                    inputs = Array.from(inputs);
+                    inputs.map((input) => {
+                        input.value = token;
+                    });
+                    let formData = new FormData(contactForm);
+                    let response = await fetch("/contact", {
+                        method: 'POST',
+                        body: formData
+                    });
+                    console.log(response)
+                    if (response.ok) {
+                        // console.log('OK!!!');
+                        result = await response.json();
+                        if (result.success) { // успешно
+                            $.toaster({
+                                priority : 'success',
+                                title : 'Спасибо, Ваша заявка принята!',
+                                message : ''
+                            });
+                        }
+                    }else{
+                        $.toaster({ priority : 'danger',
+                            title : 'Ошибка сервера!',
+                            message : ''
+                        });
+                    }
+                    $('#container_loading').hide();
+                    console.log(response);
+                })
+        });
+    }
 </script>
