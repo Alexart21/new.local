@@ -99,7 +99,7 @@ main {
     /*height: 100% !important;*/
 }
 
-main p, ul.p li, .solo-text-block{
+main p, ul.p li, .solo-text-block, .main-p{
     line-height: 1.43em;
     letter-spacing: 1px;
     margin-bottom: 1em;

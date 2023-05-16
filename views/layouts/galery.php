@@ -157,6 +157,23 @@ GaleryAsset::register($this);
                 <img src="/img/brands/hettich.jpg" width="188" height="52" alt="фурнитура hettich">
                 <img src="/img/brands/mak.jpg" width="188" height="52" alt="фурнитура makmart">
             </div>
+            <div>
+                <br>
+                <p>
+                    Оплатить покупки можно при получении, либо выбрать другой способ оплаты
+                </p>
+                <div class="footer-payment__list">
+                    <!--<div class="footer-payment__item">
+                        <img src="/img/payment-icon/footer-payment-2.png" width="157" height="28" alt="Оплата Mastercard">
+                    </div>
+                    <div class="footer-payment__item">
+                        <img src="/img/payment-icon/footer-payment-3.png" width="84" height="26" alt="Оплата Visa">
+                    </div>-->
+                    <div class="footer-payment__item">
+                        <img src="/img/payment-icon/footer-payment-4.png" width="98" height="28" alt="Оплата МИР">
+                    </div>
+                </div>
+            </div>
             <p>
             <div>сайт разработан группой <a target="_blank" href="https://laravel.s-solo.ru"><strong>ALEXART-21</strong></a><img src="/img/logo/alex-logo.png" width="100" height="58" alt=""></div>
             <a href="/politic" class="small">Политика конфиденциальности</a><br>
@@ -168,12 +185,53 @@ GaleryAsset::register($this);
             <br>
             <br>
             <br>
-        </footer>
+            <br>
+        </footer
     </div>
 </div>
 <!--кнопка вверх-->
 <div id="scroller" class="fa fa-chevron-circle-up"></div>
 <!--/-->
+<!-- чат replane -->
+<a id="tg-btn-outher" href="https://t.me/+79023274546" target="_blank"><div class="tg-btn"></div></a>
+<script>
+    window.addEventListener('load', () => {
+        if (!('ontouchstart' in window || navigator.maxTouchPoints)){ // для десктопов
+            console.log('desktop');
+            setTimeout(() => {
+                window.replainSettings = {
+                    id: '3c5fb190-8bb5-4a75-a72d-ae633d121544',
+                    onClientOpenedChat: () => {
+                        // клиент открыл чат или открылся по таймеру
+                        // куку на 1 час
+                        // в течении часа не будет всплывашек
+                        document.cookie = 'chat_open=1;max-age=3600';
+                    },
+                };
+                (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+                    var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+                })('https://widget.replain.cc/dist/client.js');
+            }, 3000);
+
+            window.addEventListener('scroll', () => {
+                // откроем через .. после скрола
+                setTimeout(() => {
+                    if(!readCookie('chat_open')){
+                        window.ReplainAPI('open');
+                        // установить стартовое сообщение (Перебивает то что было в настройках)
+                        // window.ReplainAPI('setStartMessage', 'Привет!!! 👋');
+                        // звук
+                        beep();
+                    }
+                }, 3000);
+            })
+        }else { // для мобил просто кнопка с ссылкой
+            console.log('mobile');
+            document.getElementById('tg-btn-outher').style.display = 'block';
+        }
+    });
+</script>
+<!-- конец чат replane -->
 <?php $this->endBody() ?>
 <script>
     window.onload = () => {
@@ -190,7 +248,23 @@ GaleryAsset::register($this);
         $('#container_loading').hide();
         // ldr.style.display = '';
     });
+    //
+    function startFormLoader(form) {
+        let loader = form.querySelector('.form-loader');
+        let btn = form.querySelector('button');
+        loader.style.display = 'inline-block';
+        btn.disabled = true;
+    }
+
+    function stopFormLoader(form) {
+        let loader = form.querySelector('.form-loader');
+        let btn = form.querySelector('button');
+        loader.style.display = 'none';
+        btn.disabled = false;
+    }
 </script>
+<script async src="https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC"></script>
+<script src="/js/jquery.toaster.js"></script>
 </body>
 </html>
 <?php //Spaceless::end()?>
