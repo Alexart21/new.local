@@ -27,7 +27,8 @@ Modal::begin([
         ?>
         <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
         <div class="form-group">
-            <?= Html::submitButton('жду звонка!', ['class' => 'btn-zamer']) ?>
+            <div class="form-loader"></div>
+            <button type="submit" class="btn btn-zamer">оставить заявку</button>
         </div>
         <?php ActiveForm::end(); ?>
     </div>
@@ -42,7 +43,7 @@ Modal::end();
     let callForm = document.getElementById('call-form');
     callForm.onsubmit = (e) => {
         e.preventDefault();
-        $('#container_loading').show();
+        startFormLoader(callForm);
         grecaptcha.ready(function () {
             grecaptcha
                 .execute("<?= Yii::$app->params['siteKeyV3']  ?>", {
@@ -60,6 +61,9 @@ Modal::end();
                     let response = await fetch("/call", {
                         method: 'POST',
                         body: formData
+                    })
+                    .finally(() => {
+                        stopFormLoader(callForm);
                     });
                     console.log(response)
                     if (response.ok) {
@@ -78,7 +82,6 @@ Modal::end();
                             message : ''
                         });
                     }
-                    $('#container_loading').hide();
                     console.log(response);
                 })
         });

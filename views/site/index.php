@@ -343,7 +343,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
         <br>
         <br>
-        <button type="submit" class="btn btn-zamer">записаться на замер</button>
+        <div class="form-group">
+            <div class="form-loader"></div>
+            <button type="submit" class="btn btn-zamer">оставить заявку</button>
+        </div>
         <?php ActiveForm::end(); ?>
     </div>
 </div>
@@ -355,9 +358,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <span class="h1 header_shadow">Экспресс расчет<br>
         в течении 15 минут
             </span>
-        <p>
-            Если вы уже заказывали эскиз кухонного гарнитура в другом месте,<br> отправьте нам чертежи с размерами, мы
-            сделаем<br> экспресс расчет за 15мин с Более выгодным предложением.
+        <p style="max-width: 50%">
+            Если вы заказывали проект кухонного гарнитура в другой фирме и не остались довольны результатом, вы можете отправить нам чертежи с размерами. Мы сможем быстро рассчитать стоимость вашего проекта всего за 15 минут и предложить более выгодные условия.
         </p>
         <a href="/call" class="pjax kitchen-icon-btn header_shadow">заказать экспресс расчет</a>
     </div>
@@ -463,7 +465,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
         <br>
         <br>
-        <button type="submit" class="btn btn-zamer">оставить заявку</button>
+        <div class="form-group">
+            <div class="form-loader"></div>
+            <button type="submit" class="btn btn-zamer">оставить заявку</button>
+        </div>
         <?php ActiveForm::end(); ?>
     </div>
 </div>
@@ -615,7 +620,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             ]);
         ?>
         <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
-        <button type="submit" class="btn btn-zamer">задать вопрос</button>
+        <div class="form-group">
+            <div class="form-loader"></div>
+            <button type="submit" class="btn btn-zamer">оставить заявку</button>
+        </div>
         <?php ActiveForm::end(); ?>
     </div>
     <img width="208" height="243" src="/img/call.jpg" alt="" data-scrollreveal="enter right and move 100px, wait 0.4s">
@@ -661,7 +669,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         Компании, которые специализируются на производстве кухонной мебели, могут помочь вам создать кухню, которая
         будет отвечать всем вашим потребностям и желаниям.
     </p>
-    <ul>
+    <ul class="p">
         <li>
             Наша компания "Solo мебель" предлагает кухонные гарнитуры по низким ценам, так как мы работаем напрямую с
             производителем и не имеем посредников. Покупка кухонного гарнитура может быть дорогой, даже для тех, кто
@@ -681,10 +689,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         </li>
         <li>
             Мы также предоставляем гарантию на все материалы и работу, так как мы уверены в качестве наших гарнитуров.
-            Тема, связанная с этим текстом, - это производство и установка мебели. Компания, описанная в тексте,
-            использует высококачественные материалы и фурнитуру от лидирующих производителей,
-            чтобы создать долговечную мебель. Кроме того, они предоставляют гарантию на свою продукцию, что говорит о
-            доверии качеству своих гарнитуров.
         </li>
         <li>
             Мы не оставляем после себя мусора! Вы можете начинать пить чай уже через минуту после того, как мы покинем
@@ -696,17 +700,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     <h2 class="text-center">Для тех, у кого остались вопросы по дизайну кухни</h2>
     <p>Продумаем дизайн интерьера кухни и поможем найти уютное и функциональное решение даже для непростых
         планировок:</p>
-    <ul>
+    <ul class="p">
         <li>
-            Хрущёвки и квартиры с маленькой кухней. Найдём компромисс между эстетикой и функциональностью и воплотим его
-            в жизнь.
+            Многие квартиры, построенные во времена СССР, имеют небольшие кухни и нестандартные планировки. Однако, современный дизайн интерьера может помочь найти компромисс между эстетикой и функциональностью, чтобы создать уютную и практичную обстановку в доме.
         </li>
         <li>
-            Квартиры-студии. Правильно зонируем квартиру.
+            Для квартир-студий важно правильно зонировать пространство, чтобы каждая зона была функциональной и удобной.
         </li>
         <li>
-            Нестандартные планировки. Для маленьких пространств предлагаем создать дизайн угловой кухни — это отличное
-            сочетание комфорта и функциональности.
+            В случае с маленькими кухнями, можно использовать дизайн угловой кухни, чтобы максимально эффективно использовать доступное пространство.
+        </li>
+        <li>
+            Важно понимать, что дизайн интерьера не только делает дом красивее, но и помогает максимально эффективно использовать доступное пространство, что особенно важно для квартир с ограниченным пространством.
         </li>
         <li>
             Выезд дизайнера на замеры всегда бесплатный, даже если вам не понравится ни один из вариантов гарнитуров.
@@ -714,13 +719,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     </ul>
     <h2 class="text-center">Если остались вопросы по кухонным гарнитурам</h2>
     <p>
-        В ассортименте — кухонные гарнитуры для маленькой кухни (угловые и обычные), решения для квартир-студий и
-        домашних пространств любой планировки.
+        В нашем ассортименте представлены кухонные гарнитуры для маленьких кухонь, включая угловые и обычные,
+        а также решения для квартир-студий и домашних пространств любой планировки.
     </p>
     <p>
-        Если вам не понравился ни один из представленных в каталоге гарнитуров - ничего страшного! Дизайнер приедет к
-        вам, сделает замеры и подготовит варианты. Вы можете подъехать к нам в офис на бесплатном такси, и мы вместе
-        выберем индивидуальный дизайн кухни!
+        Если ни один из гарнитуров из каталога вам не подходит, не стоит переживать! Наш дизайнер приедет к вам,
+        снимет мерки и предложит варианты.
+        Вы также можете приехать к нам в офис на бесплатном такси, и мы вместе выберем индивидуальный дизайн кухни!
     </p>
 </div>
 <!---->
@@ -761,17 +766,33 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             ?>
             <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
             <br>
-
-            <button type="submit" class="btn btn-zamer">оставить заявку</button>
+            <div class="form-group">
+                <div class="form-loader"></div>
+                <button type="submit" class="btn btn-zamer">оставить заявку</button>
+            </div>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
 <script>
+    function startFormLoader(form) {
+        let loader = form.querySelector('.form-loader');
+        let btn = form.querySelector('button');
+        loader.style.display = 'inline-block';
+        btn.disabled = true;
+    }
+
+    function stopFormLoader(form) {
+        let loader = form.querySelector('.form-loader');
+        let btn = form.querySelector('button');
+        loader.style.display = 'none';
+        btn.disabled = false;
+    }
+
     function sendForm(form) {
         form.onsubmit = (e) => {
             e.preventDefault();
-            $('#container_loading').show();
+            startFormLoader(form);
             grecaptcha.ready(function () {
                 grecaptcha
                     .execute("<?= Yii::$app->params['siteKeyV3']  ?>", {
@@ -789,6 +810,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                         let response = await fetch("/", {
                             method: 'POST',
                             body: formData
+                        })
+                        .finally(() => {
+                            stopFormLoader(form);
                         });
                         if (response.ok) {
                             result = await response.json();
@@ -806,7 +830,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                                 message: ''
                             });
                         }
-                        $('#container_loading').hide();
                         console.log(response);
                     })
             });
