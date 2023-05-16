@@ -596,7 +596,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 </div>
 <br>
 <br>
-<a href="/catalog" target="_blank" class="btn btn-zamer center-block">перейти в каталог</a>
+<div class="d-flex justify-content-center">
+    <div>
+        <a href="/catalog" target="_blank" class="btn btn-zamer center-block">перейти в каталог</a>
+    </div>
+</div>
+
 <!---->
 <br>
 <div class="h1 text-center">Остались вопросы?</div>
@@ -756,10 +761,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 ],
             ]);
             ?>
+            <br>
             <div class="h3">Ваше имя:</div>
             <?= $form->field($indexForm, 'name')->textInput(['class' => 'index-field', 'required' => true, 'placeholder' => 'Ваше имя'])->label(false) ?>
 
-            <div class="h3">Тел:</div>
+            <div class="h3">Тел.:</div>
             <?= $form->field($indexForm, 'tel')->textInput()
                 ->widget(MaskedInput::class, [
                     'name' => 'taxi',
@@ -794,7 +800,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         loader.style.display = 'none';
         btn.disabled = false;
     }
-    // тодписка на эту ф-ию нлайн в теге форм по событию onsubmit
+    // тодписка на эту ф-ию инлайн в тегах form по событию onsubmit
     function sendForm(form) {
         form.onsubmit = (e) => {
             e.preventDefault();
@@ -828,6 +834,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                                     title: 'Спасибо, заявка принята!',
                                     message: '',
                                 });
+                                setTimeout(() =>{
+                                    form.reset();
+                                }, 2000);
                             }
                         } else {
                             $.toaster({

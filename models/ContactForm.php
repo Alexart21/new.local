@@ -14,6 +14,7 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
+    public $tel;
 
 
     /**
@@ -29,6 +30,7 @@ class ContactForm extends Model
             ['email', 'email', 'message' => 'Некорректный e-mail адрес !'],
             ['subject', 'trim'],
             ['subject', 'string', 'max' => 1000, 'tooLong' => 'не более 1000 символов'],
+            ['tel', 'string', 'length' => [11, 30]],
         ];
     }
 
@@ -42,6 +44,7 @@ class ContactForm extends Model
             'email' => 'Email',
             'subject' => 'Тема',
             'body' => 'Сообщение',
+            'tel' => 'Номер телефона:'
         ];
     }
 

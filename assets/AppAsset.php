@@ -15,11 +15,6 @@ class AppAsset extends AssetBundle
 //        'css/3d-anim.css',
     ];
     public $js = [
-        'js/velocity.min.js',
-        'js/velocity.ui.min.js',
-        'js/scrollReveal.js',
-        'js/main.js',
-        'js/top-menu.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

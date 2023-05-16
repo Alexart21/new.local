@@ -21,7 +21,7 @@ Modal::begin([
 
 
         <?= $form->field($model, 'tel')->textInput(['class' => 'phone', 'required' => true])
-            ->widget(MaskedInput::className(), [
+            ->widget(MaskedInput::class, [
                 'mask' => '+7 (999) - 999 - 99 - 99',
             ]);
         ?>
@@ -75,6 +75,10 @@ Modal::end();
                                 title : 'Спасибо, Ваша заявка принята!',
                                 message : ''
                             });
+                            setTimeout(() =>{
+                                callForm.reset();
+                                $('#callback').modal('hide');
+                            }, 2000);
                         }
                     }else{
                         $.toaster({ priority : 'danger',

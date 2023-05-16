@@ -763,7 +763,7 @@ p{
     margin-bottom: 100px;
 }*/
 
-.index-field, #indexform-tel, #callform-tel{
+.index-field, #indexform-tel, #callform-tel, #contactform-tel{
     width: 240px !important;
     height: inherit !important;
    border: none !important;
@@ -1463,6 +1463,7 @@ a[href="/contact"]:hover{
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
+
 
 
 

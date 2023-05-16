@@ -2,6 +2,7 @@
 use yii\widgets\ActiveForm;
 use yii\bootstrap4\Modal;
 use yii\helpers\Html;
+use yii\widgets\MaskedInput;
 
 $this->title = 'Call';
 ?>
@@ -23,7 +24,11 @@ Modal::begin([
 
 <input type="hidden" name="ContactForm[subject]" value="Сообщение с сайта s-solo.ru">
 
-<?php //= $form->field($model, 'subject')->textInput(['class' => 'index-field', 'tabindex' => '3', 'placeholder' => 'тема'])->label(false) ?>
+<?= $form->field($model, 'tel')->textInput(['class' => 'phone'])
+    ->widget(MaskedInput::class, [
+        'mask' => '+7 (999) - 999 - 99 - 99',
+    ]);
+?>
 
 <?= $form->field($model, 'body')->textarea(['rows' => 6, 'tabindex' => '4', 'placeholder' => 'Текст сообщения'])->label(false) ?>
 <input type="hidden" class="reCaptcha-field" name="reCaptcha"/>
@@ -77,6 +82,10 @@ Modal::end();
                                 title : 'Спасибо, Ваша заявка принята!',
                                 message : ''
                             });
+                            setTimeout(() =>{
+                                contactForm.reset();
+                                $('#mail-f').modal('hide');
+                            }, 2000);
                         }
                     }else{
                         $.toaster({ priority : 'danger',

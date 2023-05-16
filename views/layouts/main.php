@@ -229,26 +229,27 @@ AppAsset::register($this);
 </div>
 <?php $this->endBody() ?>
 <script>
-    $(document).on('pjax:beforeSend', function () {
-        document.body.style.cursor = 'progress';
-        $('#container_loading').show();
-    });
-    $(document).on('pjax:complete', function () {
-        document.body.style.cursor = 'default';
-        $('#container_loading').hide();
-        // let method = $.pjax.options.type;
-        // console.log(method);
-    });
-    ///
-    window.scrollReveal = new scrollReveal();
+    window.addEventListener('load', ()=>{
+        $(document).on('pjax:beforeSend', function () {
+            document.body.style.cursor = 'progress';
+            $('#container_loading').show();
+        });
+        $(document).on('pjax:complete', function () {
+            document.body.style.cursor = 'default';
+            $('#container_loading').hide();
+            // let method = $.pjax.options.type;
+            // console.log(method);
+        });
+        window.scrollReveal = new scrollReveal();
+    })
 </script>
-<script>
-    $(document).ready(function(){
-        $('[href="/contact"]').tooltip();
-    });
-</script>
+<script src="/js/main.js"></script>
+<script src="/js/top-menu.js"></script>
+<script defer src="/js/velocity.min.js"></script>
+<script defer src="js/velocity.ui.min.js"></script>
+<script defer src="js/scrollReveal.js"></script>
 <script async src="https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC"></script>
-<script src="/js/jquery.toaster.js"></script>
+<script async src="/js/jquery.toaster.js"></script>
 </body>
 </html>
 <?php //Spaceless::end()?>

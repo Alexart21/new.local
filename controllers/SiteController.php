@@ -93,7 +93,7 @@ class SiteController extends Controller
                     return $response;
                 }
 //                die('her blin2');
-                $subject = 'Обратный звонок';
+                $subject = 'Просьба перезвонить';
                 $name = $indexForm->name ? mb_ucfirst($indexForm->name) : null;
                 $tel = $indexForm->tel ? $indexForm->tel : null;
                 $body = 'Клиент &nbsp;<b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b>&nbsp; просит перезвонить.<br>' .
@@ -178,8 +178,13 @@ class SiteController extends Controller
             if ($model->load($request->post()) && $model->validate()) {
                 $subject = $model->subject ? clr_get($model->subject) : 'Без темы';
                 $name = mb_ucfirst(clr_get($model->name));
-                $body = 'Вам пишет <b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b><br>' . clr_get($model->email) . '<br><br><div style="font-style: italic">' . nl2br(clr_get($model->body)) . '</div>' .
-                    '<br><br>Сообщение отправлено с сайта <b>https://www.s-solo.ru</b>';
+                $phone = $model->tel ? '<br>Тел.: ' . '<b>' . clr_get($model->tel) . '</b>' : '';
+                $body =
+                    'Вам пишет <b style="font-size: 120%;text-shadow: 0 1px 0 #e61b05">' . $name . '</b><br>' .
+                    clr_get($model->email)
+                    . $phone
+                    . '<br><br><div style="font-style: italic">' . nl2br(clr_get($model->body)) . '</div>' .
+                    '<br><br>Сообщение отправлено с сайта <b>https://s-solo.ru</b>';
                 $success = Yii::$app->mailer->compose()// Yii::$app->params['adminEmail'] [clr_get($this->email) => $name]
                 ->setTo('mail@s-solo.ru')
                     ->setFrom(['mail@s-solo.ru' => 's-solo.ru'])
