@@ -186,46 +186,7 @@ AppAsset::register($this);
     <!--кнопка вверх-->
     <div id="scroller" class="fa fa-chevron-circle-up"></div>
     <!--/-->
-    <!-- чат replane -->
     <a id="tg-btn-outher" href="https://t.me/+79023274546" target="_blank"><div class="tg-btn"></div></a>
-    <script>
-        window.addEventListener('load', () => {
-            if (!('ontouchstart' in window || navigator.maxTouchPoints)){ // для десктопов
-                console.log('desktop');
-                setTimeout(() => {
-                    window.replainSettings = {
-                        id: '3c5fb190-8bb5-4a75-a72d-ae633d121544',
-                        onClientOpenedChat: () => {
-                            // клиент открыл чат или открылся по таймеру
-                            // куку на 1 час
-                            // в течении часа не будет всплывашек
-                            document.cookie = 'chat_open=1;max-age=3600';
-                        },
-                    };
-                    (function(u){var s=document.createElement('script');s.async=true;s.src=u;
-                        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
-                    })('https://widget.replain.cc/dist/client.js');
-                }, 3000);
-
-                window.addEventListener('scroll', () => {
-                    // откроем через .. после скрола
-                    setTimeout(() => {
-                        if(!readCookie('chat_open')){
-                            window.ReplainAPI('open');
-                            // установить стартовое сообщение (Перебивает то что было в настройках)
-                            // window.ReplainAPI('setStartMessage', 'Привет!!! 👋');
-                            // звук
-                            beep();
-                        }
-                    }, 3000);
-                })
-            }else { // для мобил просто кнопка с ссылкой
-                console.log('mobile');
-                document.getElementById('tg-btn-outher').style.display = 'block';
-            }
-        });
-    </script>
-    <!-- конец чат replane -->
 </div>
 <?php $this->endBody() ?>
 <script>
@@ -240,16 +201,133 @@ AppAsset::register($this);
             // let method = $.pjax.options.type;
             // console.log(method);
         });
-        window.scrollReveal = new scrollReveal();
+        // window.scrollReveal = new scrollReveal();
     })
 </script>
 <script src="/js/main.js"></script>
 <script src="/js/top-menu.js"></script>
-<script defer src="/js/velocity.min.js"></script>
-<script defer src="js/velocity.ui.min.js"></script>
-<script defer src="js/scrollReveal.js"></script>
-<script async src="https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC"></script>
-<script async src="/js/jquery.toaster.js"></script>
+<!--<script defer src="/js/velocity.min.js"></script>-->
+<!--<script defer src="js/velocity.ui.min.js"></script>-->
+<!--<script defer src="js/scrollReveal.js"></script>-->
+<!--<script async src="https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC"></script>-->
+<!--<script async src="/js/jquery.toaster.js"></script>-->
+<!-- отложенная загрузка -->
+<script>
+    function loadScript(src, asyncMode = false,  callback) {
+        let script = document.createElement('script');
+        if(asyncMode === 'async'){
+            script.async = true;
+        } else if (asyncMode === 'defer'){
+            script.defer = true;
+        }
+        script.src = src;
+        document.body.appendChild(script);
+        if (callback){
+            script.onload = ()=> {
+                callback();
+            }
+        }
+    }
+    function loadCss(src){
+        let link = document.createElement( "link" );
+        link.rel = "stylesheet";
+        link.href = src;
+        document.body.appendChild(link);
+        console.log('css');
+    }
+    //
+    let event_status = false; // Статус события (ещё не произошло)
+    window.addEventListener("load", function() {
+        ["mouseover", "click", "scroll"].forEach(function(event) {
+            window.addEventListener(event, function() {
+                // start
+                if(!event_status) {
+                    console.log("отложенная загрузка js css");
+                    // здесь зависимые скрипты по загрузке первого коллбэк на загрузку второго
+                    loadScript('/js/velocity.min.js', 'async', () => {
+                        loadScript('/js/velocity.ui.min.js');
+                    });
+                    loadScript('/js/scrollReveal.js', 'async', () => {
+                        window.scrollReveal = new scrollReveal();
+                    });
+                    // Ya map
+                    loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27", 'async', () => {
+                        function init() {
+                            console.log(ymaps);
+                            let myMap = new ymaps.Map("map", {
+                                    // Координаты центра карты.
+                                    center: [56.137656, 47.277821],
+                                    zoom: 17
+                                }, {
+                                    // searchControlProvider: 'yandex#search'
+                                }),
+
+                                // Создаем геообъект с типом геометрии "Точка".
+                                myGeoObject = new ymaps.GeoObject({
+                                    // Описание геометрии.
+                                    geometry: {
+                                        type: "Point",
+                                        coordinates: [56.137656, 47.277821],
+                                    },
+                                    // Свойства.
+                                    properties: {
+                                        iconContent: 'Соло мебель в ТЦ МЕГА МОЛЛ',
+                                    },
+                                }, {
+                                    preset: "islands#redStretchyIcon",
+                                });
+                            myMap.geoObjects
+                                .add(myGeoObject)
+                        }
+                        ymaps.ready(init);
+                    });
+                    //recapTcha
+                    loadScript("https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC", 'async');
+                    loadScript('/js/jquery.toaster.js', 'async');
+                    //css
+                    loadCss('/fontawesome/css/all.min.css');
+                    // Telegram chat
+                    if (!('ontouchstart' in window || navigator.maxTouchPoints)) { // для десктопов
+                        console.log('desktop');
+                        setTimeout(() => {
+                            window.replainSettings = {
+                                id: '3c5fb190-8bb5-4a75-a72d-ae633d121544',
+                                onClientOpenedChat: () => {
+                                    // клиент открыл чат или открылся по таймеру
+                                    // куку на 1 час
+                                    // в течении часа не будет всплывашек
+                                    document.cookie = 'chat_open=1;max-age=3600';
+                                },
+                            };
+                            (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+                                var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+                                s.onload = () => {
+                                    setTimeout(() => {
+                                        if(!readCookie('chat_open')){
+                                            window.ReplainAPI('open');
+                                            // установить стартовое сообщение (Перебивает то что было в настройках)
+                                            // window.ReplainAPI('setStartMessage', 'Привет!!! 👋');
+                                            // звук
+                                            beep();
+                                        }
+                                    }, 3000)
+                                }
+                            })('https://widget.replain.cc/dist/client.js');
+                        }, 3000);
+                    }else { // для мобил просто кнопка с ссылкой
+                        console.log('mobile');
+                        document.getElementById('tg-btn-outher').style.display = 'block';
+                    }
+                    event_status = true; // Статус события (произошло)
+                }
+            }, {
+                once: true
+            });
+            //end
+        });
+    });
+</script>
+<!-- конец отложенная загрузка -->
 </body>
 </html>
 <?php //Spaceless::end()?>

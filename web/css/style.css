@@ -14,16 +14,19 @@
 @font-face {
     font-family: clematis;
     src: url(/fonts/clematis.woff);
+    font-display: swap;
 }
 
 @font-face {
     font-family: corpid;
     src: url(/fonts/corpid2.woff);
+    font-display: swap;
 }
 
 @font-face {
     font-family: LatoRegular;
     src: url(/fonts/LatoRegular.woff);
+    font-display: swap;
 }
 
 * {
@@ -517,13 +520,13 @@ div.modal-header > button > span {
 }
 
 .tooltip-inner{
-    font-size: 18px;
+    /*font-size: 18px;*/
     color: #222;
-    font-weight: bold;
+    /*font-weight: bold;*/
     letter-spacing: 1px;
     background-color: #fff !important;
     border: 1px solid #222;
-    box-shadow: 0 0 8px inset var(--logo-color);
+    /*box-shadow: 0 0 8px inset var(--logo-color);*/
 }
 
 .arrow::before{
@@ -1462,6 +1465,49 @@ a[href="/contact"]:hover{
 @keyframes loader-spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
+}
+
+.question{
+    cursor: help;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='iso-8859-1'?%3e%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3e%3cg%3e%3cg%3e%3cpath fill='%23ffffff' d='M256,8C114.616,8,0,97.542,0,208c0,110.459,114.616,200,256,200v96l90.802-108.962C443.36,366.413,512,293.475,512,208 C512,97.542,397.384,8,256,8z M257.56,320h-48.29v-51.093h48.29V320z M317.216,186.818c-3.634,8.205-10.122,15.419-19.47,21.65 c-4.571,3.115-9.242,5.818-14.019,8.101c-4.779,2.29-9.19,4.57-13.24,6.851c-4.048,2.291-7.374,4.677-9.968,7.168 c-2.602,2.493-3.894,5.4-3.894,8.72h-48.288c0-4.362,0.206-8.669,0.624-12.928c0.413-4.254,1.451-8.302,3.115-12.15 c1.661-3.84,4.152-7.525,7.477-11.059c3.32-3.53,7.789-6.749,13.397-9.658c2.283-1.246,5.555-2.906,9.814-4.986 c4.254-2.074,8.512-4.566,12.771-7.474c4.254-2.907,7.946-6.179,11.061-9.819c3.114-3.63,4.674-7.632,4.674-11.99 c0-4.778-1.872-8.568-5.613-11.371c-3.738-2.803-8.096-4.206-13.082-4.206c-3.741,0-6.962,0.728-9.658,2.179 c-2.701,1.456-5.037,3.224-7.01,5.298c-1.976,2.078-3.637,4.208-4.986,6.386c-1.352,2.182-2.648,4.002-3.893,5.451l-37.698-26.79 c5.398-12.666,13.912-22.531,25.547-29.597C226.506,99.533,239.8,96,254.757,96c7.888,0,15.885,1.144,23.984,3.429 c8.101,2.288,15.424,5.918,21.966,10.904c6.544,4.982,11.84,11.528,15.89,19.627c4.051,8.101,6.074,17.966,6.074,29.595 C322.669,169.526,320.846,178.614,317.216,186.818z'/%3e%3c/g%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3c/svg%3e ");
+}
+
+.question-block{
+    background: #ddd;
+    max-width: 1024px;
+}
+
+#q1{
+    left:120px;
+    top: 50%;
+}
+
+#q2{
+    left:240px;
+    top: 30%;
+}
+
+#q3{
+    left:480px;
+    top: 75%;
+}
+
+#q4{
+    left:580px;
+    top: 23%;
+}
+
+#q5{
+    left:700px;
+    top: 310px;
+}
+
+#q6{
+    left:720px;
+    top: 510px;
 }
 
 

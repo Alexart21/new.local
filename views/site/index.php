@@ -202,12 +202,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
     <div class="kitchen-icon-item">
-        <img src="/img/new-icon/modern.png" width="150" height="150" alt="">
+        <img loading="lazy" src="/img/new-icon/modern.png" width="150" height="150" alt="">
         <div class="h4">СОВРЕМЕННЫЕ КУХНИ</div>
         <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
     <div class="kitchen-icon-item">
-        <img src="/img/new-icon/loft.png" width="150" height="150" alt="">
+        <img loading="lazy" src="/img/new-icon/loft.png" width="150" height="150" alt="">
         <div class="h4">КУХНИ ЛОФТ</div>
         <a href="/catalog" target="_blank" class="kitchen-icon-btn">перейти в каталог</a>
     </div>
@@ -218,25 +218,25 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <div class="d-flex flex-row justify-content-md-around flex-wrap">
     <div class="kitchen-icon-item2">
-        <img src="/img/new-icon/1presentation.png" alt="" width="50" height="46">
+        <img loading="lazy" src="/img/new-icon/1presentation.png" alt="" width="50" height="46">
         <p>
         <div class="h3 header_shadow">Онлайн-расчёт за 15 минут</div>
         <span class="main-p">бесплатный проект от дизайнера, посоветуем лучшее решение</span>
     </div>
     <div class="kitchen-icon-item2">
-        <img src="/img/new-icon/2calendar.png" alt="" width="50" height="50">
+        <img loading="lazy" src="/img/new-icon/2calendar.png" alt="" width="50" height="50">
         <p>
         <div class="h3 header_shadow">Срок изготовления от 20 дней</div>
         <span class="main-p">две недели для производства гарнитура - это вполне реально!</span>
     </div>
     <div class="kitchen-icon-item2">
-        <img src="/img/new-icon/3certificate.png" alt="" width="50" height="50">
+        <img loading="lazy" src="/img/new-icon/3certificate.png" alt="" width="50" height="50">
         <p>
         <div class="h3 header_shadow">Экологичные материалы</div>
         <span class="main-p">предоставляем сертификаты качества и соответствия на все материалы</span>
     </div>
     <div class="kitchen-icon-item2">
-        <img src="/img/new-icon/4like.png" alt="" width="50" height="44">
+        <img loading="lazy" src="/img/new-icon/4like.png" alt="" width="50" height="44">
         <p>
         <div class="h3 header_shadow"><?= (int)date('Y') - 2007 ?> лет на рынке</div>
         <span class="main-p">работаем с 2007 года в области изготовления кухни на заказ</span>
@@ -256,7 +256,41 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <a href="/call" class="pjax kitchen-icon-btn btn-2">ЗАКАЗАТЬ РАСЧЕТ СТОИМОСТИ</a>
 <br>
 <br>
-<!---->
+<div class="question-block container">
+    <div class="d-flex">
+        <div class="h1 header_shadow">С какими материалами мы работаем и почему их выбираем?</div>
+        <div>
+            Наведите на<span class="question"></span>, чтобы узнать подробнее
+        </div>
+    </div>
+    <div class="position-relative">
+        <img loading="lazy" width="1000" height="750" src="/img/question-bg.png" alt="">
+        <span data-q="0" id="q1" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" data-title="'<h4>qqq</h4>'" class="q-info question position-absolute"></span>
+        <span data-q="1" id="q2" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" class="q-info question position-absolute"></span>
+        <span data-q="2" id="q3" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" class="q-info question position-absolute"></span>
+        <span data-q="3" id="q4" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" class="q-info question position-absolute"></span>
+        <span data-q="4" id="q5" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" class="q-info question position-absolute"></span>
+        <span data-q="5" id="q6" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" data-html="true" class="q-info question position-absolute"></span>
+    </div>
+</div>
+<script>
+    let q = [
+        '<h3>Стеновые панели</h3>Создаются по специальной технологии, придающей декорам невероятную реалистичность и натуральность. Высокая стойкость к температурам и чистящим веществам.',
+        '<h3>Крашеные фасады из МДФ</h3>Имеют безграничные вариации цветов и стилевых решений. Не боятся повреждений, солнечных лучей, влагостойкие и не впитывают запахи.',
+        '<h3>Каркасы из ЛДСП производства Egger (Австрия)</h3>Материал, который на производстве покрывают особым составом, образующим декоративную пленку. Материал высокой прочности, устойчивый к перепаду температур и термическому воздействию.',
+        '<h3>Фурнитура Blum и Hettich</h3>Прочная, долговечная и простая в эксплуатации. Делает работу на кухне проще и приятней.',
+        '<h3>Светодиодная подсветка</h3>Светодиодные ленты разделяют помещение на зоны, дают дополнительный свет для удобного приготовления пищи. Такая подсветка помогает расставить акценты в интерьере.',
+        '<h3>Ламинированные и каменные столешницы</h3>Современное производство позволяет разным материалам не уступать друг другу в прочности, долговечности и внешнем виде. Все зависит от заложенного бюджета и ваших предпочтений.',
+    ];
+    let questions = document.querySelectorAll('.q-info');
+    for(let i = 0; i < questions.length; i++){
+        questions[i].dataset.title = q[i];
+    }
+    window.addEventListener('load', () => {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
+<br>
 <p class="h2">
     ЧТО ДЕЛАЕТ КОМАНДА <span class="solo">SOLO</span> МЕБЕЛЬ, ДЛЯ ТОГО
     ЧТОБЫ ВЫ ПОЛУЧИЛИ НАИВЫСШЕЕ КАЧЕСТВО И ЧУВСТВО ВОСТОРГА ОТ ВАШЕЙ КУХНИ.
@@ -370,7 +404,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         <a href="/call" class="pjax kitchen-icon-btn header_shadow">заказать экспресс расчет</a>
     </div>
 
-    <img src="/img/kitchen.jpg" alt="" width="557" height="494">
+    <img loading="lazy" src="/img/kitchen.jpg" alt="" width="557" height="494">
 </div>
 <!---->
 <div id="contacts" class="h1 text-center anchors">Как нас найти ?</div>
@@ -378,7 +412,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
 <div class="d-flex flex-row justify-content-center flex-wrap">
     <div class="">
-        <img class="" src="/img/mega.jpg" alt="">
+        <img loading="lazy"  class="" src="/img/mega.jpg" alt="">
         <div class="">
             <div class="h3">Тел: +7(8352) 37-57-00</div>
             <a rel="nofollow" href="/contact" class="pjax" data-toggle="tooltip" title="написать письмо"
@@ -392,11 +426,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
             &nbsp;&nbsp;<span>Вс 10<sup>00</sup>&mdash;20<sup>00</sup></span>
         </div>
         <div id="map"></div>
-        <script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27"
+        <!--<script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27"
                 type="text/javascript"></script>
         <script>
             window.addEventListener('load', () => {
                 function init() {
+                    console.log(ymaps);
                     let myMap = new ymaps.Map("map", {
                             // Координаты центра карты.
                             center: [56.137656, 47.277821],
@@ -425,7 +460,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 
                 ymaps.ready(init);
             })
-        </script>
+        </script>-->
     </div>
 </div>
 <!---->
@@ -485,7 +520,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="h2 text-center">КОТОРЫЕ ЗАПОЛНЯЕТ КЛИЕНТ ПОСЛЕ УСТАНОВКИ КУХНИ</div>
 <div class="d-flex flex-row justify-content-center flex-wrap">
     <div class="otziv">
-        <img src="/img/doc.png" alt="">
+        <img loading="lazy" src="/img/doc.png" alt="">
     </div>
     <!--<div class="otziv">
         <b class="h3">Федоров А.С.</b><br>
@@ -514,21 +549,21 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
                 <li data-target="#carousel-otz" data-slide-to="2"></li>
             </ol>
             <div class="carousel-item active">
-                <img src="/img/user/user1.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                <img loading="lazy" src="/img/user/user1.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
                 <div class="carousel-caption">
                     <h3 class="header_shadow">Светлана Сергеева</h3>
                     <p>Довольна уровенем сервиса. Кухню доставили в оговоренные сроки.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/img/user/user2.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                <img loading="lazy" src="/img/user/user2.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
                 <div class="carousel-caption">
                     <h3 class="header_shadow">Алексей Минаев</h3>
                     <p>Приемлемые цены.Отдельно заслуживает благодарности что убрали мусор.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/img/user/user3.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
+                <img loading="lazy" src="/img/user/user3.jpg" class="icon-shadow img-thumbnail rounded-circle" alt="">
                 <div class="carousel-caption">
                     <h3 class="header_shadow">Ольга</h3>
                     <p>Довольна качеством работ.</p>
@@ -556,7 +591,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="d-flex flex-row justify-content-center flex-wrap">
     <div class="other-meb-block view view-tenth">
         <a href="/galery/lkupe">
-            <img src="/img/hall/kupe.jpg" alt="">
+            <img loading="lazy" src="/img/hall/kupe.jpg" alt="">
             <div class="mask">
                 <h4 class="h-bg2">Шкафы купе</h4>
                 <p>Шкафы купе и гардеробные.А так же радиусные шкафы купе</p>
@@ -565,7 +600,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     </div>
     <div class="other-meb-block view view-tenth">
         <a href="/galery/childrens">
-            <img src="/img/childrens/childrens.jpg" alt="">
+            <img loading="lazy" src="/img/childrens/childrens.jpg" alt="">
             <div class="mask">
                 <h4 class="h-bg2">Детская мебель</h4>
                 <p>Детские комнаты и все виды мебели для детей</p>
@@ -577,7 +612,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <div class="d-flex flex-row justify-content-center flex-wrap">
     <div class="other-meb-block view view-tenth">
         <a href="/galery/wall">
-            <img src="/img/wall/wall.jpg" alt="">
+            <img loading="lazy" src="/img/wall/wall.jpg" alt="">
             <div class="mask">
                 <h4 class="h-bg2">Мебель для гостинной</h4>
                 <p>Стенки, журнальные столы и другая мебель для дома</p>
@@ -586,7 +621,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     </div>
     <div class="other-meb-block view view-tenth">
         <a href="/galery/office">
-            <img src="/img/hall/other.jpg" alt="">
+            <img loading="lazy" src="/img/hall/other.jpg" alt="">
             <div class="mask">
                 <h4 class="h-bg2">Офисная мебель</h4>
                 <p>Все виды офисной и другой мебели для бизнеса.</p>
@@ -637,7 +672,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         </div>
         <?php ActiveForm::end(); ?>
     </div>
-    <img width="208" height="243" src="/img/call.jpg" alt="" data-scrollreveal="enter right and move 100px, wait 0.4s">
+    <img loading="lazy"  width="208" height="243" src="/img/call.jpg" alt="" data-scrollreveal="enter right and move 100px, wait 0.4s">
 </div>
 <!---->
 <div class="bla-bla container">
@@ -654,13 +689,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/img/carousel_img/img1.jpg" alt="">
+                <img  loading="lazy" src="/img/carousel_img/img1.jpg" alt="">
             </div>
             <div class="carousel-item">
-                <img src="/img/carousel_img/img2.jpg" alt="">
+                <img loading="lazy" src="/img/carousel_img/img2.jpg" alt="">
             </div>
             <div class="carousel-item">
-                <img src="/img/carousel_img/img3.jpg" alt="">
+                <img loading="lazy" src="/img/carousel_img/img3.jpg" alt="">
             </div>
         </div>
     </div>
@@ -745,7 +780,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
 <br>
 <div class="city d-flex flex-row justify-content-center flex-wrap">
     <div class="taxi-out item1">
-        <img class="taxi-inner" src="/img/taxi.png" width="652" height="354" alt=""
+        <img loading="lazy"  class="taxi-inner" src="/img/taxi.png" width="652" height="354" alt=""
              data-scrollreveal="enter left and move 300px, wait 0.3s">
     </div>
     <div class="taxi-out item2">
@@ -803,6 +838,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $data[0]['descriti
     // тодписка на эту ф-ию инлайн в тегах form по событию onsubmit
     function sendForm(form) {
         form.onsubmit = (e) => {
+            
             e.preventDefault();
             startFormLoader(form);
             grecaptcha.ready(function () {

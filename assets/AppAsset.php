@@ -10,7 +10,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/style.css',
-        'fontawesome/css/all.min.css',
+//        'fontawesome/css/all.min.css',
         'css/top-menu.css',
 //        'css/3d-anim.css',
     ];
