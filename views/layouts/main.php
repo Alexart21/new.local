@@ -213,20 +213,16 @@ AppAsset::register($this);
 <!--<script async src="/js/jquery.toaster.js"></script>-->
 <!-- отложенная загрузка -->
 <script>
-    function loadScript(src, asyncMode = false,  callback) {
+    function loadScript(src, callback) {
         let script = document.createElement('script');
-        if(asyncMode === 'async'){
-            script.async = true;
-        } else if (asyncMode === 'defer'){
-            script.defer = true;
-        }
         script.src = src;
-        document.body.appendChild(script);
-        if (callback){
-            script.onload = ()=> {
+        if (callback && typeof callback === 'function'){
+            script.onload = () => {
                 callback();
             }
         }
+        script.onerror = () => {console.log(`Не удалось загрузить скрипт ${src}`)}
+        document.head.append(script);
     }
     function loadCss(src){
         let link = document.createElement( "link" );
@@ -244,16 +240,15 @@ AppAsset::register($this);
                 if(!event_status) {
                     console.log("отложенная загрузка js css");
                     // здесь зависимые скрипты по загрузке первого коллбэк на загрузку второго
-                    loadScript('/js/velocity.min.js', 'async', () => {
+                    loadScript('/js/velocity.min.js', () => {
                         loadScript('/js/velocity.ui.min.js');
                     });
-                    loadScript('/js/scrollReveal.js', 'async', () => {
+                    loadScript('/js/scrollReveal.js', () => {
                         window.scrollReveal = new scrollReveal();
                     });
-                    // Ya map
-                    loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27", 'async', () => {
+                    // Yandex map На странице index
+                    loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2937914e-0b30-4ff3-b518-b51947516d27", () => {
                         function init() {
-                            console.log(ymaps);
                             let myMap = new ymaps.Map("map", {
                                     // Координаты центра карты.
                                     center: [56.137656, 47.277821],
@@ -282,8 +277,8 @@ AppAsset::register($this);
                         ymaps.ready(init);
                     });
                     //recapTcha
-                    loadScript("https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC", 'async');
-                    loadScript('/js/jquery.toaster.js', 'async');
+                    loadScript("https://www.google.com/recaptcha/api.js?render=6LftRl0aAAAAAHJDSCKdThCy1TaS9OwaGNPSgWyC");
+                    loadScript('/js/jquery.toaster.js');
                     //css
                     loadCss('/fontawesome/css/all.min.css');
                     // Telegram chat
